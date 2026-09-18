@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games | Aprèn jugant",
+    "description": "Un espai per descobrir, practicar i aprendre jugant."
+  },
+  "nav": {
+    "home": "Ves a l'inici",
+    "navigation": "Navegació principal",
+    "how": "Com funciona",
+    "news": "Novetats",
+    "discover": "Descobreix-ne més",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Un món per descobrir",
+    "titleBefore": "Aprendre pot ser el teu ",
+    "titleAccent": "millor joc.",
+    "description": "Un lloc per explorar, pensar i créixer a través del joc. Ben aviat trobaràs noves maneres d'aprendre mentre t'ho passes bé.",
+    "primary": "Explora la idea",
+    "secondary": "Què vindrà després?",
+    "note": "Curiositat, joc i aprenentatge en un sol lloc."
+  },
+  "art": {
+    "letsGo": "Som-hi!",
+    "discover": "Descobreix i aprèn",
+    "newChallenge": "REPTE NOU",
+    "play": "Juguem?",
+    "adventure": "Una aventura comença aquí",
+    "newIdea": "idea nova"
+  },
+  "features": {
+    "kicker": "UNA MANERA DIFERENT D'APRENDRE",
+    "title": "Juga, descobreix, avança.",
+    "description": "Creiem que les millors idees apareixen quan ens atrevim a provar.",
+    "items": [
+      {
+        "title": "Aprèn al teu ritme",
+        "description": "Petits reptes pensats per avançar pas a pas i gaudir del camí."
+      },
+      {
+        "title": "Descobreix idees noves",
+        "description": "Explora temes, prova solucions i converteix la curiositat en aprenentatge."
+      },
+      {
+        "title": "Celebra els teus èxits",
+        "description": "Cada intent compta. Continua practicant i descobreix fins on pots arribar."
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "AIXÒ TOT JUST COMENÇA",
+    "title": "Ben aviat, més maneres de jugar.",
+    "description": "Estem preparant aquest espai per omplir-lo d'experiències d'aprenentatge."
+  },
+  "footer": "Fet per a ments curioses."
+}

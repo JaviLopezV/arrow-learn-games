@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games | Learn through play",
+    "description": "A place to discover, practice and learn through play."
+  },
+  "nav": {
+    "home": "Go to home",
+    "navigation": "Main navigation",
+    "how": "How it works",
+    "news": "What's next",
+    "discover": "Find out more",
+    "language": "Language"
+  },
+  "hero": {
+    "eyebrow": "A world to discover",
+    "titleBefore": "Learning can be your ",
+    "titleAccent": "favorite game.",
+    "description": "A place to explore, think and grow through play. Soon, you'll find new ways to learn while having fun.",
+    "primary": "Explore the idea",
+    "secondary": "What's coming next?",
+    "note": "Curiosity, play and learning in one place."
+  },
+  "art": {
+    "letsGo": "Let's go!",
+    "discover": "Discover and learn",
+    "newChallenge": "NEW CHALLENGE",
+    "play": "Ready to play?",
+    "adventure": "An adventure starts here",
+    "newIdea": "new idea"
+  },
+  "features": {
+    "kicker": "A DIFFERENT WAY TO LEARN",
+    "title": "Play, discover, grow.",
+    "description": "We believe the best ideas appear when we dare to try.",
+    "items": [
+      {
+        "title": "Learn at your pace",
+        "description": "Small challenges designed to help you move forward and enjoy the journey."
+      },
+      {
+        "title": "Discover new ideas",
+        "description": "Explore topics, try solutions and turn curiosity into learning."
+      },
+      {
+        "title": "Celebrate your progress",
+        "description": "Every attempt matters. Keep practicing and see how far you can go."
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "THIS IS JUST THE BEGINNING",
+    "title": "More ways to play are coming.",
+    "description": "We're getting this space ready for new learning experiences."
+  },
+  "footer": "Made for curious minds."
+}

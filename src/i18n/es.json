@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games | Aprende jugando",
+    "description": "Un espacio para descubrir, practicar y aprender jugando."
+  },
+  "nav": {
+    "home": "Ir al inicio",
+    "navigation": "Navegación principal",
+    "how": "Cómo funciona",
+    "news": "Novedades",
+    "discover": "Descubrir más",
+    "language": "Idioma"
+  },
+  "hero": {
+    "eyebrow": "Un mundo por descubrir",
+    "titleBefore": "Aprender puede ser tu ",
+    "titleAccent": "mejor juego.",
+    "description": "Un lugar para explorar, pensar y crecer a través del juego. Muy pronto encontrarás nuevas formas de aprender mientras te diviertes.",
+    "primary": "Explorar la idea",
+    "secondary": "¿Qué viene después?",
+    "note": "Curiosidad, juego y aprendizaje en un solo lugar."
+  },
+  "art": {
+    "letsGo": "¡Vamos!",
+    "discover": "Descubre y aprende",
+    "newChallenge": "NUEVO RETO",
+    "play": "¿Jugamos?",
+    "adventure": "Una aventura empieza aquí",
+    "newIdea": "idea nueva"
+  },
+  "features": {
+    "kicker": "UNA FORMA DIFERENTE DE APRENDER",
+    "title": "Jugar, descubrir, avanzar.",
+    "description": "Creemos que las mejores ideas aparecen cuando nos atrevemos a probar.",
+    "items": [
+      {
+        "title": "Aprende a tu ritmo",
+        "description": "Pequeños retos pensados para avanzar paso a paso y disfrutar del camino."
+      },
+      {
+        "title": "Descubre nuevas ideas",
+        "description": "Explora temas, prueba soluciones y convierte la curiosidad en aprendizaje."
+      },
+      {
+        "title": "Celebra tus logros",
+        "description": "Cada intento cuenta. Sigue practicando y mira cuánto puedes conseguir."
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "ESTO ACABA DE EMPEZAR",
+    "title": "Próximamente, más formas de jugar.",
+    "description": "Estamos preparando este espacio para llenarlo de experiencias de aprendizaje."
+  },
+  "footer": "Hecho para mentes curiosas."
+}

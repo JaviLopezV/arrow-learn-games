@@ -1,23 +1,23 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprende jugando",
-    "description": "Un espacio para descubrir, practicar y aprender jugando."
+    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar."
   },
   "nav": {
     "home": "Ir al inicio",
     "navigation": "Navegación principal",
     "how": "Cómo funciona",
-    "news": "Novedades",
-    "discover": "Descubrir más",
+    "news": "Juegos",
+    "discover": "Empezar a jugar",
     "language": "Idioma"
   },
   "hero": {
     "eyebrow": "Un mundo por descubrir",
     "titleBefore": "Aprender puede ser tu ",
     "titleAccent": "mejor juego.",
-    "description": "Un lugar para explorar, pensar y crecer a través del juego. Muy pronto encontrarás nuevas formas de aprender mientras te diviertes.",
-    "primary": "Explorar la idea",
-    "secondary": "¿Qué viene después?",
+    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar.",
+    "primary": "Empezar a jugar",
+    "secondary": "Cómo funciona",
     "note": "Curiosidad, juego y aprendizaje en un solo lugar."
   },
   "art": {
@@ -31,19 +31,19 @@
   "features": {
     "kicker": "UNA FORMA DIFERENTE DE APRENDER",
     "title": "Jugar, descubrir, avanzar.",
-    "description": "Creemos que las mejores ideas aparecen cuando nos atrevemos a probar.",
+    "description": "10 puntos por acierto. Los errores no restan. Se respetan las tildes; las mayúsculas no importan.",
     "items": [
       {
-        "title": "Aprende a tu ritmo",
-        "description": "Pequeños retos pensados para avanzar paso a paso y disfrutar del camino."
+        "title": "Identifica el animal",
+        "description": "Mira la ilustración y escribe el nombre del animal."
       },
       {
-        "title": "Descubre nuevas ideas",
-        "description": "Explora temas, prueba soluciones y convierte la curiosidad en aprendizaje."
+        "title": "Traduce la palabra",
+        "description": "Lee el nombre del animal y escribe su traducción."
       },
       {
         "title": "Celebra tus logros",
-        "description": "Cada intento cuenta. Sigue practicando y mira cuánto puedes conseguir."
+        "description": "Tu progreso se guarda en este navegador."
       }
     ]
   },
@@ -52,5 +52,41 @@
     "title": "Próximamente, más formas de jugar.",
     "description": "Estamos preparando este espacio para llenarlo de experiencias de aprendizaje."
   },
-  "footer": "Hecho para mentes curiosas."
+  "footer": "Hecho para mentes curiosas.",
+  "games": {
+    "kicker": "TU PRÓXIMO RETO",
+    "title": "Pequeñas palabras, grandes descubrimientos.",
+    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar.",
+    "pictureTitle": "Identifica el animal",
+    "pictureDescription": "Mira la ilustración y escribe el nombre del animal.",
+    "translationTitle": "Traduce la palabra",
+    "translationDescription": "Lee el nombre del animal y escribe su traducción.",
+    "target": "Idioma que quieres practicar",
+    "source": "Traducir desde",
+    "start": "Empezar a jugar",
+    "points": "Puntos totales",
+    "correct": "Aciertos",
+    "best": "Mejor racha",
+    "saved": "Tu progreso se guarda en este navegador.",
+    "rules": "10 puntos por acierto. Los errores no restan. Se respetan las tildes; las mayúsculas no importan.",
+    "question": "Pregunta",
+    "picturePrompt": "¿Qué animal es?",
+    "translationPrompt": "Traduce esta palabra",
+    "answer": "Tu respuesta",
+    "check": "Comprobar",
+    "success": "¡Correcto! +10 puntos",
+    "failure": "Sigue practicando. Respuesta correcta:",
+    "next": "Siguiente animal",
+    "results": "Ver resultado",
+    "complete": "¡Ronda completada!",
+    "roundPoints": "Puntos en esta ronda",
+    "again": "Volver a jugar",
+    "change": "Cambiar juego o idioma",
+    "imageAlt": "Ilustración del animal que debes identificar",
+    "storageError": "No se puede guardar el progreso en este navegador. La puntuación se mantendrá mientras sigas en esta página.",
+    "of": "de",
+    "writeIn": "Escribe en",
+    "choose": "Elige tu juego",
+    "loading": "Cargando tu puntuación…"
+  }
 }

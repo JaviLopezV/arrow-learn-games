@@ -1,23 +1,23 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprèn jugant",
-    "description": "Un espai per descobrir, practicar i aprendre jugant."
+    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar."
   },
   "nav": {
     "home": "Ves a l'inici",
     "navigation": "Navegació principal",
     "how": "Com funciona",
-    "news": "Novetats",
-    "discover": "Descobreix-ne més",
+    "news": "Jocs",
+    "discover": "Comença a jugar",
     "language": "Idioma"
   },
   "hero": {
     "eyebrow": "Un món per descobrir",
     "titleBefore": "Aprendre pot ser el teu ",
     "titleAccent": "millor joc.",
-    "description": "Un lloc per explorar, pensar i créixer a través del joc. Ben aviat trobaràs noves maneres d'aprendre mentre t'ho passes bé.",
-    "primary": "Explora la idea",
-    "secondary": "Què vindrà després?",
+    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar.",
+    "primary": "Comença a jugar",
+    "secondary": "Com funciona",
     "note": "Curiositat, joc i aprenentatge en un sol lloc."
   },
   "art": {
@@ -31,19 +31,19 @@
   "features": {
     "kicker": "UNA MANERA DIFERENT D'APRENDRE",
     "title": "Juga, descobreix, avança.",
-    "description": "Creiem que les millors idees apareixen quan ens atrevim a provar.",
+    "description": "10 punts per encert. Els errors no resten. Es respecten els accents; les majúscules no importen.",
     "items": [
       {
-        "title": "Aprèn al teu ritme",
-        "description": "Petits reptes pensats per avançar pas a pas i gaudir del camí."
+        "title": "Identifica l’animal",
+        "description": "Mira la il·lustració i escriu el nom de l’animal."
       },
       {
-        "title": "Descobreix idees noves",
-        "description": "Explora temes, prova solucions i converteix la curiositat en aprenentatge."
+        "title": "Tradueix la paraula",
+        "description": "Llegeix el nom de l’animal i escriu-ne la traducció."
       },
       {
         "title": "Celebra els teus èxits",
-        "description": "Cada intent compta. Continua practicant i descobreix fins on pots arribar."
+        "description": "El teu progrés es desa en aquest navegador."
       }
     ]
   },
@@ -52,5 +52,41 @@
     "title": "Ben aviat, més maneres de jugar.",
     "description": "Estem preparant aquest espai per omplir-lo d'experiències d'aprenentatge."
   },
-  "footer": "Fet per a ments curioses."
+  "footer": "Fet per a ments curioses.",
+  "games": {
+    "kicker": "EL TEU PROPER REPTE",
+    "title": "Paraules petites, grans descobriments.",
+    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar.",
+    "pictureTitle": "Identifica l’animal",
+    "pictureDescription": "Mira la il·lustració i escriu el nom de l’animal.",
+    "translationTitle": "Tradueix la paraula",
+    "translationDescription": "Llegeix el nom de l’animal i escriu-ne la traducció.",
+    "target": "Idioma que vols practicar",
+    "source": "Traduir des de",
+    "start": "Comença a jugar",
+    "points": "Punts totals",
+    "correct": "Encerts",
+    "best": "Millor ratxa",
+    "saved": "El teu progrés es desa en aquest navegador.",
+    "rules": "10 punts per encert. Els errors no resten. Es respecten els accents; les majúscules no importen.",
+    "question": "Pregunta",
+    "picturePrompt": "Quin animal és?",
+    "translationPrompt": "Tradueix aquesta paraula",
+    "answer": "La teva resposta",
+    "check": "Comprova",
+    "success": "Correcte! +10 punts",
+    "failure": "Continua practicant. Resposta correcta:",
+    "next": "Animal següent",
+    "results": "Veure el resultat",
+    "complete": "Ronda completada!",
+    "roundPoints": "Punts en aquesta ronda",
+    "again": "Torna a jugar",
+    "change": "Canvia de joc o idioma",
+    "imageAlt": "Il·lustració de l’animal que has d’identificar",
+    "storageError": "No es pot desar el progrés en aquest navegador. La puntuació es mantindrà mentre siguis en aquesta pàgina.",
+    "of": "de",
+    "writeIn": "Escriu en",
+    "choose": "Tria el teu joc",
+    "loading": "Carregant la puntuació…"
+  }
 }

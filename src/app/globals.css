@@ -581,3 +581,331 @@ a {
     gap: 0;
   }
 }
+
+.animal-games {
+  padding: 76px 24px;
+  background: #f6f5fc;
+  scroll-margin-top: 24px;
+}
+.games-container {
+  max-width: 1000px;
+  margin: auto;
+}
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.score-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 22px 28px;
+  border: 1px solid #e4e1f2;
+  border-radius: 18px;
+  background: white;
+}
+.score-grid span,
+.save-note,
+.game-rules {
+  color: #646982;
+  font-size: 13px;
+}
+.score-grid strong {
+  font-family: Outfit, sans-serif;
+  font-size: 32px;
+  color: #4552d5;
+}
+.score-grid small {
+  font-size: 16px;
+}
+.save-note {
+  text-align: center;
+  margin: 15px 0 30px;
+}
+.game-setup,
+.play-panel {
+  background: white;
+  padding: 32px;
+  border: 1px solid #e4e1f2;
+  border-radius: 24px;
+}
+.mode-picker {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.mode-picker legend {
+  font-family: Outfit, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.mode-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 12px;
+  border: 2px solid #e8e6f1;
+  border-radius: 18px;
+  cursor: pointer;
+}
+.mode-option.selected {
+  border-color: #5966d9;
+  background: #f5f3ff;
+}
+.mode-option input {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  accent-color: #4552d5;
+  width: 19px;
+  height: 19px;
+}
+.mode-symbol {
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #e7e3fc;
+  min-width: 62px;
+  height: 58px;
+  font-size: 25px;
+  color: #4552d5;
+}
+.mode-option:nth-of-type(2) .mode-symbol {
+  background: #ffeddf;
+  color: #9b542b;
+}
+.mode-option strong {
+  font-size: 19px;
+}
+.mode-option > span:last-child {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #646982;
+}
+.game-settings {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.game-settings label {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.game-settings select,
+.answer-row input {
+  min-height: 50px;
+  border: 1px solid #cdcee1;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font: inherit;
+  color: #24264e;
+  background: white;
+}
+.play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 50px;
+  padding: 12px 23px;
+  border: 0;
+  border-radius: 12px;
+  background: #4552d5;
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.play-button:hover:not(:disabled) {
+  background: #3542bd;
+}
+.play-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.animal-games :focus-visible {
+  outline: 3px solid #aa6d16;
+  outline-offset: 4px;
+}
+.game-rules {
+  margin: 22px 0 0;
+  line-height: 1.7;
+}
+.play-panel {
+  max-width: 760px;
+  margin: auto;
+  text-align: center;
+}
+.round-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #646982;
+}
+.play-panel progress {
+  width: 100%;
+  height: 7px;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 18px;
+  accent-color: #5966d9;
+}
+.play-panel progress::-webkit-progress-bar {
+  background: #eeecf7;
+}
+.play-panel progress::-webkit-progress-value {
+  background: #5966d9;
+}
+.play-panel h3 {
+  font-family: Outfit, sans-serif;
+  font-size: 28px;
+  margin: 25px 0 10px;
+}
+.animal-image {
+  margin: 8px auto 20px;
+  max-width: 290px;
+  background: #f5f2ff;
+  border-radius: 28px;
+}
+.animal-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+.animal-word {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  min-height: 230px;
+}
+.animal-word span {
+  color: #646982;
+  font-size: 14px;
+}
+.animal-word strong {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(36px, 8vw, 56px);
+  color: #4552d5;
+  overflow-wrap: anywhere;
+}
+.answer-form {
+  text-align: left;
+}
+.answer-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.answer-row {
+  display: flex;
+  gap: 12px;
+}
+.answer-row input {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  font-size: 18px;
+}
+.answer-feedback {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+}
+.answer-feedback p {
+  margin-top: 0;
+  line-height: 1.6;
+}
+.answer-feedback.correct {
+  background: #e6f7ef;
+  color: #24634e;
+}
+.answer-feedback.incorrect {
+  background: #fff0e4;
+  color: #8c4827;
+}
+.text-button {
+  display: block;
+  margin: 22px auto 0;
+  padding: 8px;
+  background: none;
+  border: 0;
+  color: #535eac;
+  text-decoration: underline;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.summary-star {
+  font-size: 62px;
+  color: #eda63e;
+}
+.round-points {
+  display: block;
+  color: #4552d5;
+  font-family: Outfit, sans-serif;
+  font-size: 72px;
+}
+.round-points small {
+  font-size: 25px;
+}
+.round-summary > p {
+  color: #646982;
+  margin-bottom: 28px;
+}
+@media (max-width: 600px) {
+  .animal-games {
+    padding: 55px 16px;
+  }
+  .score-grid {
+    gap: 8px;
+  }
+  .score-grid > div {
+    padding: 15px 10px;
+  }
+  .score-grid strong {
+    font-size: 24px;
+  }
+  .score-grid span {
+    font-size: 11px;
+  }
+  .game-setup,
+  .play-panel {
+    padding: 20px;
+  }
+  .mode-picker {
+    grid-template-columns: 1fr;
+  }
+  .mode-option {
+    padding: 20px;
+  }
+  .game-settings {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .answer-row {
+    flex-direction: column;
+  }
+  .round-header {
+    font-size: 11px;
+  }
+}

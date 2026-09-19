@@ -1,23 +1,23 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Learn through play",
-    "description": "A place to discover, practice and learn through play."
+    "description": "Learn animal vocabulary with two games. Choose a language and start practising."
   },
   "nav": {
     "home": "Go to home",
     "navigation": "Main navigation",
     "how": "How it works",
-    "news": "What's next",
-    "discover": "Find out more",
+    "news": "Games",
+    "discover": "Start playing",
     "language": "Language"
   },
   "hero": {
     "eyebrow": "A world to discover",
     "titleBefore": "Learning can be your ",
     "titleAccent": "favorite game.",
-    "description": "A place to explore, think and grow through play. Soon, you'll find new ways to learn while having fun.",
-    "primary": "Explore the idea",
-    "secondary": "What's coming next?",
+    "description": "Learn animal vocabulary with two games. Choose a language and start practising.",
+    "primary": "Start playing",
+    "secondary": "How it works",
     "note": "Curiosity, play and learning in one place."
   },
   "art": {
@@ -31,19 +31,19 @@
   "features": {
     "kicker": "A DIFFERENT WAY TO LEARN",
     "title": "Play, discover, grow.",
-    "description": "We believe the best ideas appear when we dare to try.",
+    "description": "10 points per correct answer. Mistakes do not subtract points. Accents matter; capitalisation does not.",
     "items": [
       {
-        "title": "Learn at your pace",
-        "description": "Small challenges designed to help you move forward and enjoy the journey."
+        "title": "Identify the animal",
+        "description": "Look at the illustration and write the animal’s name."
       },
       {
-        "title": "Discover new ideas",
-        "description": "Explore topics, try solutions and turn curiosity into learning."
+        "title": "Translate the word",
+        "description": "Read the animal’s name and write its translation."
       },
       {
         "title": "Celebrate your progress",
-        "description": "Every attempt matters. Keep practicing and see how far you can go."
+        "description": "Your progress is saved in this browser."
       }
     ]
   },
@@ -52,5 +52,41 @@
     "title": "More ways to play are coming.",
     "description": "We're getting this space ready for new learning experiences."
   },
-  "footer": "Made for curious minds."
+  "footer": "Made for curious minds.",
+  "games": {
+    "kicker": "YOUR NEXT CHALLENGE",
+    "title": "Small words, big discoveries.",
+    "description": "Learn animal vocabulary with two games. Choose a language and start practising.",
+    "pictureTitle": "Identify the animal",
+    "pictureDescription": "Look at the illustration and write the animal’s name.",
+    "translationTitle": "Translate the word",
+    "translationDescription": "Read the animal’s name and write its translation.",
+    "target": "Language to practise",
+    "source": "Translate from",
+    "start": "Start playing",
+    "points": "Total points",
+    "correct": "Correct answers",
+    "best": "Best streak",
+    "saved": "Your progress is saved in this browser.",
+    "rules": "10 points per correct answer. Mistakes do not subtract points. Accents matter; capitalisation does not.",
+    "question": "Question",
+    "picturePrompt": "Which animal is this?",
+    "translationPrompt": "Translate this word",
+    "answer": "Your answer",
+    "check": "Check answer",
+    "success": "Correct! +10 points",
+    "failure": "Keep practising. Correct answer:",
+    "next": "Next animal",
+    "results": "See results",
+    "complete": "Round complete!",
+    "roundPoints": "Points this round",
+    "again": "Play again",
+    "change": "Change game or language",
+    "imageAlt": "Illustration of the animal to identify",
+    "storageError": "Progress cannot be saved in this browser. Your score will last while you stay on this page.",
+    "of": "of",
+    "writeIn": "Write in",
+    "choose": "Choose your game",
+    "loading": "Loading your score…"
+  }
 }

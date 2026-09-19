@@ -13,6 +13,7 @@ import ExtensionRoundedIcon from "@mui/icons-material/ExtensionRounded";
 import LightbulbRoundedIcon from "@mui/icons-material/LightbulbRounded";
 import RocketLaunchRoundedIcon from "@mui/icons-material/RocketLaunchRounded";
 import { isLocale, messages } from "@/i18n/messages";
+import { AnimalGames } from "./animal-games";
 import { LanguageSelector } from "./language-selector";
 
 const featureStyles = [
@@ -54,13 +55,13 @@ export default async function Home({
             className="navigation"
           >
             <a href="#como-funciona">{m.nav.how}</a>
-            <a href="#proximamente">{m.nav.news}</a>
+            <a href="#juegos">{m.nav.news}</a>
           </Box>
           <Box className="header-actions">
             <LanguageSelector locale={locale} label={m.nav.language} />
             <Button
               component="a"
-              href="#proximamente"
+              href="#juegos"
               tone="primary"
               variant="contained"
               className="header-cta"
@@ -91,7 +92,7 @@ export default async function Home({
             >
               <Button
                 component="a"
-                href="#como-funciona"
+                href="#juegos"
                 tone="primary"
                 variant="contained"
                 size="large"
@@ -101,7 +102,7 @@ export default async function Home({
               </Button>
               <Button
                 component="a"
-                href="#proximamente"
+                href="#como-funciona"
                 tone="neutral"
                 variant="outlined"
                 size="large"
@@ -143,6 +144,8 @@ export default async function Home({
         </Container>
       </Box>
 
+      <AnimalGames locale={locale} />
+
       <Box
         component="section"
         id="como-funciona"
@@ -172,28 +175,6 @@ export default async function Home({
                 <Typography>{feature.description}</Typography>
               </Surface>
             ))}
-          </Box>
-        </Container>
-      </Box>
-
-      <Box
-        component="section"
-        id="proximamente"
-        className="coming-section"
-        aria-labelledby="coming-title"
-      >
-        <Container maxWidth="lg">
-          <Box className="coming-panel">
-            <Box>
-              <span className="section-kicker">{m.coming.kicker}</span>
-              <Typography component="h2" id="coming-title">
-                {m.coming.title}
-              </Typography>
-              <Typography>{m.coming.description}</Typography>
-            </Box>
-            <span className="coming-symbol" aria-hidden="true">
-              ↗
-            </span>
           </Box>
         </Container>
       </Box>

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprende jugando",
-    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar."
+    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar."
   },
   "nav": {
     "home": "Ir al inicio",
@@ -15,7 +15,7 @@
     "eyebrow": "Un mundo por descubrir",
     "titleBefore": "Aprender puede ser tu ",
     "titleAccent": "mejor juego.",
-    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar.",
+    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar.",
     "primary": "Empezar a jugar",
     "secondary": "Cómo funciona",
     "note": "Curiosidad, juego y aprendizaje en un solo lugar."
@@ -43,7 +43,7 @@
       },
       {
         "title": "Celebra tus logros",
-        "description": "Tu progreso se guarda en este navegador."
+        "description": "Tus partidas se guardan por separado para cada juego en este navegador."
       }
     ]
   },
@@ -56,7 +56,7 @@
   "games": {
     "kicker": "TU PRÓXIMO RETO",
     "title": "Pequeñas palabras, grandes descubrimientos.",
-    "description": "Aprende vocabulario de animales con dos juegos. Elige un idioma y empieza a practicar.",
+    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar.",
     "pictureTitle": "Identifica el animal",
     "pictureDescription": "Mira la ilustración y escribe el nombre del animal.",
     "translationTitle": "Traduce la palabra",
@@ -67,7 +67,7 @@
     "points": "Puntos totales",
     "correct": "Aciertos",
     "best": "Mejor racha",
-    "saved": "Tu progreso se guarda en este navegador.",
+    "saved": "Tus partidas se guardan por separado para cada juego en este navegador.",
     "rules": "10 puntos por acierto. Los errores no restan. Se respetan las tildes; las mayúsculas no importan.",
     "question": "Pregunta",
     "picturePrompt": "¿Qué animal es?",
@@ -87,6 +87,41 @@
     "of": "de",
     "writeIn": "Escribe en",
     "choose": "Elige tu juego",
-    "loading": "Cargando tu puntuación…"
+    "loading": "Cargando tu puntuación…",
+    "pronounsTitle": "Pronombres sujeto",
+    "pronounsDescription": "Aprende quién realiza la acción: yo, tú, él… y escribe su traducción.",
+    "pronounsPrompt": "Traduce este pronombre sujeto",
+    "pronounsList": "Lista de pronombres sujeto",
+    "pronounsContext": "Persona y contexto",
+    "pronounsNote": "12 preguntas por ronda. El contexto distingue singular, plural y género cuando una palabra tiene varias traducciones. Incluye formas personales y de cortesía; no incluye usos neutros o impersonales como «it». En español se aceptan «vos» y «ustedes» en sus contextos regionales.",
+    "nextPronoun": "Siguiente pronombre",
+    "pronounContexts": {
+      "firstSingular": "1.ª persona singular",
+      "secondSingular": "2.ª persona singular · informal",
+      "thirdMasculine": "3.ª persona singular · masculino",
+      "thirdFeminine": "3.ª persona singular · femenino",
+      "firstPluralMasculine": "1.ª persona plural · grupo masculino o mixto",
+      "firstPluralFeminine": "1.ª persona plural · grupo femenino",
+      "secondPluralMasculine": "2.ª persona plural · grupo masculino o mixto · informal",
+      "secondPluralFeminine": "2.ª persona plural · grupo femenino · informal",
+      "thirdPluralMasculine": "3.ª persona plural · grupo masculino o mixto",
+      "thirdPluralFeminine": "3.ª persona plural · grupo femenino",
+      "formalSingular": "2.ª persona singular · formal",
+      "formalPlural": "2.ª persona plural · formal"
+    },
+    "lastScore": "Última partida",
+    "bestScore": "Mejor partida completa",
+    "completedGames": "Partidas completadas",
+    "historyTitle": "Historial de partidas",
+    "historyNote": "Cada partida empieza en 0. Las partidas sin terminar se guardan, pero no cuentan para el récord.",
+    "noGames": "Todavía no has jugado a este juego.",
+    "playedAt": "Fecha",
+    "historyLanguage": "Idioma",
+    "resultScore": "Puntuación",
+    "gameStatus": "Estado",
+    "finishedGame": "Completada",
+    "activeGame": "En curso",
+    "unfinishedGame": "Sin terminar",
+    "legacyScore": "La puntuación global anterior se conserva aparte: no se puede repartir entre juegos porque no registraba el juego de cada respuesta."
   }
 }

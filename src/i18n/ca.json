@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprèn jugant",
-    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar."
+    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar."
   },
   "nav": {
     "home": "Ves a l'inici",
@@ -15,7 +15,7 @@
     "eyebrow": "Un món per descobrir",
     "titleBefore": "Aprendre pot ser el teu ",
     "titleAccent": "millor joc.",
-    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar.",
+    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar.",
     "primary": "Comença a jugar",
     "secondary": "Com funciona",
     "note": "Curiositat, joc i aprenentatge en un sol lloc."
@@ -43,7 +43,7 @@
       },
       {
         "title": "Celebra els teus èxits",
-        "description": "El teu progrés es desa en aquest navegador."
+        "description": "Les teves partides es desen per separat per a cada joc en aquest navegador."
       }
     ]
   },
@@ -56,7 +56,7 @@
   "games": {
     "kicker": "EL TEU PROPER REPTE",
     "title": "Paraules petites, grans descobriments.",
-    "description": "Aprèn vocabulari d’animals amb dos jocs. Tria un idioma i comença a practicar.",
+    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar.",
     "pictureTitle": "Identifica l’animal",
     "pictureDescription": "Mira la il·lustració i escriu el nom de l’animal.",
     "translationTitle": "Tradueix la paraula",
@@ -67,7 +67,7 @@
     "points": "Punts totals",
     "correct": "Encerts",
     "best": "Millor ratxa",
-    "saved": "El teu progrés es desa en aquest navegador.",
+    "saved": "Les teves partides es desen per separat per a cada joc en aquest navegador.",
     "rules": "10 punts per encert. Els errors no resten. Es respecten els accents; les majúscules no importen.",
     "question": "Pregunta",
     "picturePrompt": "Quin animal és?",
@@ -87,6 +87,41 @@
     "of": "de",
     "writeIn": "Escriu en",
     "choose": "Tria el teu joc",
-    "loading": "Carregant la puntuació…"
+    "loading": "Carregant la puntuació…",
+    "pronounsTitle": "Pronoms subjecte",
+    "pronounsDescription": "Aprèn qui fa l’acció: jo, tu, ell… i escriu-ne la traducció.",
+    "pronounsPrompt": "Tradueix aquest pronom subjecte",
+    "pronounsList": "Llista de pronoms subjecte",
+    "pronounsContext": "Persona i context",
+    "pronounsNote": "12 preguntes per ronda. El context distingeix singular, plural i gènere quan una paraula té diverses traduccions. Inclou formes personals i de cortesia; no inclou usos neutres o impersonals com «it». En castellà s’accepten «vos» i «ustedes» en els seus contextos regionals.",
+    "nextPronoun": "Pronom següent",
+    "pronounContexts": {
+      "firstSingular": "1a persona singular",
+      "secondSingular": "2a persona singular · informal",
+      "thirdMasculine": "3a persona singular · masculí",
+      "thirdFeminine": "3a persona singular · femení",
+      "firstPluralMasculine": "1a persona plural · grup masculí o mixt",
+      "firstPluralFeminine": "1a persona plural · grup femení",
+      "secondPluralMasculine": "2a persona plural · grup masculí o mixt · informal",
+      "secondPluralFeminine": "2a persona plural · grup femení · informal",
+      "thirdPluralMasculine": "3a persona plural · grup masculí o mixt",
+      "thirdPluralFeminine": "3a persona plural · grup femení",
+      "formalSingular": "2a persona singular · formal",
+      "formalPlural": "2a persona plural · formal"
+    },
+    "lastScore": "Última partida",
+    "bestScore": "Millor partida completa",
+    "completedGames": "Partides completades",
+    "historyTitle": "Historial de partides",
+    "historyNote": "Cada partida comença a 0. Les partides sense acabar es desen, però no compten per al rècord.",
+    "noGames": "Encara no has jugat a aquest joc.",
+    "playedAt": "Data",
+    "historyLanguage": "Idioma",
+    "resultScore": "Puntuació",
+    "gameStatus": "Estat",
+    "finishedGame": "Completada",
+    "activeGame": "En curs",
+    "unfinishedGame": "Sense acabar",
+    "legacyScore": "La puntuació global anterior es conserva a part: no es pot repartir entre jocs perquè no registrava el joc de cada resposta."
   }
 }

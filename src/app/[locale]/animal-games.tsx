@@ -4,19 +4,28 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { messages, type Locale } from "@/i18n/messages";
 import {
-  addAnswer,
-  emptyScore,
   isCorrect,
   languages,
-  readScore,
   shuffledAnimals,
+  shuffleDeck,
   type Language,
   type Mode,
-  type Score,
 } from "@/lib/animals";
 
-const storageKey = "arrow-learn-games:score:v1";
+import { pronouns, type PronounId } from "@/lib/pronouns";
+
+import {
+  emptyHistory,
+  gameModes,
+  historyKey,
+  mergeHistory,
+  readHistory,
+  type GameHistory,
+  type GameResult,
+} from "@/lib/game-history";
 type Round = {
+  id: string;
+  startedAt: string;
   deck: ReturnType<typeof shuffledAnimals>;
   index: number;
   points: number;
@@ -32,7 +41,9 @@ export function AnimalGames({ locale }: { locale: Locale }) {
   const [mode, setMode] = useState<Mode>("picture");
   const [target, setTarget] = useState<Language>(locale === "en" ? "es" : "en");
   const [source, setSource] = useState<Language>(locale);
-  const [score, setScore] = useState<Score>(emptyScore);
+  const [history, setHistory] = useState<GameHistory>(emptyHistory);
+  const historyRef = useRef<GameHistory>(emptyHistory());
+  const [legacyScore, setLegacyScore] = useState(false);
   const [ready, setReady] = useState(false);
   const [storageError, setStorageError] = useState(false);
   const [round, setRound] = useState<Round | null>(null);
@@ -44,7 +55,14 @@ export function AnimalGames({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     try {
-      setScore(readScore(localStorage.getItem(storageKey)));
+      const loaded = emptyHistory();
+      for (const game of gameModes)
+        loaded[game] = readHistory(localStorage.getItem(historyKey(game)));
+      historyRef.current = loaded;
+      setHistory(loaded);
+      setLegacyScore(
+        localStorage.getItem("arrow-learn-games:score:v1") !== null,
+      );
     } catch {
       setStorageError(true);
     }
@@ -57,11 +75,43 @@ export function AnimalGames({ locale }: { locale: Locale }) {
     else if (round) input.current?.focus();
   }, [round]);
 
+  function saveResult(current: Round, answered: number) {
+    const result: GameResult = {
+      id: current.id,
+      startedAt: current.startedAt,
+      target: current.target,
+      source: current.source,
+      points: current.points,
+      answered,
+      total: current.deck.length,
+      completed: answered === current.deck.length,
+    };
+    let previous = historyRef.current[current.mode];
+    try {
+      previous = mergeHistory(
+        readHistory(localStorage.getItem(historyKey(current.mode))),
+        previous,
+      );
+    } catch {
+      setStorageError(true);
+    }
+    const updated = mergeHistory(previous, [result]);
+    historyRef.current = { ...historyRef.current, [current.mode]: updated };
+    setHistory(historyRef.current);
+    try {
+      localStorage.setItem(historyKey(current.mode), JSON.stringify(updated));
+    } catch {
+      setStorageError(true);
+    }
+  }
+
   function start() {
     locked.current = false;
     setAnswer("");
-    setRound({
-      deck: shuffledAnimals(),
+    const fresh: Round = {
+      id: crypto.randomUUID(),
+      startedAt: new Date().toISOString(),
+      deck: mode === "pronouns" ? shuffleDeck(pronouns) : shuffledAnimals(),
       index: 0,
       points: 0,
       result: null,
@@ -69,7 +119,9 @@ export function AnimalGames({ locale }: { locale: Locale }) {
       mode,
       target,
       source,
-    });
+    };
+    setRound(fresh);
+    saveResult(fresh, 0);
   }
 
   function submit(event: React.FormEvent) {
@@ -87,24 +139,13 @@ export function AnimalGames({ locale }: { locale: Locale }) {
       answer,
       round.deck[round.index].words[round.target],
     );
-    let previous = score;
-    try {
-      if (!storageError) previous = readScore(localStorage.getItem(storageKey));
-    } catch {
-      setStorageError(true);
-    }
-    const updated = addAnswer(previous, correct);
-    setScore(updated);
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(updated));
-    } catch {
-      setStorageError(true);
-    }
-    setRound({
+    const updated = {
       ...round,
       result: correct,
       points: round.points + (correct ? 10 : 0),
-    });
+    };
+    setRound(updated);
+    saveResult(updated, round.index + 1);
   }
 
   function next() {
@@ -118,7 +159,19 @@ export function AnimalGames({ locale }: { locale: Locale }) {
     }
   }
 
+  const activeMode = round?.mode ?? mode;
+  const results = history[activeMode];
+  const completedResults = results.filter((result) => result.completed);
+  const best = completedResults.length
+    ? Math.max(...completedResults.map((result) => result.points))
+    : null;
   const animal = round?.deck[round.index];
+  const gameTitle = (value: Mode) =>
+    value === "picture"
+      ? m.pictureTitle
+      : value === "pronouns"
+        ? m.pronounsTitle
+        : m.translationTitle;
   return (
     <section id="juegos" className="animal-games" aria-labelledby="games-title">
       <div className="games-container">
@@ -127,60 +180,67 @@ export function AnimalGames({ locale }: { locale: Locale }) {
           <h2 id="games-title">{m.title}</h2>
           <p>{m.description}</p>
         </div>
-        <div className="score-grid" aria-label={m.points}>
+        <h3 className="score-game-title">{gameTitle(activeMode)}</h3>
+        <div className="score-grid" aria-label={gameTitle(activeMode)}>
           <div>
-            <span>{m.points}</span>
+            <span>{round ? m.roundPoints : m.lastScore}</span>
             <strong>
-              {ready ? score.points : "—"} <small>pts</small>
+              {ready ? (round?.points ?? results[0]?.points ?? "—") : "—"}{" "}
+              <small>pts</small>
             </strong>
           </div>
           <div>
-            <span>{m.correct}</span>
+            <span>{m.bestScore}</span>
             <strong>
-              {ready ? `${score.correct} / ${score.attempts}` : "—"}
+              {ready ? (best ?? "—") : "—"} <small>pts</small>
             </strong>
           </div>
           <div>
-            <span>{m.best}</span>
-            <strong>
-              {ready ? score.bestStreak : "—"} <small>✦</small>
-            </strong>
+            <span>{m.completedGames}</span>
+            <strong>{ready ? completedResults.length : "—"}</strong>
           </div>
         </div>
         <p className="save-note" role="status">
           {!ready ? m.loading : storageError ? m.storageError : m.saved}
         </p>
+        {legacyScore && <p className="save-note">{m.legacyScore}</p>}
         {!round ? (
           <div className="game-setup">
             <fieldset className="mode-picker">
               <legend>{m.choose}</legend>
-              {(["picture", "translation"] as const).map((value) => (
-                <label
-                  key={value}
-                  className={`mode-option ${mode === value ? "selected" : ""}`}
-                >
-                  <input
-                    type="radio"
-                    name="game-mode"
-                    checked={mode === value}
-                    onChange={() => setMode(value)}
-                  />
-                  <span className="mode-symbol" aria-hidden="true">
-                    {value === "picture" ? "🐾" : "Aa ↔"}
-                  </span>
-                  <strong>
-                    {value === "picture" ? m.pictureTitle : m.translationTitle}
-                  </strong>
-                  <span>
-                    {value === "picture"
-                      ? m.pictureDescription
-                      : m.translationDescription}
-                  </span>
-                </label>
-              ))}
+              {(["picture", "translation", "pronouns"] as const).map(
+                (value) => (
+                  <label
+                    key={value}
+                    className={`mode-option ${mode === value ? "selected" : ""}`}
+                  >
+                    <input
+                      type="radio"
+                      name="game-mode"
+                      checked={mode === value}
+                      onChange={() => setMode(value)}
+                    />
+                    <span className="mode-symbol" aria-hidden="true">
+                      {value === "picture"
+                        ? "🐾"
+                        : value === "pronouns"
+                          ? "Yo ↔ I"
+                          : "Aa ↔"}
+                    </span>
+                    <strong>{gameTitle(value)}</strong>
+                    <span>
+                      {value === "picture"
+                        ? m.pictureDescription
+                        : value === "pronouns"
+                          ? m.pronounsDescription
+                          : m.translationDescription}
+                    </span>
+                  </label>
+                ),
+              )}
             </fieldset>
             <div className="game-settings">
-              {mode === "translation" && (
+              {mode !== "picture" && (
                 <label>
                   {m.source}
                   <select
@@ -219,6 +279,32 @@ export function AnimalGames({ locale }: { locale: Locale }) {
               </button>
             </div>
             <p className="game-rules">{m.rules}</p>
+            {mode === "pronouns" && (
+              <details className="pronoun-reference">
+                <summary>{m.pronounsList}</summary>
+                <p>{m.pronounsNote}</p>
+                <div className="pronoun-table-scroll">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">{m.pronounsContext}</th>
+                        <th scope="col">{languages[source]}</th>
+                        <th scope="col">{languages[target]}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {pronouns.map((pronoun) => (
+                        <tr key={pronoun.id}>
+                          <th scope="row">{m.pronounContexts[pronoun.id]}</th>
+                          <td lang={source}>{pronoun.words[source][0]}</td>
+                          <td lang={target}>{pronoun.words[target][0]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            )}
           </div>
         ) : round.done ? (
           <div className="play-panel round-summary">
@@ -245,9 +331,7 @@ export function AnimalGames({ locale }: { locale: Locale }) {
         ) : (
           <div className="play-panel">
             <div className="round-header">
-              <span>
-                {round.mode === "picture" ? m.pictureTitle : m.translationTitle}
-              </span>
+              <span>{gameTitle(round.mode)}</span>
               <span>
                 {m.question} {round.index + 1} {m.of} {round.deck.length}
               </span>
@@ -258,7 +342,11 @@ export function AnimalGames({ locale }: { locale: Locale }) {
               aria-label={m.question}
             />
             <h3>
-              {round.mode === "picture" ? m.picturePrompt : m.translationPrompt}
+              {round.mode === "picture"
+                ? m.picturePrompt
+                : round.mode === "pronouns"
+                  ? m.pronounsPrompt
+                  : m.translationPrompt}
             </h3>
             {round.mode === "picture" ? (
               <div className="animal-image">
@@ -273,6 +361,11 @@ export function AnimalGames({ locale }: { locale: Locale }) {
             ) : (
               <div className="animal-word">
                 <span>{languages[round.source]}</span>
+                {round.mode === "pronouns" && (
+                  <span className="pronoun-context">
+                    {m.pronounContexts[animal!.id as PronounId]}
+                  </span>
+                )}
                 <strong lang={round.source}>
                   {animal!.words[round.source][0]}
                 </strong>
@@ -332,7 +425,12 @@ export function AnimalGames({ locale }: { locale: Locale }) {
                   className="play-button"
                   onClick={next}
                 >
-                  {round.index === round.deck.length - 1 ? m.results : m.next} →
+                  {round.index === round.deck.length - 1
+                    ? m.results
+                    : round.mode === "pronouns"
+                      ? m.nextPronoun
+                      : m.next}{" "}
+                  →
                 </button>
               </div>
             )}
@@ -340,6 +438,67 @@ export function AnimalGames({ locale }: { locale: Locale }) {
               {m.change}
             </button>
           </div>
+        )}
+        {ready && (
+          <section className="game-history" aria-labelledby="history-title">
+            <h3 id="history-title">
+              {m.historyTitle} · {gameTitle(activeMode)}
+            </h3>
+            <p className="save-note">{m.historyNote}</p>
+            {results.length === 0 ? (
+              <p>{m.noGames}</p>
+            ) : (
+              <div className="history-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">{m.playedAt}</th>
+                      <th scope="col">{m.historyLanguage}</th>
+                      <th scope="col">{m.resultScore}</th>
+                      <th scope="col">{m.correct}</th>
+                      <th scope="col">{m.gameStatus}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {results.map((result) => (
+                      <tr key={result.id}>
+                        <td>
+                          <time dateTime={result.startedAt}>
+                            {new Intl.DateTimeFormat(locale, {
+                              dateStyle: "short",
+                              timeStyle: "short",
+                            }).format(new Date(result.startedAt))}
+                          </time>
+                        </td>
+                        <td>
+                          {activeMode !== "picture" && (
+                            <>{languages[result.source]} → </>
+                          )}
+                          {languages[result.target]}
+                        </td>
+                        <td>
+                          <strong>
+                            {result.points} / {result.total * 10}
+                          </strong>{" "}
+                          pts
+                        </td>
+                        <td>
+                          {result.points / 10} / {result.answered}
+                        </td>
+                        <td>
+                          {result.completed
+                            ? m.finishedGame
+                            : round?.id === result.id
+                              ? m.activeGame
+                              : m.unfinishedGame}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </section>
         )}
       </div>
     </section>

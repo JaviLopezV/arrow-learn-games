@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Learn through play",
-    "description": "Learn animal vocabulary with two games. Choose a language and start practising."
+    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising."
   },
   "nav": {
     "home": "Go to home",
@@ -15,7 +15,7 @@
     "eyebrow": "A world to discover",
     "titleBefore": "Learning can be your ",
     "titleAccent": "favorite game.",
-    "description": "Learn animal vocabulary with two games. Choose a language and start practising.",
+    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising.",
     "primary": "Start playing",
     "secondary": "How it works",
     "note": "Curiosity, play and learning in one place."
@@ -43,7 +43,7 @@
       },
       {
         "title": "Celebrate your progress",
-        "description": "Your progress is saved in this browser."
+        "description": "Your results are saved separately for each game in this browser."
       }
     ]
   },
@@ -56,7 +56,7 @@
   "games": {
     "kicker": "YOUR NEXT CHALLENGE",
     "title": "Small words, big discoveries.",
-    "description": "Learn animal vocabulary with two games. Choose a language and start practising.",
+    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising.",
     "pictureTitle": "Identify the animal",
     "pictureDescription": "Look at the illustration and write the animal’s name.",
     "translationTitle": "Translate the word",
@@ -67,7 +67,7 @@
     "points": "Total points",
     "correct": "Correct answers",
     "best": "Best streak",
-    "saved": "Your progress is saved in this browser.",
+    "saved": "Your results are saved separately for each game in this browser.",
     "rules": "10 points per correct answer. Mistakes do not subtract points. Accents matter; capitalisation does not.",
     "question": "Question",
     "picturePrompt": "Which animal is this?",
@@ -87,6 +87,41 @@
     "of": "of",
     "writeIn": "Write in",
     "choose": "Choose your game",
-    "loading": "Loading your score…"
+    "loading": "Loading your score…",
+    "pronounsTitle": "Subject pronouns",
+    "pronounsDescription": "Learn who performs the action: I, you, he… and write the translation.",
+    "pronounsPrompt": "Translate this subject pronoun",
+    "pronounsList": "Subject pronoun list",
+    "pronounsContext": "Person and context",
+    "pronounsNote": "12 questions per round. Context distinguishes singular, plural and gender when a word has several translations. Covers personal and polite forms; excludes neuter or impersonal uses such as “it”. Spanish regional forms “vos” and “ustedes” are accepted in the appropriate contexts.",
+    "nextPronoun": "Next pronoun",
+    "pronounContexts": {
+      "firstSingular": "1st person singular",
+      "secondSingular": "2nd person singular · informal",
+      "thirdMasculine": "3rd person singular · masculine",
+      "thirdFeminine": "3rd person singular · feminine",
+      "firstPluralMasculine": "1st person plural · masculine or mixed group",
+      "firstPluralFeminine": "1st person plural · feminine group",
+      "secondPluralMasculine": "2nd person plural · masculine or mixed group · informal",
+      "secondPluralFeminine": "2nd person plural · feminine group · informal",
+      "thirdPluralMasculine": "3rd person plural · masculine or mixed group",
+      "thirdPluralFeminine": "3rd person plural · feminine group",
+      "formalSingular": "2nd person singular · formal",
+      "formalPlural": "2nd person plural · formal"
+    },
+    "lastScore": "Last game",
+    "bestScore": "Best completed game",
+    "completedGames": "Completed games",
+    "historyTitle": "Game history",
+    "historyNote": "Each game starts at 0. Unfinished games are saved, but do not count towards your record.",
+    "noGames": "You have not played this game yet.",
+    "playedAt": "Date",
+    "historyLanguage": "Language",
+    "resultScore": "Score",
+    "gameStatus": "Status",
+    "finishedGame": "Completed",
+    "activeGame": "In progress",
+    "unfinishedGame": "Unfinished",
+    "legacyScore": "Your previous global score is kept separately: it cannot be split between games because it did not record which game each answer belonged to."
   }
 }

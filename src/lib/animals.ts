@@ -7,7 +7,7 @@ export const languages = {
   it: "Italiano",
 } as const;
 export type Language = keyof typeof languages;
-export type Mode = "picture" | "translation";
+export type Mode = "picture" | "translation" | "pronouns";
 export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "cat",
@@ -106,56 +106,15 @@ export function isCorrect(answer: string, accepted: string[]) {
     (word) => normalizeAnswer(word) === normalizeAnswer(answer),
   );
 }
-export type Score = {
-  points: number;
-  correct: number;
-  attempts: number;
-  streak: number;
-  bestStreak: number;
-};
-export const emptyScore: Score = {
-  points: 0,
-  correct: 0,
-  attempts: 0,
-  streak: 0,
-  bestStreak: 0,
-};
-export function readScore(raw: string | null): Score {
-  try {
-    const value = JSON.parse(raw ?? "null");
-    if (
-      !value ||
-      !Object.keys(emptyScore).every(
-        (key) => Number.isSafeInteger(value[key]) && value[key] >= 0,
-      ) ||
-      value.correct > value.attempts ||
-      value.points !== value.correct * 10 ||
-      value.streak > value.bestStreak ||
-      value.bestStreak > value.correct
-    )
-      return { ...emptyScore };
-    return Object.fromEntries(
-      Object.keys(emptyScore).map((key) => [key, value[key]]),
-    ) as Score;
-  } catch {
-    return { ...emptyScore };
-  }
-}
-export function addAnswer(score: Score, correct: boolean): Score {
-  const streak = correct ? score.streak + 1 : 0;
-  return {
-    points: score.points + (correct ? 10 : 0),
-    correct: score.correct + Number(correct),
-    attempts: score.attempts + 1,
-    streak,
-    bestStreak: Math.max(score.bestStreak, streak),
-  };
-}
-export function shuffledAnimals() {
-  const deck = [...animals];
+export function shuffleDeck<T>(items: readonly T[]): T[] {
+  const deck = [...items];
   for (let i = deck.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [deck[i], deck[j]] = [deck[j], deck[i]];
   }
   return deck;
+}
+
+export function shuffledAnimals() {
+  return shuffleDeck(animals);
 }

@@ -23,15 +23,13 @@ type Round = {
   source: Language;
 };
 
-export function useGame({
-  locale,
-  topic,
-  mode,
-}: {
+type UseGameOptions = {
   locale: Locale;
   topic: Topic;
   mode: ImplementedMode;
-}) {
+};
+
+export function useGame({ locale, topic, mode }: UseGameOptions) {
   const m = messages[locale].games;
   const [target, setTarget] = useState<Language>(locale === "en" ? "es" : "en");
   const [source, setSource] = useState<Language>(locale);

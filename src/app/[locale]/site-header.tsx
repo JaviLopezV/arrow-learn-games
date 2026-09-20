@@ -1,5 +1,6 @@
 import { Box, Link, Button, Container } from "@jlopvil/mui-kit";
 import { messages, type Locale } from "@/i18n/messages";
+import { InstallApp } from "../install-app";
 import { LanguageSelector } from "./language-selector";
 
 export function SiteHeader({ locale }: { locale: Locale }) {
@@ -34,6 +35,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         </Box>
         <Box className="header-actions">
           <LanguageSelector locale={locale} label={m.nav.language} />
+          <InstallApp locale={locale} />
           <Button
             component="a"
             href={`/${locale}/games`}

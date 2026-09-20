@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { MyUiInitColorSchemeScript } from "@jlopvil/mui-kit/theme";
 import { isLocale, locales, messages } from "@/i18n/messages";
@@ -11,6 +11,8 @@ const siteUrl =
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
+
+export const viewport: Viewport = { themeColor: "#4552d5" };
 
 const ogLocales = { es: "es_ES", ca: "ca_ES", en: "en_US" };
 
@@ -31,6 +33,16 @@ export async function generateMetadata({
     title: m.title,
     description: m.description,
     applicationName: "Arrow Learn Games",
+    manifest: "/manifest.webmanifest",
+    appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: "Arrow Learn",
+    },
+    icons: {
+      icon: "/icons/icon-192.png",
+      apple: "/icons/apple-touch-icon.png",
+    },
     alternates: {
       canonical: `/${locale}`,
       languages: { es: "/es", ca: "/ca", en: "/en", "x-default": "/es" },

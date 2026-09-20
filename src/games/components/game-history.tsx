@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { languages } from "@/lib/animals";
 import type { Locale } from "@/i18n/messages";
-import type { GameController } from "./use-animal-game";
+import type { GameController } from "../engines/use-game";
 export function GameHistory({
   game,
   locale,
@@ -68,7 +68,7 @@ export function GameHistory({
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {activeMode !== "picture" && (
+                    {activeMode !== "image-to-word" && (
                       <>{languages[result.source]} → </>
                     )}
                     {languages[result.target]}

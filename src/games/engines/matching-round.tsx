@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Alert, Box, Button, Surface, Typography } from "@jlopvil/mui-kit";
 import { LinearProgress } from "@mui/material";
 import { languages } from "@/lib/animals";
-import type { GameController } from "./use-animal-game";
+import type { GameController } from "./use-game";
 
 export function MatchingRound({ game }: { game: GameController }) {
   const { m, round, match, setRound } = game;

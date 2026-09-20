@@ -60,32 +60,32 @@
     "kicker": "EL TEU PROPER REPTE",
     "title": "Paraules petites, grans descobriments.",
     "description": "Aprèn vocabulari d’animals, pronoms i frases. Tria un idioma i comença a practicar.",
-    "pictureTitle": "Identifica l’animal",
-    "pictureDescription": "Mira la il·lustració i escriu el nom de l’animal.",
-    "translationTitle": "Tradueix la paraula",
-    "translationDescription": "Llegeix el nom de l’animal i escriu-ne la traducció.",
+    "pictureTitle": "Imatge → paraula",
+    "pictureDescription": "Mira la imatge i escriu la paraula correcta.",
+    "translationTitle": "Traducció",
+    "translationDescription": "Llegeix el text i escriu-ne la traducció.",
     "target": "Idioma que vols practicar",
     "source": "Traduir des de",
     "start": "Comença a jugar",
     "points": "Punts totals",
     "correct": "Encerts",
     "best": "Millor ratxa",
-    "saved": "Les teves partides es desen per separat per a cada joc en aquest navegador.",
+    "saved": "Les partides es desen per tema i mode en aquest navegador.",
     "rules": "10 punts per encert. Els errors no resten. Es respecten els accents; les majúscules no importen.",
     "question": "Pregunta",
-    "picturePrompt": "Quin animal és?",
-    "translationPrompt": "Tradueix aquesta paraula",
+    "picturePrompt": "Què mostra la imatge?",
+    "translationPrompt": "Escriu la traducció",
     "answer": "La teva resposta",
     "check": "Comprova",
     "success": "Correcte! +10 punts",
     "failure": "Continua practicant. Resposta correcta:",
-    "next": "Animal següent",
+    "next": "Següent",
     "results": "Veure el resultat",
     "complete": "Ronda completada!",
     "roundPoints": "Punts en aquesta ronda",
     "again": "Torna a jugar",
-    "change": "Canvia de joc o idioma",
-    "imageAlt": "Il·lustració de l’animal que has d’identificar",
+    "change": "Canviar l’idioma o reiniciar",
+    "imageAlt": "Il·lustració que has d’identificar",
     "storageError": "No es pot desar el progrés en aquest navegador. La puntuació es mantindrà mentre siguis en aquesta pàgina.",
     "of": "de",
     "writeIn": "Escriu en",
@@ -126,13 +126,111 @@
     "activeGame": "En curs",
     "unfinishedGame": "Sense acabar",
     "legacyScore": "La puntuació global anterior es conserva a part: no es pot repartir entre jocs perquè no registrava el joc de cada resposta.",
-    "matchingTitle": "Relacionar paraules",
-    "matchingDescription": "Uneix cada frase amb la seva traducció. Practica amb verbs i persones a l’atzar.",
-    "matchingPrompt": "Selecciona una frase i després la seva traducció.",
-    "matchingRules": "8 parelles per ronda. 10 punts si encertes a la primera; després d’un error, aquella parella suma 0. Pots continuar intentant-ho. Els verbs i les frases canvien a l’atzar.",
+    "matchingTitle": "Relacionar",
+    "matchingDescription": "Uneix cada paraula o frase amb la seva traducció.",
+    "matchingPrompt": "Selecciona un text i després la seva traducció.",
+    "matchingRules": "10 punts per parella si encertes a la primera; després d’un error, aquella parella suma 0. Pots continuar intentant-ho.",
     "matchedPairs": "Parelles completades",
-    "matchingError": "Aquestes frases no corresponen. Prova una altra traducció.",
+    "matchingError": "No és la mateixa idea. Prova una altra traducció.",
     "matchingSuccess": "Parella trobada!",
     "matchingSelected": "Seleccionada"
+  },
+  "catalog": {
+    "title": "Què vols practicar?",
+    "description": "Tria un tema i descobreix diferents maneres d’aprendre’l.",
+    "chooseMode": "Tria com vols practicar",
+    "topics": "Practicar un tema",
+    "shortcuts": "Al teu ritme",
+    "soon": "Properament",
+    "browse": "Explora els temes",
+    "back": "Tots els continguts",
+    "modesLabel": "modes disponibles",
+    "breadcrumb": "Ruta d’aprenentatge",
+    "areas": {
+      "vocabulary": {
+        "title": "Vocabulari",
+        "description": "Paraules per descobrir el món."
+      },
+      "grammar": {
+        "title": "Gramàtica",
+        "description": "Entén com funciona l’idioma."
+      },
+      "phrases": {
+        "title": "Frases i expressions",
+        "description": "Practica el que diries cada dia."
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "Partida ràpida",
+        "description": "Practica amb una selecció d’exercicis variats."
+      },
+      "mistakes": {
+        "title": "Repassar errors",
+        "description": "Practica paraules en què t’has equivocat abans."
+      },
+      "daily": {
+        "title": "Repte diari",
+        "description": "Completa un petit repte diferent cada dia."
+      },
+      "topic": {
+        "title": "Practicar un tema",
+        "description": "Tria el contingut que vols aprendre."
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "Imatge → paraula",
+        "description": "Mira la imatge i escriu la paraula correcta."
+      },
+      "translation": {
+        "title": "Traducció",
+        "description": "Llegeix el text i escriu-ne la traducció."
+      },
+      "matching": {
+        "title": "Relacionar",
+        "description": "Uneix cada paraula o frase amb la seva traducció."
+      },
+      "multiple-choice": {
+        "title": "Tria la correcta",
+        "description": "Tria la resposta correcta entre diverses opcions."
+      },
+      "complete-word": {
+        "title": "Completa la paraula",
+        "description": "Omple les lletres que falten."
+      },
+      "unscramble": {
+        "title": "Ordena les lletres",
+        "description": "Ordena les lletres per formar una paraula."
+      },
+      "listen-and-write": {
+        "title": "Escolta i escriu",
+        "description": "Escolta l’àudio i escriu el que sents."
+      },
+      "listen-and-choose": {
+        "title": "Escolta i tria",
+        "description": "Escolta i selecciona la resposta correcta."
+      },
+      "memory": {
+        "title": "Memòria",
+        "description": "Troba les parelles de targetes."
+      },
+      "speed-round": {
+        "title": "Contrarellotge",
+        "description": "Respon abans que s’acabi el temps."
+      },
+      "odd-one-out": {
+        "title": "Troba la intrusa",
+        "description": "Troba la paraula que no pertany al grup."
+      },
+      "sentence-context": {
+        "title": "Completa la frase",
+        "description": "Fes servir el vocabulari en una frase."
+      },
+      "mixed-review": {
+        "title": "Repàs variat",
+        "description": "Combina diferents maneres de practicar."
+      }
+    }
   }
 }

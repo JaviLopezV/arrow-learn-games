@@ -2,50 +2,41 @@
 
 import { useEffect, useRef, useState } from "react";
 import { messages, type Locale } from "@/i18n/messages";
-import {
-  isCorrect,
-  shuffledAnimals,
-  shuffleDeck,
-  type Language,
-  type Mode,
-} from "@/lib/animals";
+import { isCorrect, shuffleDeck, type Language } from "@/lib/animals";
 
-import { shuffledSentences } from "@/lib/sentences";
-
-import { pronouns } from "@/lib/pronouns";
-
-import {
-  emptyHistory,
-  gameModes,
-  historyKey,
-  mergeHistory,
-  readHistory,
-  type GameHistory,
-  type GameResult,
-} from "@/lib/game-history";
+import type { ContentItem, ImplementedMode, Topic } from "../types/game.types";
+import { loadSessionHistory, sessionHistoryKey } from "../utils/history";
+import { mergeHistory, type GameResult } from "@/lib/game-history";
 type Round = {
   id: string;
   startedAt: string;
-  deck: ReturnType<typeof shuffledAnimals>;
+  deck: ContentItem[];
   matched: string[];
   mistakes: string[];
-  choices: ReturnType<typeof shuffledAnimals>;
+  choices: ContentItem[];
   index: number;
   points: number;
   result: boolean | null;
   done: boolean;
-  mode: Mode;
+  mode: ImplementedMode;
   target: Language;
   source: Language;
 };
 
-export function useAnimalGame({ locale }: { locale: Locale }) {
+export function useGame({
+  locale,
+  topic,
+  mode,
+}: {
+  locale: Locale;
+  topic: Topic;
+  mode: ImplementedMode;
+}) {
   const m = messages[locale].games;
-  const [mode, setMode] = useState<Mode>("picture");
   const [target, setTarget] = useState<Language>(locale === "en" ? "es" : "en");
   const [source, setSource] = useState<Language>(locale);
-  const [history, setHistory] = useState<GameHistory>(emptyHistory);
-  const historyRef = useRef<GameHistory>(emptyHistory());
+  const [history, setHistory] = useState<GameResult[]>([]);
+  const historyRef = useRef<GameResult[]>([]);
   const [legacyScore, setLegacyScore] = useState(false);
   const [ready, setReady] = useState(false);
   const [storageError, setStorageError] = useState(false);
@@ -58,9 +49,7 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     try {
-      const loaded = emptyHistory();
-      for (const game of gameModes)
-        loaded[game] = readHistory(localStorage.getItem(historyKey(game)));
+      const loaded = loadSessionHistory(localStorage, topic, mode);
       historyRef.current = loaded;
       setHistory(loaded);
       setLegacyScore(
@@ -70,7 +59,7 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
       setStorageError(true);
     }
     setReady(true);
-  }, []);
+  }, [topic, mode]);
 
   useEffect(() => {
     if (round?.done) resultTitle.current?.focus();
@@ -89,20 +78,23 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
       total: current.deck.length,
       completed: answered === current.deck.length,
     };
-    let previous = historyRef.current[current.mode];
+    let previous = historyRef.current;
     try {
       previous = mergeHistory(
-        readHistory(localStorage.getItem(historyKey(current.mode))),
+        loadSessionHistory(localStorage, topic, current.mode),
         previous,
       );
     } catch {
       setStorageError(true);
     }
     const updated = mergeHistory(previous, [result]);
-    historyRef.current = { ...historyRef.current, [current.mode]: updated };
+    historyRef.current = updated;
     setHistory(historyRef.current);
     try {
-      localStorage.setItem(historyKey(current.mode), JSON.stringify(updated));
+      localStorage.setItem(
+        sessionHistoryKey(topic, current.mode),
+        JSON.stringify(updated),
+      );
     } catch {
       setStorageError(true);
     }
@@ -112,11 +104,9 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
     locked.current = false;
     setAnswer("");
     const deck =
-      mode === "matching"
-        ? shuffledSentences()
-        : mode === "pronouns"
-          ? shuffleDeck(pronouns)
-          : shuffledAnimals();
+      topic.createDeck?.() ??
+      shuffleDeck(topic.items).slice(0, topic.roundSize ?? topic.items.length);
+    if (!deck.length) return;
     const fresh: Round = {
       id: crypto.randomUUID(),
       startedAt: new Date().toISOString(),
@@ -203,24 +193,17 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
   }
 
   const activeMode = round?.mode ?? mode;
-  const results = history[activeMode];
+  const results = history;
   const completedResults = results.filter((result) => result.completed);
   const best = completedResults.length
     ? Math.max(...completedResults.map((result) => result.points))
     : null;
-  const animal = round?.deck[round.index];
-  const gameTitle = (value: Mode) =>
-    value === "picture"
-      ? m.pictureTitle
-      : value === "matching"
-        ? m.matchingTitle
-        : value === "pronouns"
-          ? m.pronounsTitle
-          : m.translationTitle;
+  const item = round?.deck[round.index];
+  const gameTitle = (value: ImplementedMode) =>
+    messages[locale].catalog.modes[value].title;
   return {
     m,
     mode,
-    setMode,
     target,
     setTarget,
     source,
@@ -243,9 +226,11 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
     results,
     completedResults,
     best,
-    animal,
+    item,
+    topic,
+    locale,
     gameTitle,
   };
 }
 
-export type GameController = ReturnType<typeof useAnimalGame>;
+export type GameController = ReturnType<typeof useGame>;

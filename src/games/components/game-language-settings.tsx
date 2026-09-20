@@ -3,7 +3,7 @@
 import { Box, Button, SelectField, Typography } from "@jlopvil/mui-kit";
 import NorthEastRoundedIcon from "@mui/icons-material/NorthEastRounded";
 import { languages, type Language } from "@/lib/animals";
-import type { GameController } from "./use-animal-game";
+import type { GameController } from "../engines/use-game";
 
 const languageOptions = Object.entries(languages).map(([value, label]) => ({
   value: value as Language,
@@ -75,7 +75,7 @@ export function GameLanguageSettings({ game }: { game: GameController }) {
         mt: 3.5,
       }}
     >
-      {mode !== "picture" && (
+      {mode !== "image-to-word" && (
         <LanguageField
           id="source-language"
           label={m.source}

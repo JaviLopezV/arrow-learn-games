@@ -1,48 +1,111 @@
 # Arrow Learn Games
 
-Aplicación Next.js con juegos de aprendizaje. La interfaz utiliza Material UI 7 y la librería [`@jlopvil/mui-kit`](../mui-component-library).
+Aplicación Next.js App Router con TypeScript estricto, Material UI 7 y `@jlopvil/mui-kit`. No se necesitan dependencias adicionales para los juegos.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre http://localhost:3000 (redirige a `/es`). La portada también está disponible en `/ca` y `/en` y permite cambiar el idioma desde la cabecera. Los literales se encuentran en `src/i18n/es.json`, `ca.json` y `en.json`. La dependencia `@jlopvil/mui-kit` corresponde al proyecto hermano `mui-component-library` y utiliza la versión publicada `^0.4.0`.
+La portada redirige a `/es`. Interfaz en español, catalán e inglés; práctica en español, catalán, inglés, francés, alemán e italiano. Cambiar el idioma de interfaz conserva la ruta.
 
-## Juegos de animales
+## Contenido × mecánica
 
-La página «Juegos» (`/es/games`, `/ca/games` y `/en/games`), accesible desde la portada, ofrece identificación mediante ilustraciones locales y traducción entre español, catalán, inglés, francés, alemán e italiano. El idioma de la interfaz se elige por separado. Cada ronda incluye ocho animales sin repeticiones.
+El catálogo se organiza por Vocabulario, Gramática y Frases y expresiones. Las rutas incluyen el idioma:
 
-Cada acierto suma 10 puntos; un error suma 0. Se aceptan mayúsculas, espacios exteriores y las variantes del vocabulario definidas en `src/lib/animals.ts`; se requieren los acentos correctos. Tras comprobar una respuesta se muestra el resultado antes de continuar.
+```text
+/es/games
+/es/games/vocabulary
+/es/games/vocabulary/animals
+/es/games/vocabulary/animals/image-to-word
+/es/games/vocabulary/animals/translation
+/es/games/vocabulary/animals/matching
+/es/games/grammar/subject-pronouns/translation
+/es/games/phrases/everyday-conversation/matching
+```
 
-Cada partida empieza en cero y mantiene su puntuación individual. El historial se guarda por juego en `localStorage`, con claves `arrow-learn-games:history:v2:picture`, `:translation` y `:pronouns`. Incluye fecha de inicio, idiomas, puntos, aciertos, respuestas y estado. La última puntuación y el récord se muestran para el juego seleccionado; solo las partidas completas cuentan para el récord.
+`/games` y sus subrutas redirigen a su equivalente español. Las áreas, temas y combinaciones no disponibles devuelven 404. Los temas sin contenido aparecen como «Próximamente» sin enlaces de juego.
 
-El resultado se guarda al empezar y tras cada respuesta, incluida la última antes de abrir el resumen. Una partida abandonada o interrumpida por una recarga aparece como «Sin terminar» y no se reanuda. Los datos se recuperan en el mismo navegador; no se sincronizan entre dispositivos. Si falla el almacenamiento, se indica en pantalla y se conserva el historial en memoria durante la visita.
+- `src/games/types/game.types.ts`: áreas, niveles, contenido, modos y selección de práctica.
+- `src/games/config/learningAreas.ts`: áreas del catálogo.
+- `src/games/config/topics.ts`: temas, contenido, imágenes, contexto y modos compatibles.
+- `src/games/config/gameModes.ts`: modos, disponibilidad, habilidades y tipo de interacción para futuros filtros.
+- `src/games/config/practice.ts`: accesos y estrategias futuras de partida rápida, errores y reto diario.
+- `src/games/components/GameCatalog.tsx` y `CatalogCard.tsx`: navegación y tarjetas reutilizables.
+- `src/games/components/GameRunner.tsx`: sesión, configuración, puntuación e historial.
+- `src/games/components/game-round.tsx`: registro de motores y resumen común.
+- `src/games/engines/use-game.ts`: estado de ronda y persistencia, independiente del tema.
+- `src/games/engines/writing-round.tsx`: imagen → palabra y traducción.
+- `src/games/engines/matching-round.tsx`: relacionar cualquier colección compatible.
+- `src/lib/animals.ts`, `pronouns.ts`, `sentences.ts`: datos originales conservados; el catálogo los adapta a `ContentItem`.
 
-El antiguo score global `arrow-learn-games:score:v1` no se modifica ni se atribuye a ningún juego: no contiene datos que permitan repartirlo.
+Las imágenes son campos de contenido, no rutas construidas por el motor. El contexto de pronombres también viaja en los datos. La tabla de consulta bilingüe se mantiene como referencia opcional del tema. Los componentes de sesión se han trasladado desde `src/app/[locale]` a `src/games`.
 
-Verificaciones: `npm run typecheck`, `npm run lint` y `npm run build` y `node --test tests/game-history.mjs`.
+## Añadir un tema
 
-## Pronombres sujeto
+1. Añade una colección de `ContentItem` con IDs únicos y traducciones/variantes en los seis idiomas de práctica. Para imagen → palabra, incluye `image` apuntando a un recurso real de `public`.
+2. Añade una entrada `Topic` en `config/topics.ts`: `id`, `area`, títulos en es/ca/en, icono, nivel, contenido y `availableGameModes`.
+3. Opcionalmente define `roundSize` o `createDeck` para un muestreo específico; por defecto se mezclan todos los elementos sin repetir.
 
-El tercer juego permite consultar una lista bilingüe de pronombres sujeto y practicar su traducción en rondas de 12 preguntas. Cada pregunta aporta persona, número, género y registro para distinguir formas ambiguas como «you» o «sie». La lista cambia con los idiomas seleccionados y solo se muestra antes de empezar. Incluye formas personales y de cortesía; no pretende cubrir usos neutros o impersonales. Se aceptan variantes regionales españolas como «vos» y «ustedes» donde corresponden.
+No se crean páginas ni componentes nuevos. Ejemplo con una colección `food` importada:
 
-El vocabulario está en `src/lib/pronouns.ts`. Usa las mismas reglas de puntuación, con su propio historial y récord independientes de los juegos de animales.
+```ts
+{
+  id: 'food', area: 'vocabulary',
+  title: { es: 'Comida', ca: 'Menjar', en: 'Food' },
+  icon: '🍎', level: 'A1', items: food,
+  availableGameModes: ['translation', 'matching']
+}
+```
 
-## Interfaz y mantenimiento
+Para relacionar, las traducciones visibles deben distinguirse inequívocamente en cada idioma. Por eso pronombres ofrece traducción con contexto y no parejas ambiguas. Los temas pueden reutilizar todos los motores compatibles.
 
-Los botones, campos, selectores, radios, tipografía y superficies usan `@jlopvil/mui-kit`. Las tablas, el acordeón y la barra de progreso usan Material UI directamente. El tema compartido se configura en `src/app/providers.tsx`; el CSS conserva la composición responsive y las ilustraciones de la portada.
+## Añadir un modo
 
-La lógica de las partidas está en `use-animal-game.ts`, separada de los componentes de configuración, ronda e historial. La configuración `eslint.config.mjs` replica la de `javier-lopez-portfolio`: 300 líneas por archivo, 200 por función y hasta 600 por archivo de pruebas o fixtures, excluyendo líneas vacías y comentarios.
+1. Añade el identificador a `GameMode` si aún no existe; los trece modos previstos ya están declarados.
+2. Implementa el motor reutilizable en `engines/`, utilizando el contenido de la sesión. Si necesita otra interacción (audio, temporizador…), amplía el contrato de contenido/controlador según corresponda.
+3. Añádelo a `ImplementedMode`, declara sus metadatos y disponibilidad en `config/gameModes.ts` y registra el componente en `components/game-round.tsx`.
+4. Añade título y descripción a `catalog.modes` en los tres JSON de `src/i18n`.
+5. Habilítalo solo en los temas compatibles mediante `availableGameModes`. No es necesario modificar los demás temas ni las rutas.
 
-## Metadatos y vista previa social
+Los modos previstos no tienen enlaces hasta estar implementados. Partida rápida (repaso variado), repasar errores y reto diario están preparados en configuración y señalados como futuros; todavía no generan sesiones. Los niveles y habilidades son metadatos, no filtros activos.
 
-Cada idioma incluye título, descripción, URL canónica, enlaces alternativos y metadatos Open Graph/Twitter. La imagen compartida es `public/og.png` (1200 × 630), con el diseño de Arrow Learn Games; los textos y el alt de los metadatos se traducen en `src/i18n/*.json`.
+## Reglas e historial
 
-Configura `NEXT_PUBLIC_SITE_URL` con la URL pública completa antes de compilar. Como en el portfolio, si no se define se usa `VERCEL_PROJECT_PRODUCTION_URL` y, en desarrollo local, `http://localhost:3000`. Así las URLs canónicas y de la imagen se generan con el dominio del despliegue.
+Cada acierto escrito suma 10 puntos; los errores suman 0. Se respetan los acentos, se ignoran mayúsculas y espacios exteriores, y se aceptan las variantes indicadas en el contenido. Animales mantiene ocho preguntas; pronombres mantiene doce con su contexto y tabla de referencia. Frases mantiene el muestreo de dos personas por cada uno de cuatro verbos, ocho parejas en total.
 
-## Relacionar palabras
+En relacionar, cada pareja acertada al primer intento suma 10 puntos; después de un error suma 0. Es posible seguir intentándolo. El motor también funciona con animales.
 
-El cuarto juego presenta dos columnas con ocho frases y sus traducciones desordenadas. Selecciona una frase de origen y después su traducción. Las parejas resueltas quedan marcadas; los errores permiten seguir intentando. Cada pareja acertada a la primera suma 10 puntos; si hubo un error al buscar su traducción, suma 0. El máximo es de 80 puntos por ronda.
+El historial se guarda al empezar y tras cada respuesta en `localStorage`, bajo `arrow-learn-games:history:v3:<area>:<topic>:<mode>`. Incluye idiomas, fecha, puntos, respuestas y estado. El récord considera solo partidas completas; recargar no reanuda la ronda abandonada. No hay sincronización entre dispositivos. Si falla el almacenamiento, se avisa y se conserva la puntuación en memoria.
 
-Funciona entre cualquier combinación de los seis idiomas. `src/lib/sentences.ts` contiene frases equivalentes con cuatro verbos (estar feliz, beber agua, comer pan y vivir aquí). Cada ronda elige al azar dos personas por verbo y mezcla ambas columnas. El historial y el récord se guardan por separado con la clave `arrow-learn-games:history:v2:matching`.
+La migración de lectura conserva y combina sin duplicar los historiales v2:
+
+| Historial anterior | Destino                                    |
+| ------------------ | ------------------------------------------ |
+| picture            | vocabulary / animals / image-to-word       |
+| translation        | vocabulary / animals / translation         |
+| pronouns           | grammar / subject-pronouns / translation   |
+| matching           | phrases / everyday-conversation / matching |
+
+La migración no borra las claves v2. Las combinaciones nuevas empiezan vacías; relacionar animales no hereda el historial de frases. El score global v1 se mantiene aparte porque no identificaba juegos.
+
+## Verificación
+
+```bash
+npm run typecheck
+npm run lint
+node --test tests/*.mjs
+npm run build
+```
+
+Las pruebas cubren validación del historial, guardados repetidos, partidas incompletas, migración e independencia de temas/modos, integridad del catálogo, imágenes y muestreo de frases.
+
+## Diseño y metadatos
+
+Se conservan colores, tipografías, superficies, cabecera y componentes existentes. Las tarjetas se adaptan a una columna en móvil y rejillas en escritorio, con foco visible y navegación mediante enlaces. No se cambia el branding.
+
+Configura `NEXT_PUBLIC_SITE_URL` antes de compilar. Si falta, se usa `VERCEL_PROJECT_PRODUCTION_URL` o `http://localhost:3000`. La imagen social sigue siendo `public/og.png`.
+
+## Siguientes pasos
+
+Añadir contenido real de comida/casa/ropa; implementar audio y opciones múltiples; guardar errores por ítem para el repaso; introducir un planificador de sesiones mixtas y retos diarios; activar filtros cuando aumente el catálogo.

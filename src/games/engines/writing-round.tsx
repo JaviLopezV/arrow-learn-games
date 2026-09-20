@@ -1,6 +1,5 @@
 "use client";
 
-import { MatchingRound } from "./matching-round";
 import Image from "next/image";
 import {
   Surface,
@@ -12,58 +11,24 @@ import {
 } from "@jlopvil/mui-kit";
 import { LinearProgress } from "@mui/material";
 import { languages } from "@/lib/animals";
-import type { PronounId } from "@/lib/pronouns";
-import type { GameController } from "./use-animal-game";
-export function GameRound({ game }: { game: GameController }) {
+import type { GameController } from "./use-game";
+export function WritingRound({ game }: { game: GameController }) {
   const {
     m,
     round,
     setRound,
-    animal,
+    item,
+    locale,
     answer,
     setAnswer,
     input,
     feedbackButton,
-    resultTitle,
-    start,
     submit,
     next,
     gameTitle,
   } = game;
   if (!round) return null;
-  if (round.mode === "matching" && !round.done)
-    return <MatchingRound key={round.id} game={game} />;
-  return round.done ? (
-    <Surface
-      padding="none"
-      sx={{ p: { xs: 2.5, sm: 4 }, borderRadius: 3 }}
-      className="play-panel round-summary"
-    >
-      <Box component="span" className="summary-star" aria-hidden="true">
-        ✦
-      </Box>
-      <Typography component="h3" variant="h5" ref={resultTitle} tabIndex={-1}>
-        {m.complete}
-      </Typography>
-      <Box component="strong" className="round-points">
-        {round.points} <Box component="small">pts</Box>
-      </Box>
-      <Typography component="p">
-        {m.roundPoints} · {round.points / 10} / {round.deck.length}{" "}
-        {m.correct.toLowerCase()}
-      </Typography>
-      <Button variant="contained" onClick={start}>
-        {m.again}
-      </Button>
-      <Button
-        variant="text"
-        sx={{ display: "block", mx: "auto", mt: 2 }}
-        onClick={() => setRound(null)}
-      >
-        {m.change}
-      </Button>
-    </Surface>
-  ) : (
+  return (
     <Surface
       padding="none"
       sx={{ p: { xs: 2.5, sm: 4 }, borderRadius: 3 }}
@@ -85,16 +50,12 @@ export function GameRound({ game }: { game: GameController }) {
         aria-label={m.question}
       />
       <Typography component="h3" variant="h5">
-        {round.mode === "picture"
-          ? m.picturePrompt
-          : round.mode === "pronouns"
-            ? m.pronounsPrompt
-            : m.translationPrompt}
+        {round.mode === "image-to-word" ? m.picturePrompt : m.translationPrompt}
       </Typography>
-      {round.mode === "picture" ? (
+      {round.mode === "image-to-word" ? (
         <Box className="animal-image">
           <Image
-            src={`/animals/${animal!.id}.svg`}
+            src={item!.image!}
             alt={m.imageAlt}
             width={250}
             height={250}
@@ -104,13 +65,13 @@ export function GameRound({ game }: { game: GameController }) {
       ) : (
         <Box className="animal-word">
           <Box component="span">{languages[round.source]}</Box>
-          {round.mode === "pronouns" && (
+          {Boolean(item?.context) && (
             <Box component="span" className="pronoun-context">
-              {m.pronounContexts[animal!.id as PronounId]}
+              {item?.context?.[locale]}
             </Box>
           )}
           <Box component="strong" lang={round.source}>
-            {animal!.words[round.source][0]}
+            {item!.words[round.source][0]}
           </Box>
         </Box>
       )}
@@ -161,18 +122,13 @@ export function GameRound({ game }: { game: GameController }) {
               <>
                 {m.failure}{" "}
                 <Box component="strong" lang={round.target}>
-                  {animal!.words[round.target][0]}
+                  {item!.words[round.target][0]}
                 </Box>
               </>
             )}
           </Typography>
           <Button ref={feedbackButton} variant="contained" onClick={next}>
-            {round.index === round.deck.length - 1
-              ? m.results
-              : round.mode === "pronouns"
-                ? m.nextPronoun
-                : m.next}{" "}
-            →
+            {round.index === round.deck.length - 1 ? m.results : m.next} →
           </Button>
         </Alert>
       )}

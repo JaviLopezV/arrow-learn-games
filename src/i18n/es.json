@@ -60,32 +60,32 @@
     "kicker": "TU PRÓXIMO RETO",
     "title": "Pequeñas palabras, grandes descubrimientos.",
     "description": "Aprende vocabulario de animales, pronombres y frases. Elige un idioma y empieza a practicar.",
-    "pictureTitle": "Identifica el animal",
-    "pictureDescription": "Mira la ilustración y escribe el nombre del animal.",
-    "translationTitle": "Traduce la palabra",
-    "translationDescription": "Lee el nombre del animal y escribe su traducción.",
+    "pictureTitle": "Imagen → palabra",
+    "pictureDescription": "Mira la imagen y escribe la palabra correcta.",
+    "translationTitle": "Traducción",
+    "translationDescription": "Lee el texto y escribe su traducción.",
     "target": "Idioma que quieres practicar",
     "source": "Traducir desde",
     "start": "Empezar a jugar",
     "points": "Puntos totales",
     "correct": "Aciertos",
     "best": "Mejor racha",
-    "saved": "Tus partidas se guardan por separado para cada juego en este navegador.",
+    "saved": "Tus partidas se guardan por tema y modo en este navegador.",
     "rules": "10 puntos por acierto. Los errores no restan. Se respetan las tildes; las mayúsculas no importan.",
     "question": "Pregunta",
-    "picturePrompt": "¿Qué animal es?",
-    "translationPrompt": "Traduce esta palabra",
+    "picturePrompt": "¿Qué muestra la imagen?",
+    "translationPrompt": "Escribe la traducción",
     "answer": "Tu respuesta",
     "check": "Comprobar",
     "success": "¡Correcto! +10 puntos",
     "failure": "Sigue practicando. Respuesta correcta:",
-    "next": "Siguiente animal",
+    "next": "Siguiente",
     "results": "Ver resultado",
     "complete": "¡Ronda completada!",
     "roundPoints": "Puntos en esta ronda",
     "again": "Volver a jugar",
-    "change": "Cambiar juego o idioma",
-    "imageAlt": "Ilustración del animal que debes identificar",
+    "change": "Cambiar idioma o reiniciar",
+    "imageAlt": "Ilustración que debes identificar",
     "storageError": "No se puede guardar el progreso en este navegador. La puntuación se mantendrá mientras sigas en esta página.",
     "of": "de",
     "writeIn": "Escribe en",
@@ -126,13 +126,111 @@
     "activeGame": "En curso",
     "unfinishedGame": "Sin terminar",
     "legacyScore": "La puntuación global anterior se conserva aparte: no se puede repartir entre juegos porque no registraba el juego de cada respuesta.",
-    "matchingTitle": "Relacionar palabras",
-    "matchingDescription": "Une cada frase con su traducción. Practica con verbos y personas al azar.",
-    "matchingPrompt": "Selecciona una frase y después su traducción.",
-    "matchingRules": "8 parejas por ronda. 10 puntos si aciertas a la primera; tras un error, esa pareja suma 0. Puedes seguir intentándolo. Los verbos y las frases cambian al azar.",
+    "matchingTitle": "Relacionar",
+    "matchingDescription": "Une cada palabra o frase con su traducción.",
+    "matchingPrompt": "Selecciona un texto y después su traducción.",
+    "matchingRules": "10 puntos por pareja si aciertas a la primera; tras un error, esa pareja suma 0. Puedes seguir intentándolo.",
     "matchedPairs": "Parejas completadas",
-    "matchingError": "Estas frases no corresponden. Prueba otra traducción.",
+    "matchingError": "No es la misma idea. Prueba otra traducción.",
     "matchingSuccess": "¡Pareja encontrada!",
     "matchingSelected": "Seleccionada"
+  },
+  "catalog": {
+    "title": "¿Qué quieres practicar?",
+    "description": "Elige un tema y descubre distintas formas de aprenderlo.",
+    "chooseMode": "Elige cómo quieres practicar",
+    "topics": "Practicar un tema",
+    "shortcuts": "A tu ritmo",
+    "soon": "Próximamente",
+    "browse": "Explorar temas",
+    "back": "Todos los contenidos",
+    "modesLabel": "modos disponibles",
+    "breadcrumb": "Ruta de aprendizaje",
+    "areas": {
+      "vocabulary": {
+        "title": "Vocabulario",
+        "description": "Palabras para descubrir el mundo."
+      },
+      "grammar": {
+        "title": "Gramática",
+        "description": "Entiende cómo funciona el idioma."
+      },
+      "phrases": {
+        "title": "Frases y expresiones",
+        "description": "Practica lo que dirías cada día."
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "Partida rápida",
+        "description": "Practica con una selección de ejercicios variados."
+      },
+      "mistakes": {
+        "title": "Repasar errores",
+        "description": "Practica palabras que has fallado anteriormente."
+      },
+      "daily": {
+        "title": "Reto diario",
+        "description": "Completa un pequeño reto diferente cada día."
+      },
+      "topic": {
+        "title": "Practicar un tema",
+        "description": "Elige el contenido que quieres aprender."
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "Imagen → palabra",
+        "description": "Mira la imagen y escribe la palabra correcta."
+      },
+      "translation": {
+        "title": "Traducción",
+        "description": "Lee el texto y escribe su traducción."
+      },
+      "matching": {
+        "title": "Relacionar",
+        "description": "Une cada palabra o frase con su traducción."
+      },
+      "multiple-choice": {
+        "title": "Elige la correcta",
+        "description": "Elige la respuesta correcta entre varias opciones."
+      },
+      "complete-word": {
+        "title": "Completa la palabra",
+        "description": "Rellena las letras que faltan."
+      },
+      "unscramble": {
+        "title": "Ordena las letras",
+        "description": "Ordena las letras para formar una palabra."
+      },
+      "listen-and-write": {
+        "title": "Escucha y escribe",
+        "description": "Escucha el audio y escribe lo que oyes."
+      },
+      "listen-and-choose": {
+        "title": "Escucha y elige",
+        "description": "Escucha y selecciona la respuesta correcta."
+      },
+      "memory": {
+        "title": "Memoria",
+        "description": "Encuentra las parejas de tarjetas."
+      },
+      "speed-round": {
+        "title": "Contrarreloj",
+        "description": "Responde antes de que se acabe el tiempo."
+      },
+      "odd-one-out": {
+        "title": "Encuentra la intrusa",
+        "description": "Encuentra la palabra que no pertenece al grupo."
+      },
+      "sentence-context": {
+        "title": "Completa la frase",
+        "description": "Usa el vocabulario en una frase."
+      },
+      "mixed-review": {
+        "title": "Repaso variado",
+        "description": "Combina distintas formas de practicar."
+      }
+    }
   }
 }

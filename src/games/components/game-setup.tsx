@@ -14,13 +14,11 @@ import {
 } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import { languages } from "@/lib/animals";
-import { pronouns } from "@/lib/pronouns";
-import type { GameController } from "./use-animal-game";
-import { GameModePicker } from "./game-mode-picker";
+import type { GameController } from "../engines/use-game";
 import { GameLanguageSettings } from "./game-language-settings";
 
 export function GameSetup({ game }: { game: GameController }) {
-  const { m, mode, source, target } = game;
+  const { m, mode, source, target, topic, locale } = game;
   return (
     <Surface
       padding="none"
@@ -33,7 +31,6 @@ export function GameSetup({ game }: { game: GameController }) {
       }}
       className="game-setup"
     >
-      <GameModePicker game={game} />
       <GameLanguageSettings game={game} />
       <Typography
         component="p"
@@ -41,7 +38,7 @@ export function GameSetup({ game }: { game: GameController }) {
       >
         {mode === "matching" ? m.matchingRules : m.rules}
       </Typography>
-      {mode === "pronouns" && (
+      {topic.reference === "subject-pronouns" && (
         <Accordion sx={{ mt: 3 }}>
           <AccordionSummary
             expandIcon={<ExpandMoreRoundedIcon />}
@@ -68,10 +65,10 @@ export function GameSetup({ game }: { game: GameController }) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {pronouns.map((pronoun) => (
+                  {topic.items.map((pronoun) => (
                     <TableRow key={pronoun.id}>
                       <TableCell component="th" scope="row">
-                        {m.pronounContexts[pronoun.id]}
+                        {pronoun.context?.[locale]}
                       </TableCell>
                       <TableCell lang={source}>
                         {pronoun.words[source][0]}

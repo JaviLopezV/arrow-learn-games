@@ -2,12 +2,25 @@
 
 import { Box, Typography } from "@jlopvil/mui-kit";
 import type { Locale } from "@/i18n/messages";
-import { useAnimalGame } from "./use-animal-game";
+import { getTopic } from "../config/topics";
+import { useGame } from "../engines/use-game";
+import type { ImplementedMode, LearningArea } from "../types/game.types";
 import { GameSetup } from "./game-setup";
 import { GameRound } from "./game-round";
 import { GameHistory } from "./game-history";
-export function AnimalGames({ locale }: { locale: Locale }) {
-  const game = useAnimalGame({ locale });
+export function GameRunner({
+  locale,
+  topic: topicId,
+  area,
+  mode,
+}: {
+  locale: Locale;
+  topic: string;
+  area: LearningArea;
+  mode: ImplementedMode;
+}) {
+  const topic = getTopic(area, topicId)!;
+  const game = useGame({ locale, topic, mode });
   const {
     m,
     activeMode,
@@ -24,7 +37,7 @@ export function AnimalGames({ locale }: { locale: Locale }) {
     <Box
       component="section"
       id="juegos"
-      className="animal-games"
+      className="game-session"
       aria-labelledby="games-title"
     >
       <Box className="games-container">
@@ -33,9 +46,9 @@ export function AnimalGames({ locale }: { locale: Locale }) {
             {m.kicker}
           </Box>
           <Typography component="h1" variant="h4" id="games-title">
-            {m.title}
+            {topic.title[locale]}
           </Typography>
-          <Typography component="p">{m.description}</Typography>
+          <Typography component="p">{gameTitle(activeMode)}</Typography>
         </Box>
         <Typography component="h3" variant="h5" className="score-game-title">
           {gameTitle(activeMode)}

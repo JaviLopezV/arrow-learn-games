@@ -60,32 +60,32 @@
     "kicker": "YOUR NEXT CHALLENGE",
     "title": "Small words, big discoveries.",
     "description": "Learn animal vocabulary, pronouns and sentences. Choose a language and start practising.",
-    "pictureTitle": "Identify the animal",
-    "pictureDescription": "Look at the illustration and write the animal’s name.",
-    "translationTitle": "Translate the word",
-    "translationDescription": "Read the animal’s name and write its translation.",
+    "pictureTitle": "Image → word",
+    "pictureDescription": "Look at the image and write the correct word.",
+    "translationTitle": "Translation",
+    "translationDescription": "Read the text and write its translation.",
     "target": "Language to practise",
     "source": "Translate from",
     "start": "Start playing",
     "points": "Total points",
     "correct": "Correct answers",
     "best": "Best streak",
-    "saved": "Your results are saved separately for each game in this browser.",
+    "saved": "Your games are saved by topic and mode in this browser.",
     "rules": "10 points per correct answer. Mistakes do not subtract points. Accents matter; capitalisation does not.",
     "question": "Question",
-    "picturePrompt": "Which animal is this?",
-    "translationPrompt": "Translate this word",
+    "picturePrompt": "What does the image show?",
+    "translationPrompt": "Write the translation",
     "answer": "Your answer",
     "check": "Check answer",
     "success": "Correct! +10 points",
     "failure": "Keep practising. Correct answer:",
-    "next": "Next animal",
+    "next": "Next",
     "results": "See results",
     "complete": "Round complete!",
     "roundPoints": "Points this round",
     "again": "Play again",
-    "change": "Change game or language",
-    "imageAlt": "Illustration of the animal to identify",
+    "change": "Change language or restart",
+    "imageAlt": "Illustration to identify",
     "storageError": "Progress cannot be saved in this browser. Your score will last while you stay on this page.",
     "of": "of",
     "writeIn": "Write in",
@@ -126,13 +126,111 @@
     "activeGame": "In progress",
     "unfinishedGame": "Unfinished",
     "legacyScore": "Your previous global score is kept separately: it cannot be split between games because it did not record which game each answer belonged to.",
-    "matchingTitle": "Match words",
-    "matchingDescription": "Match each sentence with its translation. Practise with random verbs and people.",
-    "matchingPrompt": "Select a sentence and then its translation.",
-    "matchingRules": "8 pairs per round. Earn 10 points for a first-try match; after a mistake, that pair earns 0. You can keep trying. Verbs and sentences vary randomly.",
+    "matchingTitle": "Matching",
+    "matchingDescription": "Match each word or phrase with its translation.",
+    "matchingPrompt": "Select a text and then its translation.",
+    "matchingRules": "10 points per pair on your first try; after a mistake, that pair earns 0. You can keep trying.",
     "matchedPairs": "Completed pairs",
-    "matchingError": "These sentences do not match. Try another translation.",
+    "matchingError": "These do not mean the same thing. Try another translation.",
     "matchingSuccess": "Pair matched!",
     "matchingSelected": "Selected"
+  },
+  "catalog": {
+    "title": "What would you like to practise?",
+    "description": "Choose a topic and discover different ways to learn it.",
+    "chooseMode": "Choose how you want to practise",
+    "topics": "Practise a topic",
+    "shortcuts": "At your own pace",
+    "soon": "Coming soon",
+    "browse": "Explore topics",
+    "back": "All content",
+    "modesLabel": "available modes",
+    "breadcrumb": "Learning path",
+    "areas": {
+      "vocabulary": {
+        "title": "Vocabulary",
+        "description": "Words to discover the world."
+      },
+      "grammar": {
+        "title": "Grammar",
+        "description": "Understand how the language works."
+      },
+      "phrases": {
+        "title": "Phrases and expressions",
+        "description": "Practise what you would say every day."
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "Quick game",
+        "description": "Practise with a varied selection of exercises."
+      },
+      "mistakes": {
+        "title": "Review mistakes",
+        "description": "Practise words you have missed before."
+      },
+      "daily": {
+        "title": "Daily challenge",
+        "description": "Complete a different little challenge each day."
+      },
+      "topic": {
+        "title": "Practise a topic",
+        "description": "Choose the content you want to learn."
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "Image → word",
+        "description": "Look at the image and write the correct word."
+      },
+      "translation": {
+        "title": "Translation",
+        "description": "Read the text and write its translation."
+      },
+      "matching": {
+        "title": "Matching",
+        "description": "Match each word or phrase with its translation."
+      },
+      "multiple-choice": {
+        "title": "Multiple choice",
+        "description": "Choose the correct answer from several options."
+      },
+      "complete-word": {
+        "title": "Complete the word",
+        "description": "Fill in the missing letters."
+      },
+      "unscramble": {
+        "title": "Unscramble",
+        "description": "Arrange the letters to form a word."
+      },
+      "listen-and-write": {
+        "title": "Listen and write",
+        "description": "Listen to the audio and write what you hear."
+      },
+      "listen-and-choose": {
+        "title": "Listen and choose",
+        "description": "Listen and select the correct answer."
+      },
+      "memory": {
+        "title": "Memory",
+        "description": "Find the matching cards."
+      },
+      "speed-round": {
+        "title": "Speed round",
+        "description": "Answer before time runs out."
+      },
+      "odd-one-out": {
+        "title": "Odd one out",
+        "description": "Find the word that does not belong."
+      },
+      "sentence-context": {
+        "title": "Complete the sentence",
+        "description": "Use the vocabulary in a sentence."
+      },
+      "mixed-review": {
+        "title": "Mixed review",
+        "description": "Combine different ways to practise."
+      }
+    }
   }
 }

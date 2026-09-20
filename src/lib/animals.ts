@@ -7,7 +7,7 @@ export const languages = {
   it: "Italiano",
 } as const;
 export type Language = keyof typeof languages;
-export type Mode = "picture" | "translation" | "pronouns";
+export type Mode = "picture" | "translation" | "pronouns" | "matching";
 export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "cat",

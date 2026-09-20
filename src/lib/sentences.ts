@@ -1,0 +1,172 @@
+import { shuffleDeck, type Language } from "./animals";
+
+// Each row expresses the same meaning in all six languages.
+const rows = [
+  [
+    "happy-i",
+    "Estoy feliz",
+    "Estic feliç",
+    "I am happy",
+    "Je suis heureux",
+    "Ich bin glücklich",
+    "Sono felice",
+  ],
+  [
+    "happy-you",
+    "Estás feliz",
+    "Estàs feliç",
+    "You are happy",
+    "Tu es heureux",
+    "Du bist glücklich",
+    "Sei felice",
+  ],
+  [
+    "happy-he",
+    "Él está feliz",
+    "Ell està feliç",
+    "He is happy",
+    "Il est heureux",
+    "Er ist glücklich",
+    "Lui è felice",
+  ],
+  [
+    "happy-she",
+    "Ella está feliz",
+    "Ella està feliç",
+    "She is happy",
+    "Elle est heureuse",
+    "Sie ist glücklich",
+    "Lei è felice",
+  ],
+  [
+    "drink-i",
+    "Bebo agua",
+    "Bec aigua",
+    "I drink water",
+    "Je bois de l’eau",
+    "Ich trinke Wasser",
+    "Bevo acqua",
+  ],
+  [
+    "drink-you",
+    "Bebes agua",
+    "Beus aigua",
+    "You drink water",
+    "Tu bois de l’eau",
+    "Du trinkst Wasser",
+    "Bevi acqua",
+  ],
+  [
+    "drink-he",
+    "Él bebe agua",
+    "Ell beu aigua",
+    "He drinks water",
+    "Il boit de l’eau",
+    "Er trinkt Wasser",
+    "Lui beve acqua",
+  ],
+  [
+    "drink-she",
+    "Ella bebe agua",
+    "Ella beu aigua",
+    "She drinks water",
+    "Elle boit de l’eau",
+    "Sie trinkt Wasser",
+    "Lei beve acqua",
+  ],
+  [
+    "eat-i",
+    "Como pan",
+    "Menjo pa",
+    "I eat bread",
+    "Je mange du pain",
+    "Ich esse Brot",
+    "Mangio pane",
+  ],
+  [
+    "eat-you",
+    "Comes pan",
+    "Menges pa",
+    "You eat bread",
+    "Tu manges du pain",
+    "Du isst Brot",
+    "Mangi pane",
+  ],
+  [
+    "eat-he",
+    "Él come pan",
+    "Ell menja pa",
+    "He eats bread",
+    "Il mange du pain",
+    "Er isst Brot",
+    "Lui mangia pane",
+  ],
+  [
+    "eat-she",
+    "Ella come pan",
+    "Ella menja pa",
+    "She eats bread",
+    "Elle mange du pain",
+    "Sie isst Brot",
+    "Lei mangia pane",
+  ],
+  [
+    "live-i",
+    "Vivo aquí",
+    "Visc aquí",
+    "I live here",
+    "J’habite ici",
+    "Ich wohne hier",
+    "Abito qui",
+  ],
+  [
+    "live-you",
+    "Vives aquí",
+    "Vius aquí",
+    "You live here",
+    "Tu habites ici",
+    "Du wohnst hier",
+    "Abiti qui",
+  ],
+  [
+    "live-he",
+    "Él vive aquí",
+    "Ell viu aquí",
+    "He lives here",
+    "Il habite ici",
+    "Er wohnt hier",
+    "Lui abita qui",
+  ],
+  [
+    "live-she",
+    "Ella vive aquí",
+    "Ella viu aquí",
+    "She lives here",
+    "Elle habite ici",
+    "Sie wohnt hier",
+    "Lei abita qui",
+  ],
+] as const;
+
+export const sentences = rows.map(([id, es, ca, en, fr, de, it]) => ({
+  id,
+  words: {
+    es: [es],
+    ca: [ca],
+    en: [en],
+    fr: [fr],
+    de: [de],
+    it: [it],
+  } satisfies Record<Language, string[]>,
+}));
+
+export function shuffledSentences() {
+  // Two random people per verb keep every round varied and equally long.
+  return shuffleDeck(
+    ["happy", "drink", "eat", "live"].flatMap((verb) =>
+      shuffleDeck(
+        sentences.filter((sentence) => sentence.id.startsWith(`${verb}-`)),
+      ).slice(0, 2),
+    ),
+  );
+}

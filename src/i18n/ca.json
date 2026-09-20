@@ -18,7 +18,7 @@
     "eyebrow": "Un món per descobrir",
     "titleBefore": "Aprendre pot ser el teu ",
     "titleAccent": "millor joc.",
-    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar.",
+    "description": "Aprèn vocabulari d’animals, pronoms i frases. Tria un idioma i comença a practicar.",
     "primary": "Comença a jugar",
     "secondary": "Com funciona",
     "note": "Curiositat, joc i aprenentatge en un sol lloc."
@@ -59,7 +59,7 @@
   "games": {
     "kicker": "EL TEU PROPER REPTE",
     "title": "Paraules petites, grans descobriments.",
-    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar.",
+    "description": "Aprèn vocabulari d’animals, pronoms i frases. Tria un idioma i comença a practicar.",
     "pictureTitle": "Identifica l’animal",
     "pictureDescription": "Mira la il·lustració i escriu el nom de l’animal.",
     "translationTitle": "Tradueix la paraula",
@@ -125,6 +125,14 @@
     "finishedGame": "Completada",
     "activeGame": "En curs",
     "unfinishedGame": "Sense acabar",
-    "legacyScore": "La puntuació global anterior es conserva a part: no es pot repartir entre jocs perquè no registrava el joc de cada resposta."
+    "legacyScore": "La puntuació global anterior es conserva a part: no es pot repartir entre jocs perquè no registrava el joc de cada resposta.",
+    "matchingTitle": "Relacionar paraules",
+    "matchingDescription": "Uneix cada frase amb la seva traducció. Practica amb verbs i persones a l’atzar.",
+    "matchingPrompt": "Selecciona una frase i després la seva traducció.",
+    "matchingRules": "8 parelles per ronda. 10 punts si encertes a la primera; després d’un error, aquella parella suma 0. Pots continuar intentant-ho. Els verbs i les frases canvien a l’atzar.",
+    "matchedPairs": "Parelles completades",
+    "matchingError": "Aquestes frases no corresponen. Prova una altra traducció.",
+    "matchingSuccess": "Parella trobada!",
+    "matchingSelected": "Seleccionada"
   }
 }

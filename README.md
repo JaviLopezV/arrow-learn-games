@@ -11,7 +11,7 @@ Abre http://localhost:3000 (redirige a `/es`). La portada también está disponi
 
 ## Juegos de animales
 
-La sección «Juegos» ofrece identificación mediante ilustraciones locales y traducción entre español, catalán, inglés, francés, alemán e italiano. El idioma de la interfaz se elige por separado. Cada ronda incluye ocho animales sin repeticiones.
+La página «Juegos» (`/es/games`, `/ca/games` y `/en/games`), accesible desde la portada, ofrece identificación mediante ilustraciones locales y traducción entre español, catalán, inglés, francés, alemán e italiano. El idioma de la interfaz se elige por separado. Cada ronda incluye ocho animales sin repeticiones.
 
 Cada acierto suma 10 puntos; un error suma 0. Se aceptan mayúsculas, espacios exteriores y las variantes del vocabulario definidas en `src/lib/animals.ts`; se requieren los acentos correctos. Tras comprobar una respuesta se muestra el resultado antes de continuar.
 
@@ -40,3 +40,9 @@ La lógica de las partidas está en `use-animal-game.ts`, separada de los compon
 Cada idioma incluye título, descripción, URL canónica, enlaces alternativos y metadatos Open Graph/Twitter. La imagen compartida es `public/og.png` (1200 × 630), con el diseño de Arrow Learn Games; los textos y el alt de los metadatos se traducen en `src/i18n/*.json`.
 
 Configura `NEXT_PUBLIC_SITE_URL` con la URL pública completa antes de compilar. Como en el portfolio, si no se define se usa `VERCEL_PROJECT_PRODUCTION_URL` y, en desarrollo local, `http://localhost:3000`. Así las URLs canónicas y de la imagen se generan con el dominio del despliegue.
+
+## Relacionar palabras
+
+El cuarto juego presenta dos columnas con ocho frases y sus traducciones desordenadas. Selecciona una frase de origen y después su traducción. Las parejas resueltas quedan marcadas; los errores permiten seguir intentando. Cada pareja acertada a la primera suma 10 puntos; si hubo un error al buscar su traducción, suma 0. El máximo es de 80 puntos por ronda.
+
+Funciona entre cualquier combinación de los seis idiomas. `src/lib/sentences.ts` contiene frases equivalentes con cuatro verbos (estar feliz, beber agua, comer pan y vivir aquí). Cada ronda elige al azar dos personas por verbo y mezcla ambas columnas. El historial y el récord se guardan por separado con la clave `arrow-learn-games:history:v2:matching`.

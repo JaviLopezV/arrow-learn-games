@@ -18,7 +18,7 @@
     "eyebrow": "A world to discover",
     "titleBefore": "Learning can be your ",
     "titleAccent": "favorite game.",
-    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising.",
+    "description": "Learn animal vocabulary, pronouns and sentences. Choose a language and start practising.",
     "primary": "Start playing",
     "secondary": "How it works",
     "note": "Curiosity, play and learning in one place."
@@ -59,7 +59,7 @@
   "games": {
     "kicker": "YOUR NEXT CHALLENGE",
     "title": "Small words, big discoveries.",
-    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising.",
+    "description": "Learn animal vocabulary, pronouns and sentences. Choose a language and start practising.",
     "pictureTitle": "Identify the animal",
     "pictureDescription": "Look at the illustration and write the animal’s name.",
     "translationTitle": "Translate the word",
@@ -125,6 +125,14 @@
     "finishedGame": "Completed",
     "activeGame": "In progress",
     "unfinishedGame": "Unfinished",
-    "legacyScore": "Your previous global score is kept separately: it cannot be split between games because it did not record which game each answer belonged to."
+    "legacyScore": "Your previous global score is kept separately: it cannot be split between games because it did not record which game each answer belonged to.",
+    "matchingTitle": "Match words",
+    "matchingDescription": "Match each sentence with its translation. Practise with random verbs and people.",
+    "matchingPrompt": "Select a sentence and then its translation.",
+    "matchingRules": "8 pairs per round. Earn 10 points for a first-try match; after a mistake, that pair earns 0. You can keep trying. Verbs and sentences vary randomly.",
+    "matchedPairs": "Completed pairs",
+    "matchingError": "These sentences do not match. Try another translation.",
+    "matchingSuccess": "Pair matched!",
+    "matchingSelected": "Selected"
   }
 }

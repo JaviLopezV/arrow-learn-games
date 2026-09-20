@@ -39,7 +39,7 @@ export function GameSetup({ game }: { game: GameController }) {
         component="p"
         sx={{ mt: 2.75, color: "#70748d", fontSize: 13, lineHeight: 1.7 }}
       >
-        {m.rules}
+        {mode === "matching" ? m.matchingRules : m.rules}
       </Typography>
       {mode === "pronouns" && (
         <Accordion sx={{ mt: 3 }}>

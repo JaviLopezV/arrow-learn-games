@@ -1,5 +1,6 @@
 "use client";
 
+import { MatchingRound } from "./matching-round";
 import Image from "next/image";
 import {
   Surface,
@@ -30,6 +31,8 @@ export function GameRound({ game }: { game: GameController }) {
     gameTitle,
   } = game;
   if (!round) return null;
+  if (round.mode === "matching" && !round.done)
+    return <MatchingRound key={round.id} game={game} />;
   return round.done ? (
     <Surface
       padding="none"

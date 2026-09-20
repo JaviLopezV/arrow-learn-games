@@ -1,6 +1,11 @@
 import { languages, type Language, type Mode } from "./animals";
 
-export const gameModes: Mode[] = ["picture", "translation", "pronouns"];
+export const gameModes: Mode[] = [
+  "picture",
+  "translation",
+  "pronouns",
+  "matching",
+];
 export type GameResult = {
   id: string;
   startedAt: string;
@@ -16,6 +21,7 @@ export const emptyHistory = (): GameHistory => ({
   picture: [],
   translation: [],
   pronouns: [],
+  matching: [],
 });
 export const historyKey = (mode: Mode) =>
   `arrow-learn-games:history:v2:${mode}`;

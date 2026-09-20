@@ -99,3 +99,39 @@ test("corrupted storage and invalid records do not crash or poison valid results
   ];
   assert.deepEqual(readHistory(JSON.stringify([...invalid, result])), [result]);
 });
+
+const { sentences, shuffledSentences } = load("src/lib/sentences.ts");
+const { languages } = load("src/lib/animals.ts");
+test("matching sentences have distinct, nonempty translations in every language", () => {
+  assert.equal(
+    new Set(sentences.map((item) => item.id)).size,
+    sentences.length,
+  );
+  for (const language of Object.keys(languages)) {
+    const translations = sentences.map((item) => item.words[language][0]);
+    assert.ok(
+      translations.every((text) => typeof text === "string" && text.trim()),
+    );
+    assert.equal(new Set(translations).size, sentences.length);
+  }
+});
+test("matching rounds contain eight unique pairs and all four verbs", () => {
+  for (let i = 0; i < 50; i++) {
+    const deck = shuffledSentences();
+    assert.equal(deck.length, 8);
+    assert.equal(new Set(deck.map((item) => item.id)).size, 8);
+    for (const verb of ["happy", "drink", "eat", "live"])
+      assert.equal(
+        deck.filter((item) => item.id.startsWith(`${verb}-`)).length,
+        2,
+      );
+  }
+});
+test("matching scores persist separately from the existing games", () => {
+  const history = emptyHistory();
+  history.matching = mergeHistory(history.matching, [result]);
+  assert.deepEqual(readHistory(JSON.stringify(history.matching)), [result]);
+  for (const mode of ["picture", "translation", "pronouns"])
+    assert.deepEqual(history[mode], []);
+  assert.equal(new Set(Object.keys(history).map(historyKey)).size, 4);
+});

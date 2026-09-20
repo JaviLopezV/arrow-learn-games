@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import {
   Box,
-  Link,
   Button,
   Container,
   Stack,
@@ -14,8 +13,7 @@ import ExtensionRoundedIcon from "@mui/icons-material/ExtensionRounded";
 import LightbulbRoundedIcon from "@mui/icons-material/LightbulbRounded";
 import RocketLaunchRoundedIcon from "@mui/icons-material/RocketLaunchRounded";
 import { isLocale, messages } from "@/i18n/messages";
-import { AnimalGames } from "./animal-games";
-import { LanguageSelector } from "./language-selector";
+import { SiteHeader } from "./site-header";
 
 const featureStyles = [
   { icon: <ExtensionRoundedIcon fontSize="large" />, color: "lilac" },
@@ -34,47 +32,7 @@ export default async function Home({
 
   return (
     <Box component="main" id="inicio">
-      <Box component="header" className="site-header">
-        <Container maxWidth="lg" className="header-inner">
-          <Box
-            component="a"
-            href={`/${locale}#inicio`}
-            className="brand"
-            aria-label={`Arrow Learn Games, ${m.nav.home.toLowerCase()}`}
-          >
-            <Box component="span" className="brand-mark" aria-hidden="true">
-              ↗
-            </Box>
-            <Box component="span">
-              arrow
-              <Box component="span" className="brand-accent">
-                learn
-              </Box>
-              <Box component="small">games</Box>
-            </Box>
-          </Box>
-          <Box
-            component="nav"
-            aria-label={m.nav.navigation}
-            className="navigation"
-          >
-            <Link href="#como-funciona">{m.nav.how}</Link>
-            <Link href="#juegos">{m.nav.news}</Link>
-          </Box>
-          <Box className="header-actions">
-            <LanguageSelector locale={locale} label={m.nav.language} />
-            <Button
-              component="a"
-              href="#juegos"
-              tone="primary"
-              variant="contained"
-              className="header-cta"
-            >
-              {m.nav.discover}
-            </Button>
-          </Box>
-        </Container>
-      </Box>
+      <SiteHeader locale={locale} />
 
       <Box component="section" className="hero" aria-labelledby="hero-title">
         <Container maxWidth="lg" className="hero-inner">
@@ -96,7 +54,7 @@ export default async function Home({
             >
               <Button
                 component="a"
-                href="#juegos"
+                href={`/${locale}/games`}
                 tone="primary"
                 variant="contained"
                 size="large"
@@ -156,8 +114,6 @@ export default async function Home({
           </Box>
         </Container>
       </Box>
-
-      <AnimalGames locale={locale} />
 
       <Box
         component="section"

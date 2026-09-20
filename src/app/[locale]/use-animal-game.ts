@@ -10,6 +10,8 @@ import {
   type Mode,
 } from "@/lib/animals";
 
+import { shuffledSentences } from "@/lib/sentences";
+
 import { pronouns } from "@/lib/pronouns";
 
 import {
@@ -25,6 +27,9 @@ type Round = {
   id: string;
   startedAt: string;
   deck: ReturnType<typeof shuffledAnimals>;
+  matched: string[];
+  mistakes: string[];
+  choices: ReturnType<typeof shuffledAnimals>;
   index: number;
   points: number;
   result: boolean | null;
@@ -106,10 +111,19 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
   function start() {
     locked.current = false;
     setAnswer("");
+    const deck =
+      mode === "matching"
+        ? shuffledSentences()
+        : mode === "pronouns"
+          ? shuffleDeck(pronouns)
+          : shuffledAnimals();
     const fresh: Round = {
       id: crypto.randomUUID(),
       startedAt: new Date().toISOString(),
-      deck: mode === "pronouns" ? shuffleDeck(pronouns) : shuffledAnimals(),
+      deck,
+      choices: shuffleDeck(deck),
+      matched: [],
+      mistakes: [],
       index: 0,
       points: 0,
       result: null,
@@ -146,6 +160,37 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
     saveResult(updated, round.index + 1);
   }
 
+  function match(sourceId: string, targetId: string) {
+    if (
+      !round ||
+      round.mode !== "matching" ||
+      round.done ||
+      locked.current ||
+      round.matched.includes(sourceId) ||
+      round.matched.includes(targetId)
+    )
+      return;
+    if (sourceId !== targetId) {
+      setRound({
+        ...round,
+        mistakes: [...new Set([...round.mistakes, sourceId])],
+      });
+      return;
+    }
+    locked.current = true;
+    const answered = round.matched.length + 1;
+    const updated = {
+      ...round,
+      matched: [...round.matched, sourceId],
+      points: round.points + (round.mistakes.includes(sourceId) ? 0 : 10),
+      index: Math.min(answered, round.deck.length - 1),
+      done: answered === round.deck.length,
+    };
+    setRound(updated);
+    saveResult(updated, answered);
+    locked.current = false;
+  }
+
   function next() {
     if (!round || round.result === null) return;
     if (round.index === round.deck.length - 1)
@@ -167,9 +212,11 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
   const gameTitle = (value: Mode) =>
     value === "picture"
       ? m.pictureTitle
-      : value === "pronouns"
-        ? m.pronounsTitle
-        : m.translationTitle;
+      : value === "matching"
+        ? m.matchingTitle
+        : value === "pronouns"
+          ? m.pronounsTitle
+          : m.translationTitle;
   return {
     m,
     mode,
@@ -190,6 +237,7 @@ export function useAnimalGame({ locale }: { locale: Locale }) {
     resultTitle,
     start,
     submit,
+    match,
     next,
     activeMode,
     results,

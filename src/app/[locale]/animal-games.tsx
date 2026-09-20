@@ -32,7 +32,7 @@ export function AnimalGames({ locale }: { locale: Locale }) {
           <Box component="span" className="section-kicker">
             {m.kicker}
           </Box>
-          <Typography component="h2" variant="h4" id="games-title">
+          <Typography component="h1" variant="h4" id="games-title">
             {m.title}
           </Typography>
           <Typography component="p">{m.description}</Typography>

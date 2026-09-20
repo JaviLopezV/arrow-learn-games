@@ -18,7 +18,7 @@
     "eyebrow": "Un mundo por descubrir",
     "titleBefore": "Aprender puede ser tu ",
     "titleAccent": "mejor juego.",
-    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar.",
+    "description": "Aprende vocabulario de animales, pronombres y frases. Elige un idioma y empieza a practicar.",
     "primary": "Empezar a jugar",
     "secondary": "Cómo funciona",
     "note": "Curiosidad, juego y aprendizaje en un solo lugar."
@@ -59,7 +59,7 @@
   "games": {
     "kicker": "TU PRÓXIMO RETO",
     "title": "Pequeñas palabras, grandes descubrimientos.",
-    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar.",
+    "description": "Aprende vocabulario de animales, pronombres y frases. Elige un idioma y empieza a practicar.",
     "pictureTitle": "Identifica el animal",
     "pictureDescription": "Mira la ilustración y escribe el nombre del animal.",
     "translationTitle": "Traduce la palabra",
@@ -125,6 +125,14 @@
     "finishedGame": "Completada",
     "activeGame": "En curso",
     "unfinishedGame": "Sin terminar",
-    "legacyScore": "La puntuación global anterior se conserva aparte: no se puede repartir entre juegos porque no registraba el juego de cada respuesta."
+    "legacyScore": "La puntuación global anterior se conserva aparte: no se puede repartir entre juegos porque no registraba el juego de cada respuesta.",
+    "matchingTitle": "Relacionar palabras",
+    "matchingDescription": "Une cada frase con su traducción. Practica con verbos y personas al azar.",
+    "matchingPrompt": "Selecciona una frase y después su traducción.",
+    "matchingRules": "8 parejas por ronda. 10 puntos si aciertas a la primera; tras un error, esa pareja suma 0. Puedes seguir intentándolo. Los verbos y las frases cambian al azar.",
+    "matchedPairs": "Parejas completadas",
+    "matchingError": "Estas frases no corresponden. Prueba otra traducción.",
+    "matchingSuccess": "¡Pareja encontrada!",
+    "matchingSelected": "Seleccionada"
   }
 }

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import {
   Box,
+  Link,
   Button,
   Container,
   Stack,
@@ -41,21 +42,24 @@ export default async function Home({
             className="brand"
             aria-label={`Arrow Learn Games, ${m.nav.home.toLowerCase()}`}
           >
-            <span className="brand-mark" aria-hidden="true">
+            <Box component="span" className="brand-mark" aria-hidden="true">
               ↗
-            </span>
-            <span>
-              arrow<span className="brand-accent">learn</span>
-              <small>games</small>
-            </span>
+            </Box>
+            <Box component="span">
+              arrow
+              <Box component="span" className="brand-accent">
+                learn
+              </Box>
+              <Box component="small">games</Box>
+            </Box>
           </Box>
           <Box
             component="nav"
             aria-label={m.nav.navigation}
             className="navigation"
           >
-            <a href="#como-funciona">{m.nav.how}</a>
-            <a href="#juegos">{m.nav.news}</a>
+            <Link href="#como-funciona">{m.nav.how}</Link>
+            <Link href="#juegos">{m.nav.news}</Link>
           </Box>
           <Box className="header-actions">
             <LanguageSelector locale={locale} label={m.nav.language} />
@@ -80,7 +84,7 @@ export default async function Home({
             </Box>
             <Typography component="h1" id="hero-title" className="hero-title">
               {m.hero.titleBefore}
-              <span>{m.hero.titleAccent}</span>
+              <Box component="span">{m.hero.titleAccent}</Box>
             </Typography>
             <Typography className="hero-description">
               {m.hero.description}
@@ -111,35 +115,44 @@ export default async function Home({
               </Button>
             </Stack>
             <Box className="hero-note">
-              <span className="note-stars">✦ ✦ ✦</span> {m.hero.note}
+              <Box component="span" className="note-stars">
+                ✦ ✦ ✦
+              </Box>{" "}
+              {m.hero.note}
             </Box>
           </Box>
           <Box className="hero-art" aria-hidden="true">
-            <span className="art-orbit orbit-one" />
-            <span className="art-orbit orbit-two" />
-            <span className="art-spark spark-one">✦</span>
-            <span className="art-spark spark-two">✧</span>
-            <span className="art-spark spark-three">✦</span>
-            <div className="game-card game-card-back">
-              <span>ABC</span>
-              <strong>{m.art.letsGo}</strong>
-              <small>{m.art.discover}</small>
-            </div>
-            <div className="game-card game-card-front">
-              <span className="card-top">
-                {m.art.newChallenge} <span>✦</span>
-              </span>
-              <strong>{m.art.play}</strong>
-              <span className="puzzle-row">
-                <i>★</i>
-                <i>2</i>
-                <i>↗</i>
-              </span>
-              <small>{m.art.adventure}</small>
-            </div>
-            <div className="floating-badge">
-              +1 <span>{m.art.newIdea}</span>
-            </div>
+            <Box component="span" className="art-orbit orbit-one" />
+            <Box component="span" className="art-orbit orbit-two" />
+            <Box component="span" className="art-spark spark-one">
+              ✦
+            </Box>
+            <Box component="span" className="art-spark spark-two">
+              ✧
+            </Box>
+            <Box component="span" className="art-spark spark-three">
+              ✦
+            </Box>
+            <Box className="game-card game-card-back">
+              <Box component="span">ABC</Box>
+              <Box component="strong">{m.art.letsGo}</Box>
+              <Box component="small">{m.art.discover}</Box>
+            </Box>
+            <Box className="game-card game-card-front">
+              <Box component="span" className="card-top">
+                {m.art.newChallenge} <Box component="span">✦</Box>
+              </Box>
+              <Box component="strong">{m.art.play}</Box>
+              <Box component="span" className="puzzle-row">
+                <Box component="i">★</Box>
+                <Box component="i">2</Box>
+                <Box component="i">↗</Box>
+              </Box>
+              <Box component="small">{m.art.adventure}</Box>
+            </Box>
+            <Box className="floating-badge">
+              +1 <Box component="span">{m.art.newIdea}</Box>
+            </Box>
           </Box>
         </Container>
       </Box>
@@ -154,7 +167,9 @@ export default async function Home({
       >
         <Container maxWidth="lg">
           <Box className="section-heading">
-            <span className="section-kicker">{m.features.kicker}</span>
+            <Box component="span" className="section-kicker">
+              {m.features.kicker}
+            </Box>
             <Typography component="h2" id="features-title">
               {m.features.title}
             </Typography>
@@ -181,10 +196,14 @@ export default async function Home({
 
       <Box component="footer" className="site-footer">
         <Container maxWidth="lg">
-          <span>
-            ↗ arrow<span className="brand-accent">learn</span> games
-          </span>
-          <span>{m.footer}</span>
+          <Box component="span">
+            ↗ arrow
+            <Box component="span" className="brand-accent">
+              learn
+            </Box>{" "}
+            games
+          </Box>
+          <Box component="span">{m.footer}</Box>
         </Container>
       </Box>
     </Box>

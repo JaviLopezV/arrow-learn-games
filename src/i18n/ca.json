@@ -1,7 +1,10 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprèn jugant",
-    "description": "Aprèn vocabulari d’animals i pronoms subjecte. Tria un idioma i comença a practicar."
+    "description": "Descobreix animals, tradueix paraules i practica pronoms en sis idiomes. Jocs gratuïts amb puntuacions i historial de les teves partides.",
+    "openGraphTitle": "Arrow Learn Games | Aprèn jugant",
+    "openGraphDescription": "Descobreix animals, tradueix paraules i practica pronoms en sis idiomes. Jocs gratuïts amb puntuacions i historial de les teves partides.",
+    "imageAlt": "Arrow Learn Games: aprèn jugant amb targetes d’animals, paraules i pronoms."
   },
   "nav": {
     "home": "Ves a l'inici",

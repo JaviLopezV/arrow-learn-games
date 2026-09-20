@@ -1,13 +1,13 @@
 # Arrow Learn Games
 
-Proyecto base en Next.js para futuros juegos de aprendizaje. La portada utiliza la librería local [`@jlopvil/mui-kit`](../mui-component-library).
+Aplicación Next.js con juegos de aprendizaje. La interfaz utiliza Material UI 7 y la librería [`@jlopvil/mui-kit`](../mui-component-library).
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre http://localhost:3000 (redirige a `/es`). La portada también está disponible en `/ca` y `/en` y permite cambiar el idioma desde la cabecera. Los literales se encuentran en `src/i18n/es.json`, `ca.json` y `en.json`. La dependencia de la librería apunta al repositorio hermano `../mui-component-library`; si cambian sus componentes, ejecuta `npm run build` en ese repositorio antes de instalar o actualizar esta app.
+Abre http://localhost:3000 (redirige a `/es`). La portada también está disponible en `/ca` y `/en` y permite cambiar el idioma desde la cabecera. Los literales se encuentran en `src/i18n/es.json`, `ca.json` y `en.json`. La dependencia `@jlopvil/mui-kit` corresponde al proyecto hermano `mui-component-library` y utiliza la versión publicada `^0.4.0`.
 
 ## Juegos de animales
 
@@ -28,3 +28,15 @@ Verificaciones: `npm run typecheck`, `npm run lint` y `npm run build` y `node --
 El tercer juego permite consultar una lista bilingüe de pronombres sujeto y practicar su traducción en rondas de 12 preguntas. Cada pregunta aporta persona, número, género y registro para distinguir formas ambiguas como «you» o «sie». La lista cambia con los idiomas seleccionados y solo se muestra antes de empezar. Incluye formas personales y de cortesía; no pretende cubrir usos neutros o impersonales. Se aceptan variantes regionales españolas como «vos» y «ustedes» donde corresponden.
 
 El vocabulario está en `src/lib/pronouns.ts`. Usa las mismas reglas de puntuación, con su propio historial y récord independientes de los juegos de animales.
+
+## Interfaz y mantenimiento
+
+Los botones, campos, selectores, radios, tipografía y superficies usan `@jlopvil/mui-kit`. Las tablas, el acordeón y la barra de progreso usan Material UI directamente. El tema compartido se configura en `src/app/providers.tsx`; el CSS conserva la composición responsive y las ilustraciones de la portada.
+
+La lógica de las partidas está en `use-animal-game.ts`, separada de los componentes de configuración, ronda e historial. La configuración `eslint.config.mjs` replica la de `javier-lopez-portfolio`: 300 líneas por archivo, 200 por función y hasta 600 por archivo de pruebas o fixtures, excluyendo líneas vacías y comentarios.
+
+## Metadatos y vista previa social
+
+Cada idioma incluye título, descripción, URL canónica, enlaces alternativos y metadatos Open Graph/Twitter. La imagen compartida es `public/og.png` (1200 × 630), con el diseño de Arrow Learn Games; los textos y el alt de los metadatos se traducen en `src/i18n/*.json`.
+
+Configura `NEXT_PUBLIC_SITE_URL` con la URL pública completa antes de compilar. Como en el portfolio, si no se define se usa `VERCEL_PROJECT_PRODUCTION_URL` y, en desarrollo local, `http://localhost:3000`. Así las URLs canónicas y de la imagen se generan con el dominio del despliegue.

@@ -1,7 +1,10 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Aprende jugando",
-    "description": "Aprende vocabulario de animales y pronombres sujeto. Elige un idioma y empieza a practicar."
+    "description": "Descubre animales, traduce palabras y practica pronombres en seis idiomas. Juegos gratuitos con puntuaciones e historial de tus partidas.",
+    "openGraphTitle": "Arrow Learn Games | Aprende jugando",
+    "openGraphDescription": "Descubre animales, traduce palabras y practica pronombres en seis idiomas. Juegos gratuitos con puntuaciones e historial de tus partidas.",
+    "imageAlt": "Arrow Learn Games: aprende jugando con tarjetas de animales, palabras y pronombres."
   },
   "nav": {
     "home": "Ir al inicio",

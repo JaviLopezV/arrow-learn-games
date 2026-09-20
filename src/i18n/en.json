@@ -1,7 +1,10 @@
 {
   "metadata": {
     "title": "Arrow Learn Games | Learn through play",
-    "description": "Learn animal vocabulary and subject pronouns. Choose a language and start practising."
+    "description": "Discover animals, translate words and practise pronouns in six languages. Free games with scores and a history of your rounds.",
+    "openGraphTitle": "Arrow Learn Games | Learn through play",
+    "openGraphDescription": "Discover animals, translate words and practise pronouns in six languages. Free games with scores and a history of your rounds.",
+    "imageAlt": "Arrow Learn Games: learn through play with animal, word and pronoun cards."
   },
   "nav": {
     "home": "Go to home",

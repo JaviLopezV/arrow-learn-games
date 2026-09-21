@@ -1,6 +1,6 @@
 "use client";
 import type { ComponentType } from "react";
-import type { ImplementedMode } from "../types/game.types";
+import type { StandardMode as ImplementedMode } from "../types/game.types";
 import type { GameController } from "../engines/use-game";
 import { WritingRound } from "../engines/writing-round";
 import { MatchingRound } from "../engines/matching-round";

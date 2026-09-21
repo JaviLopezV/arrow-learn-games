@@ -4,7 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { messages, type Locale } from "@/i18n/messages";
 import { isCorrect, shuffleDeck, type Language } from "@/lib/animals";
 
-import type { ContentItem, ImplementedMode, Topic } from "../types/game.types";
+import type {
+  ContentItem,
+  StandardMode as ImplementedMode,
+  Topic,
+} from "../types/game.types";
 import { loadSessionHistory, sessionHistoryKey } from "../utils/history";
 import { mergeHistory, type GameResult } from "@/lib/game-history";
 type Round = {

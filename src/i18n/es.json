@@ -230,7 +230,39 @@
       "mixed-review": {
         "title": "Repaso variado",
         "description": "Combina distintas formas de practicar."
+      },
+      "bingo": {
+        "title": "Bingo",
+        "description": "Escucha y reconoce los números del 1 al 99. ¡Completa tu cartón!"
       }
     }
+  },
+  "bingo": {
+    "description": "Escucha y reconoce los números del 1 al 99. ¡Completa tu cartón!",
+    "rules": "Escucha los números del 1 al 99, que salen automáticamente en orden aleatorio y sin repetirse. Tacha los que tengas en tu cartón. Puedes marcar cualquier número que ya haya salido y consultar el panel de números cantados.",
+    "language": "Idioma para practicar",
+    "start": "Empezar partida",
+    "next": "Siguiente número",
+    "listen": "Escuchar",
+    "card": "Tu cartón",
+    "progress": "números marcados",
+    "line": "¡Línea!",
+    "win": "¡Bingo! Has completado el cartón.",
+    "wrong": "Este número todavía no ha salido.",
+    "correct": "¡Correcto!",
+    "again": "Nueva partida",
+    "audio": "La voz no está disponible. Puedes jugar leyendo el número.",
+    "called": "Números cantados",
+    "hint": "Escucha y tacha los números que tengas. Puedes consultar el panel de abajo.",
+    "interval": "Un número cada",
+    "seconds": "segundos",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "paused": "Sorteo en pausa. Puedes seguir tachando tus números.",
+    "finished": "Ya han salido los 99 números. Consulta el panel y termina de tachar tu cartón.",
+    "board": "Panel de números · 1–99",
+    "boardHint": "Los números cantados se tachan automáticamente. Pulsa uno tachado para volver a escucharlo.",
+    "drawn": "Ya ha salido",
+    "notDrawn": "Todavía no ha salido"
   }
 }

@@ -1,6 +1,13 @@
 import type { GameModeDefinition, Topic } from "../types/game.types";
 export const gameModes = [
   {
+    id: "bingo",
+    icon: "🔢",
+    skills: ["listening", "recognition"],
+    interactionType: "listening",
+    status: "available",
+  },
+  {
     id: "image-to-word",
     icon: "▧",
     skills: ["vocabulary", "writing"],

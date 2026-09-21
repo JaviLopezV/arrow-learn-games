@@ -4,7 +4,10 @@ import { Box, Typography } from "@jlopvil/mui-kit";
 import type { Locale } from "@/i18n/messages";
 import { getTopic } from "../config/topics";
 import { useGame } from "../engines/use-game";
-import type { ImplementedMode, LearningArea } from "../types/game.types";
+import type {
+  StandardMode as ImplementedMode,
+  LearningArea,
+} from "../types/game.types";
 import { GameSetup } from "./game-setup";
 import { GameRound } from "./game-round";
 import { GameHistory } from "./game-history";

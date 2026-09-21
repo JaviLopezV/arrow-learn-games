@@ -230,7 +230,39 @@
       "mixed-review": {
         "title": "Mixed review",
         "description": "Combine different ways to practise."
+      },
+      "bingo": {
+        "title": "Bingo",
+        "description": "Listen and recognise numbers from 1 to 99. Complete your card!"
       }
     }
+  },
+  "bingo": {
+    "description": "Listen and recognise numbers from 1 to 99. Complete your card!",
+    "rules": "Listen to numbers from 1 to 99, drawn automatically in random order without repeats. Cross off the numbers on your card. You can mark any number already called and check the called-number board.",
+    "language": "Practice language",
+    "start": "Start game",
+    "next": "Next number",
+    "listen": "Listen",
+    "card": "Your card",
+    "progress": "numbers marked",
+    "line": "Line!",
+    "win": "Bingo! You completed your card.",
+    "wrong": "This number has not been called yet.",
+    "correct": "Correct!",
+    "again": "New game",
+    "audio": "Speech is unavailable. You can play by reading the number.",
+    "called": "Numbers called",
+    "hint": "Listen and cross off your numbers. Check the board below if you missed one.",
+    "interval": "Call a number every",
+    "seconds": "seconds",
+    "pause": "Pause",
+    "resume": "Resume",
+    "paused": "Draw paused. You can still mark your numbers.",
+    "finished": "All 99 numbers have been called. Check the board and finish marking your card.",
+    "board": "Number board · 1–99",
+    "boardHint": "Called numbers are crossed off automatically. Select a crossed-off number to hear it again.",
+    "drawn": "Already called",
+    "notDrawn": "Not called yet"
   }
 }

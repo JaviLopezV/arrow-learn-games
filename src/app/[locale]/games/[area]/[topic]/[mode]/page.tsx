@@ -1,3 +1,4 @@
+import { BingoGame } from "@/games/components/bingo-game";
 import { gameMetadata } from "@/games/utils/metadata";
 import { notFound } from "next/navigation";
 import { isLocale, messages } from "@/i18n/messages";
@@ -47,13 +48,17 @@ export default async function ModePage({ params }: Props) {
           topic={selected}
         />
       </div>
-      <GameRunner
-        key={`${locale}/${area}/${topic}/${mode}`}
-        locale={locale}
-        topic={selected.id}
-        area={selected.area}
-        mode={gameMode.id}
-      />
+      {gameMode.id === "bingo" ? (
+        <BingoGame locale={locale} />
+      ) : (
+        <GameRunner
+          key={`${locale}/${area}/${topic}/${mode}`}
+          locale={locale}
+          topic={selected.id}
+          area={selected.area}
+          mode={gameMode.id}
+        />
+      )}
     </>
   );
 }

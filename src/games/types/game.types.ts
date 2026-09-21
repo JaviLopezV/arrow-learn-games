@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/messages";
 export type LearningArea = "vocabulary" | "grammar" | "phrases";
 export type Level = "A1" | "A2" | "B1" | "B2";
 export type GameMode =
+  | "bingo"
   | "image-to-word"
   | "translation"
   | "matching"
@@ -16,7 +17,8 @@ export type GameMode =
   | "odd-one-out"
   | "sentence-context"
   | "mixed-review";
-export type ImplementedMode = "image-to-word" | "translation" | "matching";
+export type StandardMode = "image-to-word" | "translation" | "matching";
+export type ImplementedMode = StandardMode | "bingo";
 export type LocalizedText = Record<Locale, string>;
 export type ContentItem = {
   id: string;

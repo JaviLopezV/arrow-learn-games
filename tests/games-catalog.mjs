@@ -123,7 +123,7 @@ test("every original history maps only to its original content and mechanics", (
         availableModes(t).map((m) => sessionHistoryKey(t, m.id)),
       ),
     ).size,
-    6,
+    7,
   );
 });
 test("new rounds preserve the original sentence sampling and pronoun contexts", () => {
@@ -140,4 +140,82 @@ test("new rounds preserve the original sentence sampling and pronoun contexts", 
       Object.keys(messages).every((locale) => item.context[locale]),
     ),
   );
+});
+
+const { createBingoCard, completedLines } = load("src/lib/bingo.ts");
+const { numberWord, numbers } = load("src/lib/numbers.ts");
+test("bingo cards have 15 unique numbers, five per row, sorted in their columns", () => {
+  for (let attempt = 0; attempt < 200; attempt++) {
+    const card = createBingoCard();
+    const values = card.flat().filter((n) => n !== null);
+    assert.equal(new Set(values).size, 15);
+    assert.ok(values.every((n) => n >= 1 && n <= 99));
+    for (const row of card) {
+      assert.equal(row.length, 9);
+      assert.equal(row.filter((n) => n !== null).length, 5);
+    }
+    for (let col = 0; col < 9; col++) {
+      const values = card.map((row) => row[col]).filter((n) => n !== null);
+      assert.ok(values.length > 0);
+      assert.deepEqual(
+        values,
+        [...values].sort((a, b) => a - b),
+      );
+      assert.ok(
+        values.every((n) => (col === 8 ? n >= 80 : Math.floor(n / 10) === col)),
+      );
+    }
+    assert.equal(completedLines(card, []), 0);
+    assert.equal(
+      completedLines(
+        card,
+        card[0].filter((n) => n !== null),
+      ),
+      1,
+    );
+    assert.equal(completedLines(card, values), 3);
+  }
+});
+test("number vocabulary covers 1–99 and irregular forms across six languages", () => {
+  assert.equal(numbers.length, 99);
+  for (const language of Object.keys(languages)) {
+    const words = numbers.map((item) => item.words[language][0]);
+    assert.equal(new Set(words).size, 99);
+    assert.ok(words.every((word) => word && !word.includes("undefined")));
+  }
+  for (const [n, lang, expected] of [
+    [22, "es", "veintidós"],
+    [31, "es", "treinta y uno"],
+    [21, "ca", "vint-i-un"],
+    [99, "en", "ninety-nine"],
+    [71, "fr", "soixante et onze"],
+    [80, "fr", "quatre-vingts"],
+    [99, "fr", "quatre-vingt-dix-neuf"],
+    [21, "de", "einundzwanzig"],
+    [28, "it", "ventotto"],
+    [33, "it", "trentatré"],
+  ])
+    assert.equal(numberWord(n, lang), expected);
+  assert.throws(() => numberWord(100, "es"), RangeError);
+  assert.deepEqual(
+    availableModes(getTopic("vocabulary", "numbers")).map((m) => m.id),
+    ["bingo"],
+  );
+});
+
+const { createBingoDraw, canMarkBingoNumber } = load("src/lib/bingo.ts");
+test("bingo draws all 99 numbers exactly once, including those outside the card", () => {
+  const expected = Array.from({ length: 99 }, (_, i) => i + 1);
+  for (let i = 0; i < 50; i++) {
+    const deck = createBingoDraw();
+    assert.deepEqual(
+      [...deck].sort((a, b) => a - b),
+      expected,
+    );
+    assert.equal(canMarkBingoNumber(deck[0], deck, 0), true);
+    assert.equal(canMarkBingoNumber(deck[1], deck, 0), false);
+    assert.equal(canMarkBingoNumber(deck[0], deck, 50), true);
+    assert.equal(canMarkBingoNumber(deck[98], deck, 97), false);
+    assert.ok(expected.every((n) => canMarkBingoNumber(n, deck, 98)));
+  }
 });

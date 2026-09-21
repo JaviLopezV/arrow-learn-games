@@ -230,7 +230,39 @@
       "mixed-review": {
         "title": "Repàs variat",
         "description": "Combina diferents maneres de practicar."
+      },
+      "bingo": {
+        "title": "Bingo",
+        "description": "Escolta i reconeix els nombres de l’1 al 99. Completa el cartró!"
       }
     }
+  },
+  "bingo": {
+    "description": "Escolta i reconeix els nombres de l’1 al 99. Completa el cartró!",
+    "rules": "Escolta els nombres de l’1 al 99, que surten automàticament en ordre aleatori i sense repetir-se. Ratlla els que tinguis al cartró. Pots marcar qualsevol nombre que ja hagi sortit i consultar el panell de nombres cantats.",
+    "language": "Idioma per practicar",
+    "start": "Comença la partida",
+    "next": "Nombre següent",
+    "listen": "Escolta",
+    "card": "El teu cartró",
+    "progress": "nombres marcats",
+    "line": "Línia!",
+    "win": "Bingo! Has completat el cartró.",
+    "wrong": "Aquest nombre encara no ha sortit.",
+    "correct": "Correcte!",
+    "again": "Nova partida",
+    "audio": "La veu no està disponible. Pots jugar llegint el nombre.",
+    "called": "Nombres cantats",
+    "hint": "Escolta i ratlla els nombres que tinguis. Pots consultar el panell de sota.",
+    "interval": "Un nombre cada",
+    "seconds": "segons",
+    "pause": "Pausa",
+    "resume": "Continua",
+    "paused": "Sorteig en pausa. Pots continuar ratllant els nombres.",
+    "finished": "Ja han sortit els 99 nombres. Consulta el panell i acaba de ratllar el cartró.",
+    "board": "Panell de nombres · 1–99",
+    "boardHint": "Els nombres cantats es ratllen automàticament. Prem-ne un de ratllat per tornar-lo a escoltar.",
+    "drawn": "Ja ha sortit",
+    "notDrawn": "Encara no ha sortit"
   }
 }

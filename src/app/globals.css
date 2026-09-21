@@ -1021,3 +1021,170 @@ a.catalog-card:hover,
     transition: none;
   }
 }
+
+/* Number bingo: traditional three-row card with turquoise blanks. */
+.bingo-panel {
+  background: #fff;
+  border: 1px solid #e4e1f2;
+  border-radius: 24px;
+  padding: clamp(20px, 4vw, 36px);
+}
+.bingo-setup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+.bingo-number:focus-visible,
+.bingo-draw-number:focus-visible {
+  outline: 3px solid #aa6d16;
+  outline-offset: -3px;
+  z-index: 2;
+}
+.bingo-call {
+  text-align: center;
+}
+.bingo-call > span {
+  color: #626980;
+  font-size: 14px;
+}
+.bingo-word {
+  color: #343c69;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  margin: 14px 0;
+  overflow-wrap: anywhere;
+}
+.bingo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.bingo-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+.bingo-card-heading span {
+  color: #596078;
+  font-weight: 700;
+}
+.bingo-card {
+  border: 3px solid #172c37;
+  background: #172c37;
+}
+.bingo-row {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  position: relative;
+}
+.bingo-line {
+  outline: 4px solid #ee2525;
+  outline-offset: -4px;
+  z-index: 1;
+}
+.bingo-number,
+.bingo-empty {
+  border: 1px solid #172c37;
+  min-width: 0;
+  height: clamp(64px, 11vw, 122px);
+}
+.bingo-empty {
+  background: #05bed4;
+}
+.bingo-number.MuiButtonBase-root {
+  border: 1px solid #172c37;
+  position: relative;
+  background: white;
+  color: #111;
+  padding: 0;
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-size: clamp(25px, 6vw, 68px);
+  font-weight: 900;
+}
+.bingo-number:not(:disabled):hover {
+  background: #fff2cf;
+}
+.bingo-number:disabled {
+  color: #111;
+  opacity: 1;
+}
+.bingo-cross {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: clamp(56px, 12vw, 130px);
+  line-height: 1;
+  color: #ed1717;
+  pointer-events: none;
+}
+.bingo-feedback {
+  min-height: 28px;
+  text-align: center;
+  font-weight: 700;
+  color: #247448;
+}
+.bingo-error {
+  color: #b62b27;
+}
+.bingo-tempo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.bingo-draw-board {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 6px;
+}
+.bingo-draw-number.MuiButtonBase-root {
+  position: relative;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 0;
+  border: 1px solid #dcdaf5;
+  border-radius: 8px;
+  background: #f3f4f8;
+  color: #555c71;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(14px, 3vw, 22px);
+}
+.bingo-draw-number:disabled {
+  opacity: 1;
+}
+.bingo-drawn.MuiButtonBase-root {
+  background: #d8f6f9;
+  border-color: #058b9b;
+  color: #172c37;
+}
+.bingo-current {
+  box-shadow: inset 0 0 0 3px #4854c7;
+}
+.bingo-draw-cross {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c52c28;
+  font:
+    48px/1 Arial,
+    sans-serif;
+  pointer-events: none;
+}
+@media (max-width: 480px) {
+  .bingo-draw-board {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 3px;
+  }
+}

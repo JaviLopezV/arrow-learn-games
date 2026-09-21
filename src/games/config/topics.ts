@@ -1,9 +1,23 @@
+import { numbers } from "@/lib/numbers";
 import { animals } from "@/lib/animals";
 import { pronouns } from "@/lib/pronouns";
 import { sentences, shuffledSentences } from "@/lib/sentences";
 import { messages } from "@/i18n/messages";
 import type { Topic } from "../types/game.types";
 export const topics: Topic[] = [
+  {
+    id: "numbers",
+    area: "vocabulary",
+    icon: "🔢",
+    level: "A1",
+    title: {
+      es: "Números del 1 al 99",
+      ca: "Nombres de l’1 al 99",
+      en: "Numbers 1–99",
+    },
+    items: numbers,
+    availableGameModes: ["bingo"],
+  },
   {
     id: "animals",
     area: "vocabulary",

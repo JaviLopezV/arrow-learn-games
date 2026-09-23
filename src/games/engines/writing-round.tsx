@@ -54,13 +54,19 @@ export function WritingRound({ game }: { game: GameController }) {
       </Typography>
       {round.mode === "image-to-word" ? (
         <Box className="animal-image">
-          <Image
-            src={item!.image!}
-            alt={m.imageAlt}
-            width={250}
-            height={250}
-            priority
-          />
+          {item?.emoji ? (
+            <span className="vocabulary-emoji" role="img" aria-label={m.imageAlt}>
+              {item.emoji}
+            </span>
+          ) : (
+            <Image
+              src={item!.image!}
+              alt={m.imageAlt}
+              width={250}
+              height={250}
+              priority
+            />
+          )}
         </Box>
       ) : (
         <Box className="animal-word">

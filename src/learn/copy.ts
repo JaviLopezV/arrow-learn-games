@@ -32,12 +32,6 @@ export const learnCopy = {
     review: "Volver a repasar",
     start: "Empezar reto",
     hint: "Piensa la respuesta antes de descubrirla. Después, comprueba lo que recuerdas en el reto.",
-    tips: [
-      "Empieza por el 1–20 y las decenas. Después combina decenas y unidades. Recorre todas las fichas hasta el 99: en el bingo reconocerás la palabra y marcarás su cifra.",
-      "Asocia cada dibujo con su palabra. Lee también las variantes: en los juegos de escritura se acepta cualquiera de las que aparecen en la ficha. Después practica sin mirar la imagen.",
-      "El pronombre indica quién realiza la acción. Fíjate en la persona, el número y el trato formal. Una misma palabra puede tener varios significados: el contexto de cada ficha te ayudará.",
-      "Aprende las frases por familias: estar feliz, beber agua, comer pan y vivir aquí. Compara cómo cambia el verbo con yo, tú, él y ella. Memoriza la frase completa, incluidos artículos y apóstrofos.",
-    ],
     spelling:
       "Consejo: respeta los acentos y la escritura. Las variantes separadas por / también son respuestas válidas.",
   },
@@ -73,12 +67,6 @@ export const learnCopy = {
     review: "Tornar a repassar",
     start: "Començar repte",
     hint: "Pensa la resposta abans de descobrir-la. Després comprova què recordes al repte.",
-    tips: [
-      "Comença per l’1–20 i les desenes. Després combina desenes i unitats. Recorre les fitxes fins al 99: al bingo reconeixeràs la paraula i marcaràs la xifra.",
-      "Associa cada dibuix amb la paraula. Llegeix també les variants: als jocs d’escriptura s’accepta qualsevol de les que apareixen a la fitxa. Després practica sense mirar la imatge.",
-      "El pronom indica qui fa l’acció. Fixa’t en la persona, el nombre i el tractament formal. Una mateixa paraula pot tenir diversos significats: el context de cada fitxa t’ajudarà.",
-      "Aprèn les frases per famílies: estar feliç, beure aigua, menjar pa i viure aquí. Compara com canvia el verb amb jo, tu, ell i ella. Memoritza la frase sencera, inclosos articles i apòstrofs.",
-    ],
     spelling:
       "Consell: respecta els accents i l’escriptura. Les variants separades per / també són respostes vàlides.",
   },
@@ -114,12 +102,6 @@ export const learnCopy = {
     review: "Review again",
     start: "Start challenge",
     hint: "Think of the answer before revealing it. Then test what you remember in the challenge.",
-    tips: [
-      "Start with 1–20 and the tens. Then combine tens and units. Explore every card up to 99: in bingo you’ll recognise the word and mark its numeral.",
-      "Connect each picture with its word. Read the alternatives too: writing games accept any variant shown on the card. Then practise without looking at the picture.",
-      "Subject pronouns tell you who performs an action. Notice person, number and formal address. One word can have several meanings: each card’s context will help you.",
-      "Learn sentences in families: being happy, drinking water, eating bread and living here. Compare how verbs change with I, you, he and she. Remember the whole sentence, including articles and apostrophes.",
-    ],
     spelling:
       "Tip: pay attention to accents and spelling. Variants separated by / are also accepted answers.",
   },

@@ -1,3 +1,4 @@
+import { vocabularyItems } from "@/lib/vocabulary";
 import { numbers } from "@/lib/numbers";
 import { animals } from "@/lib/animals";
 import { pronouns } from "@/lib/pronouns";
@@ -83,8 +84,9 @@ export const topics: Topic[] = [
       area: "vocabulary",
       title: { es, ca, en },
       level: "A1",
-      items: [],
-      availableGameModes: [],
+      items: vocabularyItems(id),
+      roundSize: 8,
+      availableGameModes: ["image-to-word", "translation", "matching"],
     }),
   ),
 ];

@@ -54,7 +54,7 @@ test("content is reusable across mechanics without leaking incompatible routes",
   );
   assert.equal(getTopic("grammar", "animals"), undefined);
   assert.equal(getTopic("vocabulary", "unknown"), undefined);
-  assert.deepEqual(availableModes(getTopic("vocabulary", "food")), []);
+  assert.deepEqual(availableModes({ ...animals, items: [] }), []);
   const newTopic = {
     ...animals,
     id: "new-topic",
@@ -123,7 +123,7 @@ test("every original history maps only to its original content and mechanics", (
         availableModes(t).map((m) => sessionHistoryKey(t, m.id)),
       ),
     ).size,
-    7,
+    topics.reduce((total, topic) => total + availableModes(topic).length, 0),
   );
 });
 test("new rounds preserve the original sentence sampling and pronoun contexts", () => {
@@ -218,4 +218,44 @@ test("bingo draws all 99 numbers exactly once, including those outside the card"
     assert.equal(canMarkBingoNumber(deck[98], deck, 97), false);
     assert.ok(expected.every((n) => canMarkBingoNumber(n, deck, 98)));
   }
+});
+
+const { lessonTips } = load("src/learn/tips.ts");
+const { lessons } = load("src/learn/lessons.ts");
+test("new vocabulary topics offer playable visual, translation and matching rounds", () => {
+  const keys = new Set();
+  for (const id of ["food", "home", "clothes", "transport", "body"]) {
+    const topic = getTopic("vocabulary", id);
+    assert.ok(topic.items.length >= 8);
+    assert.equal(topic.roundSize, 8);
+    assert.deepEqual(
+      availableModes(topic).map((mode) => mode.id),
+      ["image-to-word", "translation", "matching"],
+    );
+    assert.ok(topic.items.every((item) => item.emoji || item.image));
+    for (const language of Object.keys(languages)) {
+      const owners = new Map();
+      for (const item of topic.items) {
+        assert.ok(item.words[language].length > 0);
+        for (const word of item.words[language]) {
+          const normalised = word.normalize("NFC").trim().toLocaleLowerCase();
+          assert.ok(normalised);
+          assert.ok(
+            !owners.has(normalised) || owners.get(normalised) === item.id,
+            `${id}/${language}: ambiguous matching answer ${word}`,
+          );
+          owners.set(normalised, item.id);
+        }
+      }
+    }
+    for (const mode of availableModes(topic))
+      keys.add(sessionHistoryKey(topic, mode.id));
+    assert.ok(lessons.some((lesson) => lesson.id === id));
+  }
+  assert.equal(keys.size, 15);
+});
+test("every playable topic has learning tips in every interface language", () => {
+  for (const topic of lessons)
+    for (const locale of Object.keys(messages))
+      assert.ok(lessonTips[locale][topic.id]?.trim(), `${locale}/${topic.id}`);
 });

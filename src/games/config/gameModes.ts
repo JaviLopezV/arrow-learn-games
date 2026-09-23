@@ -106,6 +106,6 @@ export function availableModes(topic: Topic) {
       topic.availableGameModes.includes(mode.id) &&
       topic.items.length > 0 &&
       (mode.id !== "image-to-word" ||
-        topic.items.every((item) => Boolean(item.image))),
+        topic.items.every((item) => Boolean(item.image || item.emoji))),
   );
 }

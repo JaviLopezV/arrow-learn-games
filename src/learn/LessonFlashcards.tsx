@@ -32,6 +32,11 @@ export function LessonFlashcards({
         aria-expanded={revealed}
         aria-label={revealed ? m.hide : m.reveal}
       >
+        {item.emoji && (
+          <span className="learn-emoji" aria-hidden="true">
+            {item.emoji}
+          </span>
+        )}
         {item.image && (
           <Image
             src={item.image}

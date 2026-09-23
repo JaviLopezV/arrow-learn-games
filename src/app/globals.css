@@ -1532,3 +1532,15 @@ a.catalog-card:hover,
   text-decoration-thickness: 3px;
   text-underline-offset: 8px;
 }
+
+.vocabulary-emoji {
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+  font-size: 132px;
+  line-height: 1.3;
+}
+.learn-flashcard .learn-emoji {
+  font-size: 64px;
+  line-height: 1.3;
+}

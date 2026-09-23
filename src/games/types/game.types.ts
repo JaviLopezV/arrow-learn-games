@@ -24,6 +24,7 @@ export type ContentItem = {
   id: string;
   words: Record<Language, string[]>;
   image?: string;
+  emoji?: string;
   context?: LocalizedText;
 };
 export type Topic = {

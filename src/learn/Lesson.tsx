@@ -6,7 +6,7 @@ import type { ContentItem, Topic } from "@/games/types/game.types";
 import type { Locale } from "@/i18n/messages";
 import { shuffleDeck, type Language } from "@/lib/animals";
 import { learnCopy } from "./copy";
-import { lessons } from "./lessons";
+import { lessonTips } from "./tips";
 import { LessonFlashcards } from "./LessonFlashcards";
 
 export function Lesson({
@@ -86,7 +86,7 @@ export function Lesson({
       <aside className="learn-tip">
         <span aria-hidden="true">💡</span>
         <div>
-          <p>{m.tips[lessons.findIndex((lesson) => lesson.id === topic.id)]}</p>
+          <p>{lessonTips[locale][topic.id]}</p>
           <small>{m.spelling}</small>
         </div>
       </aside>

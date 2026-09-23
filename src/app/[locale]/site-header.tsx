@@ -1,5 +1,6 @@
-import { Box, Link, Button, Container } from "@jlopvil/mui-kit";
+import { Box, Button, Container } from "@jlopvil/mui-kit";
 import { messages, type Locale } from "@/i18n/messages";
+import { SiteNavigation } from "./site-navigation";
 import { InstallApp } from "../install-app";
 import { LanguageSelector } from "./language-selector";
 
@@ -25,14 +26,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
             <Box component="small">games</Box>
           </Box>
         </Box>
-        <Box
-          component="nav"
-          aria-label={m.nav.navigation}
-          className="navigation"
-        >
-          <Link href={`/${locale}#como-funciona`}>{m.nav.how}</Link>
-          <Link href={`/${locale}/games`}>{m.nav.news}</Link>
-        </Box>
+        <SiteNavigation locale={locale} />
         <Box className="header-actions">
           <LanguageSelector locale={locale} label={m.nav.language} />
           <InstallApp locale={locale} />

@@ -6,11 +6,8 @@ import "@jlopvil/mui-kit/styles.css";
 import "../globals.css";
 import { Providers } from "../providers";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+import { siteUrl, indexable } from "@/lib/seo";
+import { SiteFooter } from "./site-footer";
 
 export const viewport: Viewport = { themeColor: "#4552d5" };
 
@@ -33,6 +30,7 @@ export async function generateMetadata({
     title: m.title,
     description: m.description,
     applicationName: "Arrow Learn Games",
+    robots: { index: indexable, follow: true },
     manifest: "/manifest.webmanifest",
     appleWebApp: {
       capable: true,
@@ -84,7 +82,10 @@ export default async function RootLayout({ children, params }: Props) {
     <html lang={locale} suppressHydrationWarning>
       <body>
         <MyUiInitColorSchemeScript defaultMode="light" />
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <SiteFooter locale={locale} />
+        </Providers>
       </body>
     </html>
   );

@@ -5,9 +5,11 @@ export function gameMetadata(
   locale: Locale,
   path: string,
   name: string,
+  summary?: string,
 ): Metadata {
   const title = `${name} | Arrow Learn Games`;
-  const description = messages[locale].catalog.description;
+  const description =
+    summary ?? `${name}. ${messages[locale].catalog.description}`;
   return {
     title,
     description,

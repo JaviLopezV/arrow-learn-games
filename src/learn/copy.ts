@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/messages";
 export const learnCopy = {
   es: {
-    nav: "topics",
+    nav: "Temario",
     kicker: "PEQUEÑOS PASOS, GRANDES PARTIDAS",
     title: "Aprende. Descubre. ¡Juega!",
     intro:

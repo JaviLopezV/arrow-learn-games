@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap");
-
 :root {
   color-scheme: light;
   scroll-behavior: smooth;
@@ -409,22 +407,77 @@ a {
   background: #25294e;
   color: #bfc2d8;
 }
-.site-footer .MuiContainer-root {
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  min-height: 90px;
-  font-size: 13px;
+  gap: 24px 48px;
 }
-.site-footer span:first-child {
+.footer-brand {
+  display: inline-block;
+  color: #fff;
   font-family: Outfit, sans-serif;
+  font-size: 20px;
   font-weight: 800;
-  font-size: 18px;
-  color: white;
+  letter-spacing: -0.04em;
+  padding: 6px 0;
+  white-space: nowrap;
 }
-.site-footer .brand-accent {
-  color: #9ca7ff !important;
+.footer-brand .brand-accent {
+  color: #aeb8ff;
+}
+.footer-identity p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.footer-legal-links {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  max-width: 650px;
+}
+.footer-legal-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d7daec;
+  font-size: 13px;
+  line-height: 1.5;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
+}
+.footer-legal-links a:hover {
+  background: #ffffff0f;
+  color: #fff;
+}
+.site-footer a:focus-visible {
+  outline: 2px solid #b9c1ff;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+@media (max-width: 760px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .footer-legal-links {
+    justify-content: flex-start;
+    width: 100%;
+    border-top: 1px solid #ffffff24;
+    padding-top: 16px;
+  }
+  .footer-legal-links a {
+    padding-inline: 10px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -496,11 +549,6 @@ a {
   }
   .hero-actions .MuiButton-root {
     width: 100%;
-  }
-  .site-footer .MuiContainer-root {
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1543,4 +1591,431 @@ a.catalog-card:hover,
 .learn-flashcard .learn-emoji {
   font-size: 64px;
   line-height: 1.3;
+}
+
+.legal-document a {
+  color: #3946b9;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-document {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 24px 72px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+.legal-document h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+.legal-document h2 {
+  margin-top: 32px;
+  font-size: 1.25rem;
+}
+.legal-document address {
+  font-style: normal;
+}
+
+/* Home: real learning content and direct paths into practice. */
+.landing {
+  color: #25294e;
+}
+.landing-wrap {
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.landing-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 72px;
+  padding-block: 64px 56px;
+}
+.landing-eyebrow {
+  color: #535ac0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.landing h1 {
+  margin: 24px 0;
+  font-size: clamp(42px, 4.7vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+.landing h1 span {
+  display: block;
+  color: #4552d5;
+}
+.landing-intro > p {
+  max-width: 510px;
+  color: #626780;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+.landing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 50px;
+  padding: 14px 21px;
+  border: 1px solid #4552d5;
+  border-radius: 12px;
+  background: #4552d5;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.landing-button:hover {
+  background: #3542bf;
+  box-shadow: 0 5px 16px #4552d522;
+}
+.landing-button-secondary {
+  color: #35395e;
+  background: transparent;
+  border-color: #cfd1e1;
+}
+.landing-button-secondary:hover {
+  background: #eeedf8;
+}
+.landing-note {
+  display: block;
+  margin-top: 20px;
+  color: #656a80;
+  font-size: 12px;
+}
+.landing-sample {
+  position: relative;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e4e2f0;
+  border-radius: 28px;
+  box-shadow: 0 20px 65px #393c7210;
+  transform: rotate(2deg);
+}
+.landing-sample-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #686687;
+}
+.landing-level {
+  border-radius: 6px;
+  background: #ffffff9c;
+  padding: 5px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #626582;
+  letter-spacing: 0.03em;
+}
+.landing-sample-picture {
+  display: grid;
+  place-items: center;
+  margin-top: 16px;
+  border-radius: 18px;
+  background: #f0edfc;
+  padding: 12px;
+}
+.landing-sample h2 {
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0 16px;
+  letter-spacing: -0.02em;
+}
+.landing-translations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 0;
+}
+.landing-translations div {
+  padding: 10px;
+  border: 1px solid #edeef4;
+  border-radius: 10px;
+}
+.landing-translations dt {
+  color: #73778c;
+  font-size: 10px;
+}
+.landing-translations dd {
+  margin: 4px 0 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+.landing-sample-link {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+  min-height: 44px;
+  color: #4552d5;
+  font-size: 13px;
+  font-weight: 700;
+}
+.landing-languages {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 24px 40px;
+}
+.landing-languages p {
+  color: #676b80;
+  font-size: 12px;
+}
+.landing-languages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+.landing-topics {
+  background: #f1f2f8;
+  border-block: 1px solid #e7e8f0;
+  padding-block: 64px;
+}
+.landing-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.landing-section-heading > div {
+  max-width: 620px;
+}
+.landing-section-heading h2,
+.landing-how > h2,
+.landing-closing h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin: 12px 0;
+}
+.landing-section-heading p,
+.landing-closing p {
+  color: #666b81;
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+.landing-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: #404cc3;
+  font-size: 13px;
+  font-weight: 700;
+}
+.landing-section-heading > a {
+  flex-shrink: 0;
+}
+.landing-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.landing-topic {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  padding: 22px;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #e1e3ee;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.landing-topic:hover {
+  border-color: #9c9fe0;
+  box-shadow: 0 8px 24px #333a7110;
+}
+.landing-topic-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px;
+  padding: 14px;
+  background: #eeebfc;
+}
+.landing-topic-1 .landing-topic-top {
+  background: #fff0e2;
+}
+.landing-topic-2 .landing-topic-top {
+  background: #e4f3ee;
+}
+.landing-topic-3 .landing-topic-top {
+  background: #e9effc;
+}
+.landing-topic-icon {
+  font-size: 30px;
+}
+.landing-topic h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 20px 0 8px;
+  letter-spacing: -0.025em;
+}
+.landing-topic p {
+  color: #686d82;
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 0 0 20px;
+}
+.landing-topic-action {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid #ececf4;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4552d5;
+}
+.landing-how {
+  padding-block: 72px;
+  scroll-margin-top: 24px;
+}
+.landing-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding: 0;
+  margin: 36px 0 0;
+}
+.landing-steps li {
+  border-top: 1px solid #dcddea;
+  padding-top: 22px;
+}
+.landing-step-number {
+  font-size: 13px;
+  font-weight: 800;
+  color: #626ac8;
+}
+.landing-steps h3 {
+  font-size: 20px;
+  letter-spacing: -0.025em;
+  margin: 16px 0 10px;
+}
+.landing-steps p {
+  color: #686d82;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.landing-closing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding-block: 36px;
+  margin-bottom: 64px;
+  border-top: 1px solid #dedfea;
+}
+.landing-closing .landing-button {
+  flex-shrink: 0;
+}
+.landing a:focus-visible {
+  outline: 3px solid #606bdb;
+  outline-offset: 5px;
+}
+.landing-text-link:hover,
+.landing-sample-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .landing-hero {
+    gap: 32px;
+  }
+  .landing-topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .landing-languages {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .landing-steps {
+    gap: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .landing-hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    gap: 36px;
+  }
+  .landing-intro > p {
+    font-size: 16px;
+  }
+  .landing-sample {
+    transform: none;
+    max-width: 460px;
+    width: 100%;
+    justify-self: center;
+  }
+  .landing-section-heading,
+  .landing-closing {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .landing-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .landing-how {
+    padding-block: 48px;
+  }
+  .landing-topics {
+    padding-block: 44px;
+  }
+  .landing-closing {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 420px) {
+  .landing-wrap {
+    padding-inline: 20px;
+  }
+  .landing-topic-grid {
+    grid-template-columns: 1fr;
+  }
+  .landing-actions {
+    flex-direction: column;
+  }
+  .landing-sample {
+    padding: 18px;
+  }
+  .landing-translations {
+    gap: 6px;
+  }
+  .landing-translations div {
+    padding: 8px;
+  }
 }

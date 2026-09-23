@@ -8,7 +8,7 @@ export function SiteNavigation({ locale }: { locale: Locale }) {
   const m = messages[locale];
   return (
     <nav aria-label={m.nav.navigation} className="navigation">
-      <Link href={`/${locale}#como-funciona`}>{m.nav.how}</Link>
+      <Link href={`/${locale}#how-it-works`}>{m.nav.how}</Link>
       <Link
         href={`/${locale}/games`}
         aria-current={

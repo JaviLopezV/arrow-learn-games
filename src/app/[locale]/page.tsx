@@ -64,7 +64,7 @@ export default async function Home({
               </Button>
               <Button
                 component="a"
-                href="#como-funciona"
+                href="#how-it-works"
                 tone="neutral"
                 variant="outlined"
                 size="large"
@@ -117,7 +117,7 @@ export default async function Home({
 
       <Box
         component="section"
-        id="como-funciona"
+        id="how-it-works"
         className="features-section"
         aria-labelledby="features-title"
       >

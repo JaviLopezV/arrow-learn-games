@@ -199,7 +199,7 @@ test("number vocabulary covers 1–99 and irregular forms across six languages",
   assert.throws(() => numberWord(100, "es"), RangeError);
   assert.deepEqual(
     availableModes(getTopic("vocabulary", "numbers")).map((m) => m.id),
-    ["bingo"],
+    ["bingo", "image-to-word", "translation", "matching"],
   );
 });
 
@@ -258,4 +258,25 @@ test("every playable topic has learning tips in every interface language", () =>
   for (const topic of lessons)
     for (const locale of Object.keys(messages))
       assert.ok(lessonTips[locale][topic.id]?.trim(), `${locale}/${topic.id}`);
+});
+
+test("tense games have distinct multilingual pairs and short rounds", () => {
+  for (const tense of ["present", "past", "future"]) {
+    const topic = getTopic("grammar", `${tense}-tense`);
+    assert.equal(topic.roundSize, 8);
+    assert.equal(topic.items.length, 8);
+    assert.deepEqual(
+      availableModes(topic).map((mode) => mode.id),
+      ["translation", "matching"],
+    );
+    for (const language of Object.keys(languages)) {
+      assert.equal(
+        new Set(topic.items.map((item) => item.words[language][0])).size,
+        8,
+      );
+    }
+  }
+  const numbers = getTopic("vocabulary", "numbers");
+  assert.equal(numbers.roundSize, 8);
+  assert.ok(numbers.items.every((item) => item.emoji === item.id));
 });

@@ -1,4 +1,5 @@
 import { vocabularyItems } from "@/lib/vocabulary";
+import { tenseItems } from "@/lib/verb-tenses";
 import { numbers } from "@/lib/numbers";
 import { animals } from "@/lib/animals";
 import { pronouns } from "@/lib/pronouns";
@@ -16,8 +17,9 @@ export const topics: Topic[] = [
       ca: "Nombres de l’1 al 99",
       en: "Numbers 1–99",
     },
-    items: numbers,
-    availableGameModes: ["bingo"],
+    items: numbers.map((item) => ({ ...item, emoji: item.id })),
+    roundSize: 8,
+    availableGameModes: ["bingo", "image-to-word", "translation", "matching"],
   },
   {
     id: "animals",
@@ -54,6 +56,36 @@ export const topics: Topic[] = [
     reference: "subject-pronouns",
     legacyHistory: { translation: "pronouns" },
   },
+  ...(
+    [
+      [
+        "present",
+        "☀️",
+        "Presente: hábitos",
+        "Present: hàbits",
+        "Present: habits",
+      ],
+      [
+        "past",
+        "⏮️",
+        "Pasado: acciones terminadas",
+        "Passat: accions acabades",
+        "Past: completed actions",
+      ],
+      ["future", "⏭️", "Futuro: mañana", "Futur: demà", "Future: tomorrow"],
+    ] as const
+  ).map(
+    ([tense, icon, es, ca, en]): Topic => ({
+      id: `${tense}-tense`,
+      area: "grammar",
+      title: { es, ca, en },
+      icon,
+      level: tense === "present" ? "A1" : "A2",
+      items: tenseItems(tense),
+      roundSize: 8,
+      availableGameModes: ["translation", "matching"],
+    }),
+  ),
   {
     id: "everyday-conversation",
     area: "phrases",

@@ -109,3 +109,9 @@ Configura `NEXT_PUBLIC_SITE_URL` antes de compilar. Si falta, se usa `VERCEL_PRO
 ## Siguientes pasos
 
 Añadir contenido real de comida/casa/ropa; implementar audio y opciones múltiples; guardar errores por ítem para el repaso; introducir un planificador de sesiones mixtas y retos diarios; activar filtros cuando aumente el catálogo.
+
+## Juegos de números y tiempos verbales
+
+Números del 1 al 99 ofrece bingo, cifra → palabra, traducción y parejas. Las nuevas rondas tienen ocho elementos aleatorios.
+
+En Gramática, Presente: hábitos, Pasado: acciones terminadas y Futuro: mañana ofrecen escritura por traducción y parejas. Cada tema contiene ocho frases en los seis idiomas, con fichas y consejos en Aprender. Se aceptan frases sin pronombre en español, catalán e italiano, y contracciones de will en inglés. El pasado usa la construcción habitual de acción terminada de cada idioma.

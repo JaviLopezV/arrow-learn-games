@@ -2,8 +2,15 @@ import type { Locale } from "@/i18n/messages";
 
 export const lessonTips: Record<Locale, Record<string, string>> = {
   es: {
+    "present-tense":
+      "Practica hábitos con «cada día». Traduce la frase completa y observa cómo cambia el verbo con cada persona. Se acepta omitir el pronombre en español, catalán e italiano.",
+    "past-tense":
+      "Practica acciones terminadas con «ayer». Las lenguas usan formas distintas: trabajé, vaig treballar, worked, ai travaillé, habe gearbeitet y ho lavorato. Consulta las fichas antes de jugar.",
+    "future-tense":
+      "Practica el futuro con «mañana». En inglés usa will más infinitivo (también se aceptan contracciones); en alemán, werden más infinitivo. En las otras lenguas observa las terminaciones.",
+
     numbers:
-      "Empieza por el 1–20 y las decenas. Después combina decenas y unidades. Recorre todas las fichas hasta el 99: en el bingo reconocerás la palabra y marcarás su cifra.",
+      "Empieza por el 1–20 y las decenas. Después combina decenas y unidades. Recorre todas las fichas hasta el 99: practica escribiendo las cifras en letras, traduciendo y relacionando parejas, además del bingo.",
     animals:
       "Asocia cada dibujo con su palabra. Lee también las variantes: en los juegos de escritura se acepta cualquiera de las que aparecen en la ficha. Después practica sin mirar la imagen.",
     "subject-pronouns":
@@ -19,8 +26,15 @@ export const lessonTips: Record<Locale, Record<string, string>> = {
     body: "Señala cada parte del cuerpo mientras dices su nombre. Estas fichas usan el singular: una mano, un pie, un ojo. En inglés, foot y tooth cambian a feet y teeth en plural; aquí practica foot y tooth.",
   },
   ca: {
+    "present-tense":
+      "Practica hàbits amb «cada dia». Tradueix la frase sencera i observa com canvia el verb amb cada persona. Es pot ometre el pronom en català, castellà i italià.",
+    "past-tense":
+      "Practica accions acabades amb «ahir». Les llengües fan servir formes diferents: vaig treballar, trabajé, worked, ai travaillé, habe gearbeitet i ho lavorato. Consulta les fitxes abans de jugar.",
+    "future-tense":
+      "Practica el futur amb «demà». En anglès fes servir will més infinitiu (també s’accepten contraccions); en alemany, werden més infinitiu. En les altres llengües observa les terminacions.",
+
     numbers:
-      "Comença per l’1–20 i les desenes. Després combina desenes i unitats. Recorre les fitxes fins al 99: al bingo reconeixeràs la paraula i marcaràs la xifra.",
+      "Comença per l’1–20 i les desenes. Després combina desenes i unitats. Recorre les fitxes fins al 99: practica escrivint les xifres en lletres, traduint i relacionant parelles, a més del bingo.",
     animals:
       "Associa cada dibuix amb la paraula. Llegeix també les variants: als jocs d’escriptura s’accepta qualsevol de les que apareixen a la fitxa. Després practica sense mirar la imatge.",
     "subject-pronouns":
@@ -36,8 +50,15 @@ export const lessonTips: Record<Locale, Record<string, string>> = {
     body: "Assenyala cada part del cos mentre en dius el nom. Aquestes fitxes fan servir el singular: una mà, un peu, un ull. En anglès, foot i tooth canvien a feet i teeth en plural; aquí practica foot i tooth.",
   },
   en: {
+    "present-tense":
+      "Practise habits with “every day”. Translate the whole sentence and notice how the verb changes with the subject. Subject pronouns may be omitted in Spanish, Catalan and Italian.",
+    "past-tense":
+      "Practise completed actions with “yesterday”. Languages use different forms: worked, trabajé, vaig treballar, ai travaillé, habe gearbeitet and ho lavorato. Review the cards before playing.",
+    "future-tense":
+      "Practise the future with “tomorrow”. Use will plus the infinitive in English (contractions are accepted), and werden plus the infinitive in German. Notice the endings in the other languages.",
+
     numbers:
-      "Start with 1–20 and the tens. Then combine tens and units. Explore every card up to 99: in bingo you’ll recognise the word and mark its numeral.",
+      "Start with 1–20 and the tens. Then combine tens and units. Explore every card up to 99: practise spelling numerals, translating and matching pairs, as well as playing bingo.",
     animals:
       "Connect each picture with its word. Read the alternatives too: writing games accept any variant shown on the card. Then practise without looking at the picture.",
     "subject-pronouns":

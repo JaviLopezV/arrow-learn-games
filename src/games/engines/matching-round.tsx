@@ -97,7 +97,7 @@ export function MatchingRound({ game }: { game: GameController }) {
                       }
                     }}
                     sx={{
-                      minHeight: 72,
+                      minHeight: { xs: 48, sm: 72 },
                       px: { xs: 1, sm: 2 },
                       textTransform: "none",
                       overflowWrap: "anywhere",

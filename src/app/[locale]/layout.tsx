@@ -7,9 +7,13 @@ import "../globals.css";
 import { Providers } from "../providers";
 
 import { siteUrl, indexable } from "@/lib/seo";
+import { MobileNavigation } from "./mobile-navigation";
 import { SiteFooter } from "./site-footer";
 
-export const viewport: Viewport = { themeColor: "#4552d5" };
+export const viewport: Viewport = {
+  themeColor: "#4552d5",
+  viewportFit: "cover",
+};
 
 const ogLocales = { es: "es_ES", ca: "ca_ES", en: "en_US" };
 
@@ -85,6 +89,7 @@ export default async function RootLayout({ children, params }: Props) {
         <Providers>
           {children}
           <SiteFooter locale={locale} />
+          <MobileNavigation locale={locale} />
         </Providers>
       </body>
     </html>

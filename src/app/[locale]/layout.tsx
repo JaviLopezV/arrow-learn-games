@@ -34,6 +34,9 @@ export async function generateMetadata({
     title: m.title,
     description: m.description,
     applicationName: "Arrow Learn Games",
+    verification: {
+      google: "-FEE06keQQoGEpHbLrFyZ6-RhChFiHAt5bYBvnJdOvc",
+    },
     robots: { index: indexable, follow: true },
     manifest: "/manifest.webmanifest",
     appleWebApp: {

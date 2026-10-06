@@ -51,9 +51,9 @@
     ]
   },
   "coming": {
-    "kicker": "THIS IS JUST THE BEGINNING",
-    "title": "More ways to play are coming.",
-    "description": "We're getting this space ready for new learning experiences."
+    "kicker": "KEEP EXPLORING",
+    "title": "More ways to learn through play.",
+    "description": "Try memory, listening and timed games, review mistakes or complete the daily challenge."
   },
   "footer": "Made for curious minds.",
   "games": {
@@ -264,5 +264,18 @@
     "boardHint": "Called numbers are crossed off automatically. Select a crossed-off number to hear it again.",
     "drawn": "Already called",
     "notDrawn": "Not called yet"
+  },
+  "play": {
+    "timer": "20 seconds per question",
+    "audioUnavailable": "No voice is available for this language. Skip this question without points or choose another language.",
+    "skip": "Skip question",
+    "outsideGroup": "Choose the word that does NOT belong to:",
+    "wholeWord": "Type the complete word with the letters in order.",
+    "missingWord": "Type only the missing word.",
+    "memoryNote": "Flip two cards to find a word and its translation. Earn 10 points per pair without mistakes; confused pairs earn 0.",
+    "card": "Card",
+    "dailyNote": "Eight different topics. The selection stays the same throughout the day, using your device’s date. Repeat the challenge and compare results in your history.",
+    "mistakesNote": "Review new mistakes from games in this browser. Select the same source and practice languages. Each correct answer removes that item from review; older history does not contain mistakes for individual words.",
+    "emptyMistakes": "No pending mistakes for these languages. Play a round or choose another combination to keep practising."
   }
 }

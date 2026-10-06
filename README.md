@@ -24,13 +24,13 @@ El catálogo se organiza por Vocabulario, Gramática y Frases y expresiones. Las
 /es/games/phrases/everyday-conversation/matching
 ```
 
-`/games` y sus subrutas redirigen a su equivalente español. Las áreas, temas y combinaciones no disponibles devuelven 404. Los temas sin contenido aparecen como «Próximamente» sin enlaces de juego.
+`/games` y sus subrutas redirigen a su equivalente español. Las áreas, temas y combinaciones no disponibles devuelven 404. Todas las modalidades del catálogo están implementadas y solo se ofrecen en temas compatibles.
 
 - `src/games/types/game.types.ts`: áreas, niveles, contenido, modos y selección de práctica.
 - `src/games/config/learningAreas.ts`: áreas del catálogo.
 - `src/games/config/topics.ts`: temas, contenido, imágenes, contexto y modos compatibles.
 - `src/games/config/gameModes.ts`: modos, disponibilidad, habilidades y tipo de interacción para futuros filtros.
-- `src/games/config/practice.ts`: accesos y estrategias futuras de partida rápida, errores y reto diario.
+- `src/games/config/practice.ts`: accesos a partida rápida, repaso de errores y reto diario.
 - `src/games/components/GameCatalog.tsx` y `CatalogCard.tsx`: navegación y tarjetas reutilizables.
 - `src/games/components/GameRunner.tsx`: sesión, configuración, puntuación e historial.
 - `src/games/components/game-round.tsx`: registro de motores y resumen común.
@@ -62,13 +62,23 @@ Para relacionar, las traducciones visibles deben distinguirse inequívocamente e
 
 ## Añadir un modo
 
-1. Añade el identificador a `GameMode` si aún no existe; los trece modos previstos ya están declarados.
+1. Añade el identificador a `GameMode` si aún no existe; los catorce modos actuales ya están declarados.
 2. Implementa el motor reutilizable en `engines/`, utilizando el contenido de la sesión. Si necesita otra interacción (audio, temporizador…), amplía el contrato de contenido/controlador según corresponda.
 3. Añádelo a `ImplementedMode`, declara sus metadatos y disponibilidad en `config/gameModes.ts` y registra el componente en `components/game-round.tsx`.
 4. Añade título y descripción a `catalog.modes` en los tres JSON de `src/i18n`.
 5. Habilítalo solo en los temas compatibles mediante `availableGameModes`. No es necesario modificar los demás temas ni las rutas.
 
-Los modos previstos no tienen enlaces hasta estar implementados. Partida rápida (repaso variado), repasar errores y reto diario están preparados en configuración y señalados como futuros; todavía no generan sesiones. Los niveles y habilidades son metadatos, no filtros activos.
+Todos los modos declarados tienen motor: imagen → palabra, traducción, relacionar, opciones múltiples, completar palabras, ordenar letras, escuchar y escribir, escuchar y elegir, memoria, contrarreloj, palabra intrusa, completar frases, repaso variado y bingo. Los niveles y habilidades son metadatos, no filtros activos.
+
+- `/es/games/practice/quick`: ocho ejercicios de temas distintos, combinando traducción, opciones y reconocimiento visual.
+- `/es/games/practice/mistakes`: hasta ocho contenidos fallados para la pareja de idiomas seleccionada. El estado vacío explica cómo empezar. Un acierto elimina el contenido pendiente.
+- `/es/games/practice/daily`: ocho temas seleccionados con una semilla basada en la fecha local del dispositivo. La selección permanece estable ese día, incluso al recargar; los resultados de cada intento se guardan en el historial.
+
+Los errores nuevos se guardan bajo `arrow-learn-games:mistakes:v1`, con área, tema, ID del contenido e idiomas. Los historiales antiguos se conservan, pero no permiten recuperar errores por palabra. Las sesiones mixtas mantienen la identidad original del contenido.
+
+Contrarreloj concede 20 segundos por pregunta y registra 0 puntos al agotarse el tiempo. Memoria oculta las tarjetas y puntúa las parejas sin confusiones. Completar frases pide solo la palabra omitida; completar palabras y ordenar letras piden la palabra completa. La intrusa muestra la categoría de las otras tres palabras para evitar ambigüedad.
+
+Los juegos de audio utilizan las voces de síntesis del navegador. Si el idioma no tiene voz disponible o falla la reproducción, se muestra un aviso y se puede saltar la pregunta sin puntos. Los pronombres con traducciones ambiguas no ofrecen audio ni parejas.
 
 ## Reglas e historial
 
@@ -106,9 +116,9 @@ Se conservan colores, tipografías, superficies, cabecera y componentes existent
 
 Configura `NEXT_PUBLIC_SITE_URL` antes de compilar. Si falta, se usa `VERCEL_PROJECT_PRODUCTION_URL` o `http://localhost:3000`. La imagen social sigue siendo `public/og.png`.
 
-## Siguientes pasos
+## Ampliaciones
 
-Añadir contenido real de comida/casa/ropa; implementar audio y opciones múltiples; guardar errores por ítem para el repaso; introducir un planificador de sesiones mixtas y retos diarios; activar filtros cuando aumente el catálogo.
+Se puede añadir más contenido siguiendo el contrato de `Topic`. Las modalidades, los accesos de práctica y el repaso de errores ya están disponibles.
 
 ## Juegos de números y tiempos verbales
 

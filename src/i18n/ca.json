@@ -51,9 +51,9 @@
     ]
   },
   "coming": {
-    "kicker": "AIXÒ TOT JUST COMENÇA",
-    "title": "Ben aviat, més maneres de jugar.",
-    "description": "Estem preparant aquest espai per omplir-lo d'experiències d'aprenentatge."
+    "kicker": "CONTINUA DESCOBRINT",
+    "title": "Més maneres d’aprendre jugant.",
+    "description": "Prova memòria, àudio i contrarellotge, repassa els errors o completa el repte diari."
   },
   "footer": "Fet per a ments curioses.",
   "games": {
@@ -264,5 +264,18 @@
     "boardHint": "Els nombres cantats es ratllen automàticament. Prem-ne un de ratllat per tornar-lo a escoltar.",
     "drawn": "Ja ha sortit",
     "notDrawn": "Encara no ha sortit"
+  },
+  "play": {
+    "timer": "20 segons per pregunta",
+    "audioUnavailable": "No hi ha cap veu disponible per a aquest idioma. Pots saltar la pregunta sense punts o triar un altre idioma.",
+    "skip": "Saltar pregunta",
+    "outsideGroup": "Tria la paraula que NO pertany a:",
+    "wholeWord": "Escriu la paraula completa amb les lletres en ordre.",
+    "missingWord": "Escriu només la paraula que falta.",
+    "memoryNote": "Gira dues targetes i troba una paraula i la seva traducció. 10 punts per parella sense errors; les parelles confoses sumen 0.",
+    "card": "Targeta",
+    "dailyNote": "Vuit temes diferents. La selecció es manté durant el dia segons la data del dispositiu. Pots repetir el repte i comparar els resultats a l’historial.",
+    "mistakesNote": "Repassa els errors nous de les partides en aquest navegador. Tria els mateixos idiomes d’origen i de pràctica. Cada encert retira el contingut del repàs; l’historial antic no conté errors per paraula.",
+    "emptyMistakes": "No tens errors pendents per a aquests idiomes. Juga una ronda o tria una altra combinació per continuar practicant."
   }
 }

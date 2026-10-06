@@ -108,8 +108,11 @@ export function GameCatalog({
                       icon={item.icon}
                       title={m.shortcutsData[item.id].title}
                       description={m.shortcutsData[item.id].description}
-                      href={item.status === "available" ? "#topics" : undefined}
-                      badge={item.status === "planned" ? m.soon : undefined}
+                      href={
+                        item.id === "topic"
+                          ? "#topics"
+                          : `/${locale}/games/practice/${item.id}`
+                      }
                     />
                   ))}
                 </div>

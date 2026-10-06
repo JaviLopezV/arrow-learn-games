@@ -122,5 +122,25 @@ export const topics: Topic[] = [
     }),
   ),
 ];
+// Enable only mechanics supported by the content, keeping ambiguous pronouns out of pairs/audio.
+for (const topic of topics) {
+  topic.availableGameModes.push(
+    "multiple-choice",
+    "speed-round",
+    "mixed-review",
+  );
+  if (topic.reference !== "subject-pronouns") {
+    topic.availableGameModes.push(
+      "listen-and-write",
+      "listen-and-choose",
+      "memory",
+    );
+  }
+  if (topic.area === "vocabulary") {
+    topic.availableGameModes.push("complete-word", "unscramble", "odd-one-out");
+  } else if (topic.reference !== "subject-pronouns") {
+    topic.availableGameModes.push("sentence-context");
+  }
+}
 export const getTopic = (area: string, id: string) =>
   topics.find((topic) => topic.area === area && topic.id === id);

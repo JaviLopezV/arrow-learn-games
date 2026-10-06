@@ -9,6 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/topics",
     "/games",
+    ...["quick", "mistakes", "daily"].map(
+      (strategy) => `/games/practice/${strategy}`,
+    ),
     ...learningAreas.map((a) => `/games/${a.id}`),
     ...topics.flatMap((t) => {
       const path = `/games/${t.area}/${t.id}`;

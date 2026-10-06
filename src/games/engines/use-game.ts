@@ -10,6 +10,8 @@ import type {
   Topic,
 } from "../types/game.types";
 import { loadSessionHistory, sessionHistoryKey } from "../utils/history";
+import { exercise } from "../utils/exercises";
+import { saveMistake } from "../utils/practice";
 import { mergeHistory, type GameResult } from "@/lib/game-history";
 type Round = {
   id: string;
@@ -43,6 +45,7 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
   const [ready, setReady] = useState(false);
   const [storageError, setStorageError] = useState(false);
   const [round, setRound] = useState<Round | null>(null);
+  const [emptyDeck, setEmptyDeck] = useState(false);
   const [answer, setAnswer] = useState("");
   const locked = useRef(false);
   const input = useRef<HTMLInputElement>(null);
@@ -105,10 +108,24 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
   function start() {
     locked.current = false;
     setAnswer("");
-    const deck =
-      topic.createDeck?.() ??
-      shuffleDeck(topic.items).slice(0, topic.roundSize ?? topic.items.length);
-    if (!deck.length) return;
+    setEmptyDeck(false);
+    let deck: ContentItem[];
+    try {
+      deck =
+        topic.createDeck?.(target, source) ??
+        shuffleDeck(topic.items).slice(
+          0,
+          topic.roundSize ?? topic.items.length,
+        );
+    } catch {
+      setStorageError(true);
+      return;
+    }
+    if (!deck.length) {
+      setRound(null);
+      setEmptyDeck(true);
+      return;
+    }
     const fresh: Round = {
       id: crypto.randomUUID(),
       startedAt: new Date().toISOString(),
@@ -128,21 +145,43 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
     saveResult(fresh, 0);
   }
 
-  function submit(event: React.FormEvent) {
-    event.preventDefault();
+  function recordAnswer(item: ContentItem, correct: boolean) {
+    if (!round) return;
+    try {
+      saveMistake(
+        localStorage,
+        topic,
+        item,
+        round.target,
+        round.source,
+        correct,
+      );
+    } catch {
+      setStorageError(true);
+    }
+  }
+
+  function respond(value: string, timedOut = false) {
     if (
       !round ||
       round.done ||
       round.result !== null ||
-      !answer.trim() ||
-      locked.current
+      locked.current ||
+      (!value.trim() && !timedOut)
     )
       return;
     locked.current = true;
-    const correct = isCorrect(
-      answer,
-      round.deck[round.index].words[round.target],
+    const item = round.deck[round.index];
+    const question = exercise(
+      round.mode,
+      item,
+      topic.items,
+      round.target,
+      `${round.id}/${round.index}`,
+      round.index,
     );
+    const correct = !timedOut && isCorrect(value, question.accepted);
+    recordAnswer(item, correct);
     const updated = {
       ...round,
       result: correct,
@@ -152,10 +191,15 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
     saveResult(updated, round.index + 1);
   }
 
+  function submit(event: React.FormEvent) {
+    event.preventDefault();
+    respond(answer);
+  }
+
   function match(sourceId: string, targetId: string) {
     if (
       !round ||
-      round.mode !== "matching" ||
+      (round.mode !== "matching" && round.mode !== "memory") ||
       round.done ||
       locked.current ||
       round.matched.includes(sourceId) ||
@@ -163,13 +207,22 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
     )
       return;
     if (sourceId !== targetId) {
+      const failedIds =
+        round.mode === "memory" ? [sourceId, targetId] : [sourceId];
+      for (const id of failedIds) {
+        const failed = round.deck.find((item) => item.id === id);
+        if (failed) recordAnswer(failed, false);
+      }
       setRound({
         ...round,
-        mistakes: [...new Set([...round.mistakes, sourceId])],
+        mistakes: [...new Set([...round.mistakes, ...failedIds])],
       });
       return;
     }
     locked.current = true;
+    const matchedItem = round.deck.find((item) => item.id === sourceId);
+    if (matchedItem && !round.mistakes.includes(sourceId))
+      recordAnswer(matchedItem, true);
     const answered = round.matched.length + 1;
     const updated = {
       ...round,
@@ -205,6 +258,8 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
     messages[locale].catalog.modes[value].title;
   return {
     m,
+    emptyDeck,
+    respond,
     mode,
     target,
     setTarget,

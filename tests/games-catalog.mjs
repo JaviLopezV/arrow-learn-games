@@ -39,6 +39,31 @@ const { loadSessionHistory, sessionHistoryKey } = load(
 const { historyKey } = load("src/lib/game-history.ts");
 const { messages } = load("src/i18n/messages.ts");
 const { languages } = load("src/lib/animals.ts");
+const vocabularyModes = [
+  "image-to-word",
+  "translation",
+  "matching",
+  "multiple-choice",
+  "complete-word",
+  "unscramble",
+  "listen-and-write",
+  "listen-and-choose",
+  "memory",
+  "speed-round",
+  "odd-one-out",
+  "mixed-review",
+];
+const sentenceModes = [
+  "translation",
+  "matching",
+  "multiple-choice",
+  "listen-and-write",
+  "listen-and-choose",
+  "memory",
+  "speed-round",
+  "sentence-context",
+  "mixed-review",
+];
 const animals = getTopic("vocabulary", "animals");
 const phrases = getTopic("phrases", "everyday-conversation");
 const pronouns = getTopic("grammar", "subject-pronouns");
@@ -46,11 +71,11 @@ const pronouns = getTopic("grammar", "subject-pronouns");
 test("content is reusable across mechanics without leaking incompatible routes", () => {
   assert.deepEqual(
     availableModes(animals).map((m) => m.id),
-    ["image-to-word", "translation", "matching"],
+    vocabularyModes,
   );
   assert.deepEqual(
     availableModes(pronouns).map((m) => m.id),
-    ["translation"],
+    ["translation", "multiple-choice", "speed-round", "mixed-review"],
   );
   assert.equal(getTopic("grammar", "animals"), undefined);
   assert.equal(getTopic("vocabulary", "unknown"), undefined);
@@ -62,7 +87,7 @@ test("content is reusable across mechanics without leaking incompatible routes",
   };
   assert.deepEqual(
     availableModes(newTopic).map((m) => m.id),
-    ["translation", "matching"],
+    vocabularyModes.filter((mode) => mode !== "image-to-word"),
   );
   assert.ok(
     gameModes
@@ -199,7 +224,7 @@ test("number vocabulary covers 1–99 and irregular forms across six languages",
   assert.throws(() => numberWord(100, "es"), RangeError);
   assert.deepEqual(
     availableModes(getTopic("vocabulary", "numbers")).map((m) => m.id),
-    ["bingo", "image-to-word", "translation", "matching"],
+    ["bingo", ...vocabularyModes],
   );
 });
 
@@ -230,7 +255,7 @@ test("new vocabulary topics offer playable visual, translation and matching roun
     assert.equal(topic.roundSize, 8);
     assert.deepEqual(
       availableModes(topic).map((mode) => mode.id),
-      ["image-to-word", "translation", "matching"],
+      vocabularyModes,
     );
     assert.ok(topic.items.every((item) => item.emoji || item.image));
     for (const language of Object.keys(languages)) {
@@ -252,7 +277,7 @@ test("new vocabulary topics offer playable visual, translation and matching roun
       keys.add(sessionHistoryKey(topic, mode.id));
     assert.ok(lessons.some((lesson) => lesson.id === id));
   }
-  assert.equal(keys.size, 15);
+  assert.equal(keys.size, 5 * vocabularyModes.length);
 });
 test("every playable topic has learning tips in every interface language", () => {
   for (const topic of lessons)
@@ -267,7 +292,7 @@ test("tense games have distinct multilingual pairs and short rounds", () => {
     assert.equal(topic.items.length, 8);
     assert.deepEqual(
       availableModes(topic).map((mode) => mode.id),
-      ["translation", "matching"],
+      sentenceModes,
     );
     for (const language of Object.keys(languages)) {
       assert.equal(
@@ -279,4 +304,107 @@ test("tense games have distinct multilingual pairs and short rounds", () => {
   const numbers = getTopic("vocabulary", "numbers");
   assert.equal(numbers.roundSize, 8);
   assert.ok(numbers.items.every((item) => item.emoji === item.id));
+});
+
+const {
+  practiceDeck,
+  practiceItems,
+  readMistakes,
+  updateMistakes,
+  saveMistake,
+} = load("src/games/utils/practice.ts");
+const { exercise } = load("src/games/utils/exercises.ts");
+test("daily practice is stable, diverse, changes by date and never mutates topics", () => {
+  const before = JSON.stringify(topics);
+  const a = practiceDeck(topics, "daily", "en", "es", [], "2026-10-06");
+  assert.deepEqual(
+    a,
+    practiceDeck(topics, "daily", "en", "es", [], "2026-10-06"),
+  );
+  assert.deepEqual(
+    a,
+    practiceDeck(topics, "daily", "fr", "ca", [], "2026-10-06"),
+  );
+  assert.notDeepEqual(
+    a,
+    practiceDeck(topics, "daily", "en", "es", [], "2026-10-07"),
+  );
+  assert.equal(a.length, 8);
+  assert.equal(new Set(a.map((i) => i.origin.topic)).size, 8);
+  assert.equal(JSON.stringify(topics), before);
+  const items = practiceItems(topics);
+  assert.equal(new Set(items.map((i) => i.id)).size, items.length);
+});
+test("mistake review isolates language pairs, deduplicates and removes mastered items", () => {
+  const mistake = {
+    area: "vocabulary",
+    topic: "animals",
+    item: "cat",
+    target: "en",
+    source: "es",
+  };
+  const entries = updateMistakes(
+    updateMistakes([], mistake, false),
+    mistake,
+    false,
+  );
+  assert.equal(entries.length, 1);
+  assert.equal(practiceDeck(topics, "mistakes", "en", "es", entries).length, 1);
+  assert.equal(practiceDeck(topics, "mistakes", "fr", "es", entries).length, 0);
+  assert.equal(practiceDeck(topics, "mistakes", "en", "ca", entries).length, 0);
+  assert.deepEqual(updateMistakes(entries, mistake, true), []);
+  for (const raw of ["broken", "null", "{}", '[{"target":"xx"}]'])
+    assert.deepEqual(readMistakes(raw), []);
+  const data = new Map();
+  const storage = {
+    getItem: (key) => data.get(key),
+    setItem: (key, value) => data.set(key, value),
+  };
+  const item = practiceItems(topics).find((i) => i.origin.item === "cat");
+  saveMistake(storage, animals, item, "en", "es", false);
+  assert.deepEqual(readMistakes([...data.values()][0]), entries);
+  saveMistake(storage, animals, item, "en", "es", true);
+  assert.deepEqual(readMistakes([...data.values()][0]), []);
+});
+test("every new question has valid, unambiguous answers in six languages", () => {
+  for (const topic of topics)
+    for (const mode of availableModes(topic))
+      for (const target of Object.keys(languages)) {
+        for (const [index, item] of topic.items.entries()) {
+          const q = exercise(
+            mode.id,
+            item,
+            topic.items,
+            target,
+            "test/" + index,
+            index,
+          );
+          assert.ok(q.accepted.every((word) => word.trim()));
+          if (q.options.length) {
+            assert.equal(new Set(q.options).size, q.options.length);
+            assert.equal(
+              q.options.filter((option) => q.accepted.includes(option)).length,
+              1,
+            );
+            assert.ok(q.options.length >= 2);
+          }
+          if (mode.id === "sentence-context")
+            assert.ok(q.clue.includes("_____"));
+          if (mode.id === "complete-word") assert.ok(q.clue.includes("_"));
+          if (mode.id === "odd-one-out") assert.notEqual(q.group, topic.id);
+        }
+      }
+});
+test("all declared mechanics are available and incompatible combinations stay hidden", () => {
+  assert.ok(gameModes.every((mode) => mode.status === "available"));
+  assert.ok(
+    !availableModes(pronouns).some((mode) =>
+      ["memory", "listen-and-write", "listen-and-choose", "matching"].includes(
+        mode.id,
+      ),
+    ),
+  );
+  assert.ok(
+    !availableModes(animals).some((mode) => mode.id === "sentence-context"),
+  );
 });

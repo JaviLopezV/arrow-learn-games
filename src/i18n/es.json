@@ -51,9 +51,9 @@
     ]
   },
   "coming": {
-    "kicker": "ESTO ACABA DE EMPEZAR",
-    "title": "Próximamente, más formas de jugar.",
-    "description": "Estamos preparando este espacio para llenarlo de experiencias de aprendizaje."
+    "kicker": "SIGUE DESCUBRIENDO",
+    "title": "Más formas de aprender jugando.",
+    "description": "Prueba memoria, audio y contrarreloj, repasa tus errores o completa el reto diario."
   },
   "footer": "Hecho para mentes curiosas.",
   "games": {
@@ -264,5 +264,18 @@
     "boardHint": "Los números cantados se tachan automáticamente. Pulsa uno tachado para volver a escucharlo.",
     "drawn": "Ya ha salido",
     "notDrawn": "Todavía no ha salido"
+  },
+  "play": {
+    "timer": "20 segundos por pregunta",
+    "audioUnavailable": "No hay una voz disponible para este idioma. Puedes saltar esta pregunta sin puntos o elegir otro idioma.",
+    "skip": "Saltar pregunta",
+    "outsideGroup": "Elige la palabra que NO pertenece a:",
+    "wholeWord": "Escribe la palabra completa con las letras en orden.",
+    "missingWord": "Escribe solo la palabra que falta.",
+    "memoryNote": "Gira dos tarjetas y encuentra una palabra y su traducción. 10 puntos por pareja sin errores; las parejas confundidas suman 0.",
+    "card": "Tarjeta",
+    "dailyNote": "Ocho temas distintos. La selección se mantiene durante el día según la fecha de tu dispositivo. Puedes repetir el reto y comparar tus resultados en el historial.",
+    "mistakesNote": "Repasa los errores nuevos de tus partidas en este navegador. Elige los mismos idiomas de origen y práctica. Cada acierto retira ese contenido del repaso; el historial antiguo no contiene errores por palabra.",
+    "emptyMistakes": "No tienes errores pendientes para estos idiomas. Juega una ronda o elige otra combinación para seguir practicando."
   }
 }

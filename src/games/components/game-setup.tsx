@@ -13,6 +13,7 @@ import {
   TableCell,
 } from "@mui/material";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import { messages } from "@/i18n/messages";
 import { languages } from "@/lib/animals";
 import type { GameController } from "../engines/use-game";
 import { GameLanguageSettings } from "./game-language-settings";
@@ -36,7 +37,12 @@ export function GameSetup({ game }: { game: GameController }) {
         component="p"
         sx={{ mt: 2.75, color: "#70748d", fontSize: 13, lineHeight: 1.7 }}
       >
-        {mode === "matching" ? m.matchingRules : m.rules}
+        {mode === "memory"
+          ? messages[locale].play.memoryNote
+          : mode === "matching"
+            ? m.matchingRules
+            : m.rules}
+        {mode === "speed-round" && ` ${messages[locale].play.timer}.`}
       </Typography>
       {topic.reference === "subject-pronouns" && (
         <Accordion sx={{ mt: 3 }}>

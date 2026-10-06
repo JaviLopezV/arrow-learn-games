@@ -17,7 +17,7 @@ export type GameMode =
   | "odd-one-out"
   | "sentence-context"
   | "mixed-review";
-export type StandardMode = "image-to-word" | "translation" | "matching";
+export type StandardMode = Exclude<GameMode, "bingo">;
 export type ImplementedMode = StandardMode | "bingo";
 export type LocalizedText = Record<Locale, string>;
 export type ContentItem = {
@@ -26,6 +26,7 @@ export type ContentItem = {
   image?: string;
   emoji?: string;
   context?: LocalizedText;
+  origin?: { area: LearningArea; topic: string; item: string };
 };
 export type Topic = {
   id: string;
@@ -36,7 +37,7 @@ export type Topic = {
   items: ContentItem[];
   availableGameModes: ImplementedMode[];
   roundSize?: number;
-  createDeck?: () => ContentItem[];
+  createDeck?: (target: Language, source: Language) => ContentItem[];
   reference?: "subject-pronouns";
   legacyHistory?: Partial<Record<ImplementedMode, Mode>>;
 };

@@ -83,7 +83,7 @@ export const legalDocuments = {
       ],
       [
         "Historial de juegos",
-        "localStorage guarda arrow-learn-games:history:v3:<área>:<tema>:<modo>, con identificadores de partida, fecha, idiomas, puntos, número de respuestas y estado de finalización. Versiones anteriores pueden conservar arrow-learn-games:history:v2:<modo> y arrow-learn-games:score:v1; la aplicación puede leerlos para compatibilidad. Estos datos no contienen una cuenta de usuario ni se sincronizan con un servidor.",
+        "localStorage guarda arrow-learn-games:history:v3:<área>:<tema>:<modo>, con identificadores de partida, fecha, idiomas, puntos, número de respuestas y estado de finalización. arrow-learn-games:mistakes:v1 guarda los identificadores del contenido fallado y los idiomas para el repaso de errores. Versiones anteriores pueden conservar arrow-learn-games:history:v2:<modo> y arrow-learn-games:score:v1; la aplicación puede leerlos para compatibilidad. Estos datos no contienen una cuenta de usuario ni se sincronizan con un servidor.",
       ],
       [
         "Progreso y preferencias",

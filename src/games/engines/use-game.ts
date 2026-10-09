@@ -9,25 +9,9 @@ import type {
   StandardMode as ImplementedMode,
   Topic,
 } from "../types/game.types";
-import { loadSessionHistory, sessionHistoryKey } from "../utils/history";
 import { exercise } from "../utils/exercises";
-import { saveMistake } from "../utils/practice";
-import { mergeHistory, type GameResult } from "@/lib/game-history";
-type Round = {
-  id: string;
-  startedAt: string;
-  deck: ContentItem[];
-  matched: string[];
-  mistakes: string[];
-  choices: ContentItem[];
-  index: number;
-  points: number;
-  result: boolean | null;
-  done: boolean;
-  mode: ImplementedMode;
-  target: Language;
-  source: Language;
-};
+import type { Round } from "../types/round.types";
+import { useGamePersistence } from "./use-game-persistence";
 
 type UseGameOptions = {
   locale: Locale;
@@ -39,12 +23,16 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
   const m = messages[locale].games;
   const [target, setTarget] = useState<Language>(locale === "en" ? "es" : "en");
   const [source, setSource] = useState<Language>(locale);
-  const [history, setHistory] = useState<GameResult[]>([]);
-  const historyRef = useRef<GameResult[]>([]);
-  const [legacyScore, setLegacyScore] = useState(false);
-  const [ready, setReady] = useState(false);
-  const [storageError, setStorageError] = useState(false);
   const [round, setRound] = useState<Round | null>(null);
+  const {
+    history,
+    ready,
+    legacyScore,
+    storageError,
+    setStorageError,
+    saveResult,
+    recordAnswer,
+  } = useGamePersistence(topic, mode, round);
   const [emptyDeck, setEmptyDeck] = useState(false);
   const [answer, setAnswer] = useState("");
   const locked = useRef(false);
@@ -53,57 +41,10 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
   const resultTitle = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    try {
-      const loaded = loadSessionHistory(localStorage, topic, mode);
-      historyRef.current = loaded;
-      setHistory(loaded);
-      setLegacyScore(
-        localStorage.getItem("arrow-learn-games:score:v1") !== null,
-      );
-    } catch {
-      setStorageError(true);
-    }
-    setReady(true);
-  }, [topic, mode]);
-
-  useEffect(() => {
     if (round?.done) resultTitle.current?.focus();
     else if (round?.result !== null && round) feedbackButton.current?.focus();
     else if (round) input.current?.focus();
   }, [round]);
-
-  function saveResult(current: Round, answered: number) {
-    const result: GameResult = {
-      id: current.id,
-      startedAt: current.startedAt,
-      target: current.target,
-      source: current.source,
-      points: current.points,
-      answered,
-      total: current.deck.length,
-      completed: answered === current.deck.length,
-    };
-    let previous = historyRef.current;
-    try {
-      previous = mergeHistory(
-        loadSessionHistory(localStorage, topic, current.mode),
-        previous,
-      );
-    } catch {
-      setStorageError(true);
-    }
-    const updated = mergeHistory(previous, [result]);
-    historyRef.current = updated;
-    setHistory(historyRef.current);
-    try {
-      localStorage.setItem(
-        sessionHistoryKey(topic, current.mode),
-        JSON.stringify(updated),
-      );
-    } catch {
-      setStorageError(true);
-    }
-  }
 
   function start() {
     locked.current = false;
@@ -143,22 +84,6 @@ export function useGame({ locale, topic, mode }: UseGameOptions) {
     };
     setRound(fresh);
     saveResult(fresh, 0);
-  }
-
-  function recordAnswer(item: ContentItem, correct: boolean) {
-    if (!round) return;
-    try {
-      saveMistake(
-        localStorage,
-        topic,
-        item,
-        round.target,
-        round.source,
-        correct,
-      );
-    } catch {
-      setStorageError(true);
-    }
   }
 
   function respond(value: string, timedOut = false) {

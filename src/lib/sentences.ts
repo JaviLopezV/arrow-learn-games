@@ -1,6 +1,7 @@
+import { japaneseWords } from "./japanese";
 import { shuffleDeck, type Language } from "./animals";
 
-// Each row expresses the same meaning in all six languages.
+// Each row expresses the same meaning in the original six languages.
 const rows = [
   [
     "happy-i",
@@ -151,6 +152,7 @@ const rows = [
 export const sentences = rows.map(([id, es, ca, en, fr, de, it]) => ({
   id,
   words: {
+    ja: japaneseWords(id),
     es: [es],
     ca: [ca],
     en: [en],

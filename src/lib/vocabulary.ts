@@ -1,3 +1,4 @@
+import { japaneseWords } from "./japanese";
 import type { ContentItem } from "@/games/types/game.types";
 import { food } from "./vocabulary/food";
 import { home } from "./vocabulary/home";
@@ -15,6 +16,7 @@ export function vocabularyItems(topic: VocabularyTopic): ContentItem[] {
     id,
     emoji,
     words: {
+      ja: japaneseWords(id),
       es: es.split("/"),
       ca: ca.split("/"),
       en: en.split("/"),

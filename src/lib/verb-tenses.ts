@@ -1,3 +1,4 @@
+import { japaneseWords } from "./japanese";
 import type { ContentItem } from "@/games/types/game.types";
 
 // Full sentences make the subject and time explicit in every practice language.
@@ -215,6 +216,7 @@ export function tenseItems(tense: keyof typeof sentences): ContentItem[] {
   return sentences[tense].map(([es, ca, en, fr, de, it], index) => ({
     id: `${tense}-${index + 1}`,
     words: {
+      ja: japaneseWords(`${tense}-${index + 1}`),
       es: [es, es.replace(/^(Yo|Tú|Ella|Él) /, "")],
       ca: [ca, ca.replace(/^(Jo|Tu|Ella|Ell) /, "")],
       en: [

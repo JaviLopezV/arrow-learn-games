@@ -16,6 +16,7 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import { messages } from "@/i18n/messages";
 import { languages } from "@/lib/animals";
 import type { GameController } from "../engines/use-game";
+import { JapanesePronunciationNote } from "./japanese-pronunciation-note";
 import { GameLanguageSettings } from "./game-language-settings";
 
 export function GameSetup({ game }: { game: GameController }) {
@@ -33,6 +34,9 @@ export function GameSetup({ game }: { game: GameController }) {
       className="game-setup"
     >
       <GameLanguageSettings game={game} />
+      {(source === "ja" || target === "ja") && (
+        <JapanesePronunciationNote locale={locale} />
+      )}
       <Typography
         component="p"
         sx={{ mt: 2.75, color: "#70748d", fontSize: 13, lineHeight: 1.7 }}

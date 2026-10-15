@@ -8,7 +8,7 @@ import {
   canMarkBingoNumber,
   completedLines,
 } from "@/lib/bingo";
-import { numberWord } from "@/lib/numbers";
+import { japaneseNumberText, numberWord } from "@/lib/numbers";
 
 export type BingoRound = {
   card: (number | null)[][];
@@ -23,6 +23,7 @@ const voiceLocales: Record<Language, string> = {
   fr: "fr-FR",
   de: "de-DE",
   it: "it-IT",
+  ja: "ja-JP",
 };
 
 export function useBingo(locale: Locale) {
@@ -56,7 +57,9 @@ export function useBingo(locale: Locale) {
         return;
       }
       window.speechSynthesis.cancel();
-      const speech = new SpeechSynthesisUtterance(numberWord(n, language));
+      const speech = new SpeechSynthesisUtterance(
+        language === "ja" ? japaneseNumberText(n) : numberWord(n, language),
+      );
       speech.lang = voiceLocales[language];
       speech.rate = 0.8;
       speech.onerror = (event) => {

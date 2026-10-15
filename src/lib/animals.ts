@@ -1,3 +1,4 @@
+import { japaneseWords } from "./japanese";
 export const languages = {
   es: "Español",
   ca: "Català",
@@ -5,6 +6,7 @@ export const languages = {
   fr: "Français",
   de: "Deutsch",
   it: "Italiano",
+  ja: "Japonés",
 } as const;
 export type Language = keyof typeof languages;
 export type Mode = "picture" | "translation" | "pronouns" | "matching";
@@ -12,6 +14,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "cat",
     words: {
+      ja: japaneseWords("cat"),
       es: ["gato", "gata"],
       ca: ["gat", "gata"],
       en: ["cat"],
@@ -23,6 +26,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "dog",
     words: {
+      ja: japaneseWords("dog"),
       es: ["perro", "perra"],
       ca: ["gos", "gossa"],
       en: ["dog"],
@@ -34,6 +38,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "rabbit",
     words: {
+      ja: japaneseWords("rabbit"),
       es: ["conejo", "coneja"],
       ca: ["conill", "conilla"],
       en: ["rabbit", "bunny"],
@@ -45,6 +50,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "fox",
     words: {
+      ja: japaneseWords("fox"),
       es: ["zorro", "zorra"],
       ca: ["guineu"],
       en: ["fox"],
@@ -56,6 +62,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "bear",
     words: {
+      ja: japaneseWords("bear"),
       es: ["oso", "osa"],
       ca: ["ós", "ossa"],
       en: ["bear"],
@@ -67,6 +74,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "pig",
     words: {
+      ja: japaneseWords("pig"),
       es: ["cerdo", "cerda"],
       ca: ["porc", "truja"],
       en: ["pig"],
@@ -78,6 +86,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "cow",
     words: {
+      ja: japaneseWords("cow"),
       es: ["vaca"],
       ca: ["vaca"],
       en: ["cow"],
@@ -89,6 +98,7 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
   {
     id: "panda",
     words: {
+      ja: japaneseWords("panda"),
       es: ["panda"],
       ca: ["panda"],
       en: ["panda"],

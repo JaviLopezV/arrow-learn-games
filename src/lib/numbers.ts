@@ -1,6 +1,7 @@
 import type { Language } from "./animals";
 
 const small: Record<Language, string[]> = {
+  ja: "zero ichi ni san yon go roku nana jachi kiuu lluu".split(" "),
   es: "cero uno dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciséis diecisiete dieciocho diecinueve veinte veintiuno veintidós veintitrés veinticuatro veinticinco veintiséis veintisiete veintiocho veintinueve".split(
     " ",
   ),
@@ -21,6 +22,7 @@ const small: Record<Language, string[]> = {
   ),
 };
 const tens: Record<Language, string[]> = {
+  ja: [],
   es: [
     "",
     "",
@@ -86,6 +88,10 @@ const tens: Record<Language, string[]> = {
 export function numberWord(n: number, language: Language): string {
   if (!Number.isInteger(n) || n < 1 || n > 99)
     throw new RangeError("Expected 1–99");
+  if (language === "ja" && n >= 10) {
+    const ten = Math.floor(n / 10);
+    return `${ten === 1 ? "" : `${small.ja[ten]} `}lluu${n % 10 ? ` ${small.ja[n % 10]}` : ""}`;
+  }
   if (small[language][n]) return small[language][n];
   const unit = n % 10;
   const ten = tens[language][Math.floor(n / 10)];
@@ -109,12 +115,21 @@ export function numberWord(n: number, language: Language): string {
     return `${unit === 1 || unit === 8 ? ten.slice(0, -1) : ten}${unit === 3 ? "tré" : small.it[unit]}`;
   return `${ten}${language === "es" ? " y " : language === "ca" && n < 30 ? "-i-" : "-"}${small[language][unit]}`;
 }
+export function japaneseNumberText(n: number): string {
+  if (!Number.isInteger(n) || n < 1 || n > 99)
+    throw new RangeError("Expected 1–99");
+  const digits = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+  return `${n >= 10 ? `${n < 20 ? "" : digits[Math.floor(n / 10)]}十` : ""}${digits[n % 10]}`;
+}
+
 export const numbers = Array.from({ length: 99 }, (_, i) => ({
   id: String(i + 1),
   words: Object.fromEntries(
     (Object.keys(small) as Language[]).map((language) => [
       language,
-      [numberWord(i + 1, language)],
+      language === "ja"
+        ? [numberWord(i + 1, language), japaneseNumberText(i + 1)]
+        : [numberWord(i + 1, language)],
     ]),
   ) as Record<Language, string[]>,
 }));

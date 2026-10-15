@@ -43,7 +43,9 @@ export function WritingPrompt({
       return;
     }
     window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(item.words[round.target][0]);
+    const utterance = new SpeechSynthesisUtterance(
+      round.target === "ja" ? item.words.ja[1] : item.words[round.target][0],
+    );
     utterance.lang = {
       es: "es-ES",
       ca: "ca-ES",
@@ -51,6 +53,7 @@ export function WritingPrompt({
       fr: "fr-FR",
       de: "de-DE",
       it: "it-IT",
+      ja: "ja-JP",
     }[round.target];
     const voices = window.speechSynthesis.getVoices();
     const voice = voices.find((candidate) =>

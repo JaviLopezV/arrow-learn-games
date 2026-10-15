@@ -9,6 +9,7 @@ import {
   Paper,
   Select,
 } from "@mui/material";
+import { JapanesePronunciationNote } from "./japanese-pronunciation-note";
 import { BingoDrawBoard } from "./bingo-draw-board";
 import { messages, type Locale } from "@/i18n/messages";
 import { languages, type Language } from "@/lib/animals";
@@ -72,6 +73,7 @@ export function BingoGame({ locale }: { locale: Locale }) {
             </Select>
           </FormControl>
         </Box>
+        {language === "ja" && <JapanesePronunciationNote locale={locale} />}
         {!round ? (
           <Paper
             variant="outlined"

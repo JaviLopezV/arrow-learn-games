@@ -1,3 +1,4 @@
+import { japaneseWords } from "./japanese";
 import type { Language } from "./animals";
 
 // Semantic roles keep ambiguous forms (you, sie, nous…) distinguishable.
@@ -5,6 +6,7 @@ export const pronouns = [
   {
     id: "firstSingular" as const,
     words: {
+      ja: japaneseWords("firstSingular"),
       es: ["yo"],
       ca: ["jo"],
       en: ["I"],
@@ -16,6 +18,7 @@ export const pronouns = [
   {
     id: "secondSingular" as const,
     words: {
+      ja: japaneseWords("secondSingular"),
       es: ["tú", "vos"],
       ca: ["tu"],
       en: ["you"],
@@ -27,6 +30,7 @@ export const pronouns = [
   {
     id: "thirdMasculine" as const,
     words: {
+      ja: japaneseWords("thirdMasculine"),
       es: ["él"],
       ca: ["ell"],
       en: ["he"],
@@ -38,6 +42,7 @@ export const pronouns = [
   {
     id: "thirdFeminine" as const,
     words: {
+      ja: japaneseWords("thirdFeminine"),
       es: ["ella"],
       ca: ["ella"],
       en: ["she"],
@@ -49,6 +54,7 @@ export const pronouns = [
   {
     id: "firstPluralMasculine" as const,
     words: {
+      ja: japaneseWords("firstPluralMasculine"),
       es: ["nosotros"],
       ca: ["nosaltres"],
       en: ["we"],
@@ -60,6 +66,7 @@ export const pronouns = [
   {
     id: "firstPluralFeminine" as const,
     words: {
+      ja: japaneseWords("firstPluralFeminine"),
       es: ["nosotras"],
       ca: ["nosaltres"],
       en: ["we"],
@@ -71,6 +78,7 @@ export const pronouns = [
   {
     id: "secondPluralMasculine" as const,
     words: {
+      ja: japaneseWords("secondPluralMasculine"),
       es: ["vosotros", "ustedes"],
       ca: ["vosaltres"],
       en: ["you"],
@@ -82,6 +90,7 @@ export const pronouns = [
   {
     id: "secondPluralFeminine" as const,
     words: {
+      ja: japaneseWords("secondPluralFeminine"),
       es: ["vosotras", "ustedes"],
       ca: ["vosaltres"],
       en: ["you"],
@@ -93,6 +102,7 @@ export const pronouns = [
   {
     id: "thirdPluralMasculine" as const,
     words: {
+      ja: japaneseWords("thirdPluralMasculine"),
       es: ["ellos"],
       ca: ["ells"],
       en: ["they"],
@@ -104,6 +114,7 @@ export const pronouns = [
   {
     id: "thirdPluralFeminine" as const,
     words: {
+      ja: japaneseWords("thirdPluralFeminine"),
       es: ["ellas"],
       ca: ["elles"],
       en: ["they"],
@@ -115,6 +126,7 @@ export const pronouns = [
   {
     id: "formalSingular" as const,
     words: {
+      ja: japaneseWords("formalSingular"),
       es: ["usted"],
       ca: ["vostè"],
       en: ["you"],
@@ -126,6 +138,7 @@ export const pronouns = [
   {
     id: "formalPlural" as const,
     words: {
+      ja: japaneseWords("formalPlural"),
       es: ["ustedes"],
       ca: ["vostès"],
       en: ["you"],

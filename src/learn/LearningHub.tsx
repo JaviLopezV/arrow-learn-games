@@ -8,6 +8,7 @@ import { learnCopy } from "./copy";
 import { curriculum, orderedLessons as lessons } from "./curriculum";
 import { curriculumCopy } from "./curriculum-copy";
 import { Lesson } from "./Lesson";
+import { LearningHeader } from "./LearningHeader";
 type Progress = Record<string, string[]>;
 const storageKey = "arrow-learn-syllabus-v1";
 
@@ -70,48 +71,13 @@ export function LearningHub({ locale }: { locale: Locale }) {
   return (
     <section className="learn-page">
       <div className="games-container">
-        <header className="learn-hero">
-          <span className="section-kicker">✦ {m.kicker}</span>
-          <h1>{m.title}</h1>
-          <p>{m.intro}</p>
-          <div className="learn-settings">
-            <label>
-              {m.language}
-              <select
-                value={target}
-                onChange={(event) => {
-                  const value = event.target.value as Language;
-                  setTarget(value);
-                  if (value === source) setSource(target);
-                }}
-              >
-                {Object.entries(languages).map(([id, name]) => (
-                  <option key={id} value={id}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <span aria-hidden="true">↔</span>
-            <label>
-              {m.source}
-              <select
-                value={source}
-                onChange={(event) => {
-                  const value = event.target.value as Language;
-                  setSource(value);
-                  if (value === target) setTarget(source);
-                }}
-              >
-                {Object.entries(languages).map(([id, name]) => (
-                  <option key={id} value={id}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-        </header>
+        <LearningHeader
+          locale={locale}
+          source={source}
+          target={target}
+          setSource={setSource}
+          setTarget={setTarget}
+        />
         <section className="study-overview" aria-labelledby="study-title">
           <div>
             <span className="section-kicker">{languages[target]}</span>

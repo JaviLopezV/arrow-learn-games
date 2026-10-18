@@ -408,3 +408,23 @@ test("all declared mechanics are available and incompatible combinations stay hi
     !availableModes(animals).some((mode) => mode.id === "sentence-context"),
   );
 });
+
+test("study plan covers each topic once with translations in every language", () => {
+  const { curriculum, orderedLessons } = load("src/learn/curriculum.ts");
+  const ids = curriculum.flatMap((stage) => [...stage.topics]);
+  assert.equal(new Set(ids).size, ids.length);
+  assert.deepEqual([...ids].sort(), topics.map((topic) => topic.id).sort());
+  for (const lesson of orderedLessons) {
+    assert.ok(lesson.items.length > 1);
+    for (const item of lesson.items) {
+      for (const language of Object.keys(languages)) {
+        assert.ok(
+          item.words[language]?.length,
+          `${lesson.id}/${item.id}/${language}`,
+        );
+      }
+    }
+  }
+  assert.ok(ids.indexOf("present-tense") < ids.indexOf("past-tense"));
+  assert.ok(ids.indexOf("past-tense") < ids.indexOf("future-tense"));
+});

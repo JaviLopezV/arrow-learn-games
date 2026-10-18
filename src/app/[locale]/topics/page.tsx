@@ -28,9 +28,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const titles = {
-    es: "Temario de idiomas A1 y tarjetas de vocabulario",
-    ca: "Temari d’idiomes A1 i targetes de vocabulari",
-    en: "A1 language lessons and vocabulary flashcards",
+    es: "Plan de estudios de idiomas: vocabulario y gramática",
+    ca: "Pla d’estudis d’idiomes: vocabulari i gramàtica",
+    en: "Language study plan: vocabulary and grammar",
   };
   return gameMetadata(locale, "/topics", titles[locale]);
 }

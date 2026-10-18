@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/messages";
 export const learnCopy = {
   es: {
-    nav: "Temario",
+    nav: "Plan de estudios",
     kicker: "PEQUEÑOS PASOS, GRANDES PARTIDAS",
     title: "Aprende. Descubre. ¡Juega!",
     intro:
@@ -36,7 +36,7 @@ export const learnCopy = {
       "Consejo: respeta los acentos y la escritura. Las variantes separadas por / también son respuestas válidas.",
   },
   ca: {
-    nav: "Temari",
+    nav: "Pla d’estudis",
     kicker: "PETITS PASSOS, GRANS PARTIDES",
     title: "Aprèn. Descobreix. Juga!",
     intro:
@@ -71,7 +71,7 @@ export const learnCopy = {
       "Consell: respecta els accents i l’escriptura. Les variants separades per / també són respostes vàlides.",
   },
   en: {
-    nav: "Learn",
+    nav: "Study plan",
     kicker: "SMALL STEPS, GREAT GAMES",
     title: "Learn. Discover. Play!",
     intro:

@@ -1,4 +1,5 @@
 import { vocabularyItems } from "@/lib/vocabulary";
+import { extendedTenseTopics } from "@/lib/advanced-tenses";
 import { tenseItems } from "@/lib/verb-tenses";
 import { numbers } from "@/lib/numbers";
 import { animals } from "@/lib/animals";
@@ -86,6 +87,7 @@ export const topics: Topic[] = [
       availableGameModes: ["translation", "matching"],
     }),
   ),
+  ...extendedTenseTopics,
   {
     id: "everyday-conversation",
     area: "phrases",

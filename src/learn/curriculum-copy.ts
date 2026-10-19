@@ -14,7 +14,7 @@ export const curriculumCopy = {
     finish:
       "¡Has completado el plan! Sigue practicando con los juegos para afianzar lo aprendido.",
     scope:
-      "Ruta introductoria basada en el contenido disponible de A1 y A2; completarla no equivale a acreditar esos niveles.",
+      "Ruta de vocabulario y gramática con contenido de A1 a B2; completarla no equivale a acreditar esos niveles.",
     stages: [
       [
         "Primeros pasos",
@@ -30,7 +30,7 @@ export const curriculumCopy = {
       ],
       [
         "Habla del tiempo",
-        "Distingue acciones terminadas y planes de futuro con las estructuras de los ejemplos.",
+        "Aprende tiempos simples, continuos y perfectos, condicionales, subjuntivo e imperativo con ejemplos y juegos.",
       ],
     ],
   },
@@ -49,7 +49,7 @@ export const curriculumCopy = {
     finish:
       "Has completat el pla! Continua practicant amb els jocs per consolidar el que has après.",
     scope:
-      "Ruta introductòria basada en el contingut disponible d’A1 i A2; completar-la no equival a acreditar aquests nivells.",
+      "Ruta de vocabulari i gramàtica amb contingut d’A1 a B2; completar-la no equival a acreditar aquests nivells.",
     stages: [
       [
         "Primers passos",
@@ -65,7 +65,7 @@ export const curriculumCopy = {
       ],
       [
         "Parla del temps",
-        "Distingeix accions acabades i plans de futur amb les estructures dels exemples.",
+        "Aprèn temps simples, continus i perfets, condicionals, subjuntiu i imperatiu amb exemples i jocs.",
       ],
     ],
   },
@@ -84,7 +84,7 @@ export const curriculumCopy = {
     finish:
       "You’ve completed the plan! Keep practising with the games to strengthen what you’ve learned.",
     scope:
-      "An introductory path based on the available A1 and A2 content; completing it does not certify those levels.",
+      "A vocabulary and grammar path with content from A1 to B2; completing it does not certify those levels.",
     stages: [
       [
         "First steps",
@@ -100,7 +100,7 @@ export const curriculumCopy = {
       ],
       [
         "Talk about time",
-        "Distinguish completed actions and future plans using the structures in the examples.",
+        "Learn simple, continuous and perfect forms, conditionals, subjunctives and imperatives through examples and games.",
       ],
     ],
   },

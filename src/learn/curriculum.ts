@@ -1,3 +1,4 @@
+import { extendedTenses } from "@/lib/advanced-tenses";
 import { lessons } from "./lessons";
 
 // These stages order the available content; they do not certify a CEFR level.
@@ -8,7 +9,14 @@ export const curriculum = [
     id: "communication",
     topics: ["present-tense", "transport", "everyday-conversation"],
   },
-  { id: "time", topics: ["past-tense", "future-tense"] },
+  {
+    id: "time",
+    topics: [
+      "past-tense",
+      "future-tense",
+      ...extendedTenses.map((tense) => `${tense.id}-tense`),
+    ],
+  },
 ] as const;
 
 export const orderedLessons = curriculum.flatMap((stage) =>

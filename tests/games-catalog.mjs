@@ -428,3 +428,29 @@ test("study plan covers each topic once with translations in every language", ()
   assert.ok(ids.indexOf("present-tense") < ids.indexOf("past-tense"));
   assert.ok(ids.indexOf("past-tense") < ids.indexOf("future-tense"));
 });
+
+test("extended verb lessons are playable and included in the study plan", () => {
+  const { extendedTenses } = load("src/lib/advanced-tenses.ts");
+  const { orderedLessons } = load("src/learn/curriculum.ts");
+  const { lessonTips } = load("src/learn/tips.ts");
+  assert.equal(extendedTenses.length, 17);
+  for (const tense of extendedTenses) {
+    const topic = getTopic("grammar", `${tense.id}-tense`);
+    assert.ok(orderedLessons.some((lesson) => lesson.id === topic.id));
+    assert.equal(topic.items.length, 8);
+    for (const language of Object.keys(languages)) {
+      assert.equal(
+        new Set(topic.items.map((item) => item.words[language][0])).size,
+        8,
+      );
+      assert.ok(
+        topic.items.every((item) => item.words[language].every(Boolean)),
+      );
+    }
+    for (const locale of ["es", "ca", "en"])
+      assert.ok(lessonTips[locale][topic.id]);
+    assert.ok(availableModes(topic).some((mode) => mode.id === "translation"));
+  }
+  const imperative = getTopic("grammar", "imperative-tense");
+  assert.ok(imperative.items[1].words.en.includes("Don't work at the office"));
+});

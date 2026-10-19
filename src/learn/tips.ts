@@ -1,3 +1,4 @@
+import { extendedTenses } from "@/lib/advanced-tenses";
 import type { Locale } from "@/i18n/messages";
 
 export const lessonTips: Record<Locale, Record<string, string>> = {
@@ -74,3 +75,15 @@ export const lessonTips: Record<Locale, Record<string, string>> = {
     body: "Point to each body part as you say its name. These cards use the singular: one hand, one foot, one eye. Foot and tooth become feet and teeth in the plural; practise foot and tooth here.",
   },
 };
+
+// Keep every new lesson documented in each interface language.
+for (const tense of extendedTenses) {
+  for (const locale of ["es", "ca", "en"] as const) {
+    const examples = tense.phrases;
+    lessonTips[locale][`${tense.id}-tense`] = {
+      es: `${tense.title.es}: compara «${examples[0]}» con «${examples[2]}». Lee las fichas y observa los auxiliares y las terminaciones antes de jugar. Las traducciones expresan el mismo sentido; cada idioma organiza los tiempos de forma distinta. En japonés estas fichas usan la escritura original.`,
+      ca: `${tense.title.ca}: compara «${examples[1]}» amb «${examples[2]}». Llegeix les fitxes i observa els auxiliars i les terminacions abans de jugar. Les traduccions expressen el mateix sentit; cada idioma organitza els temps de manera diferent. En japonès aquestes fitxes fan servir l’escriptura original.`,
+      en: `${tense.title.en}: compare “${examples[2]}” with “${examples[0]}”. Read the cards and notice auxiliaries and endings before playing. Translations convey the same meaning; languages organise tenses differently. These Japanese cards use native writing.`,
+    }[locale];
+  }
+}

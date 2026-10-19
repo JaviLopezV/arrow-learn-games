@@ -1,0 +1,148 @@
+import type { ExtendedTense } from "./continuous-perfect-tenses";
+
+export const moodTenses: ExtendedTense[] = [
+  {
+    id: "imperfect",
+    title: {
+      es: "Pretérito imperfecto",
+      ca: "Imperfet",
+      en: "Past habits: imperfect",
+    },
+    level: "A2",
+    phrases: [
+      "Antes trabajaba",
+      "Abans treballava",
+      "I used to work",
+      "Avant, je travaillais",
+      "Früher arbeitete ich",
+      "Prima lavoravo",
+      "以前は働いていました",
+    ],
+  },
+  {
+    id: "conditional",
+    title: {
+      es: "Condicional simple",
+      ca: "Condicional simple",
+      en: "Conditional",
+    },
+    level: "B1",
+    phrases: [
+      "Si pudiera, trabajaría",
+      "Si pogués, treballaria",
+      "If I could, I would work",
+      "Si je pouvais, je travaillerais",
+      "Wenn ich könnte, würde ich arbeiten",
+      "Se potessi, lavorerei",
+      "できるなら働くでしょう",
+    ],
+  },
+  {
+    id: "conditional-perfect",
+    title: {
+      es: "Condicional compuesto",
+      ca: "Condicional perfet",
+      en: "Conditional perfect",
+    },
+    level: "B2",
+    phrases: [
+      "Si hubiera podido, habría trabajado",
+      "Si hagués pogut, hauria treballat",
+      "If I had been able to, I would have worked",
+      "Si j’avais pu, j’aurais travaillé",
+      "Wenn ich gekonnt hätte, hätte ich gearbeitet",
+      "Se avessi potuto, avrei lavorato",
+      "できたなら働いていたでしょう",
+    ],
+  },
+  {
+    id: "present-subjunctive",
+    title: {
+      es: "Presente de subjuntivo",
+      ca: "Present de subjuntiu",
+      en: "Present subjunctive: wishes",
+    },
+    level: "B1",
+    phrases: [
+      "Espero que trabajes",
+      "Espero que treballis",
+      "I hope you work",
+      "J’espère que tu travailleras",
+      "Ich hoffe, dass du arbeitest",
+      "Spero che tu lavori",
+      "あなたが働くことを願っています",
+    ],
+  },
+  {
+    id: "past-subjunctive",
+    title: {
+      es: "Imperfecto de subjuntivo",
+      ca: "Imperfet de subjuntiu",
+      en: "Past subjunctive: wishes",
+    },
+    level: "B2",
+    phrases: [
+      "Quería que trabajaras",
+      "Volia que treballessis",
+      "I wanted you to work",
+      "Je voulais que tu travailles",
+      "Ich wollte, dass du arbeitest",
+      "Volevo che tu lavorassi",
+      "あなたに働いてほしかったです",
+    ],
+  },
+  {
+    id: "perfect-subjunctive",
+    title: {
+      es: "Pretérito perfecto de subjuntivo",
+      ca: "Perfet de subjuntiu",
+      en: "Perfect subjunctive",
+    },
+    level: "B2",
+    phrases: [
+      "Me alegra que hayas trabajado",
+      "M’alegra que hagis treballat",
+      "I am glad you have worked",
+      "Je suis content que tu aies travaillé",
+      "Ich freue mich, dass du gearbeitet hast",
+      "Sono contento che tu abbia lavorato",
+      "あなたが働いたことをうれしく思います",
+    ],
+  },
+  {
+    id: "pluperfect-subjunctive",
+    title: {
+      es: "Pluscuamperfecto de subjuntivo",
+      ca: "Plusquamperfet de subjuntiu",
+      en: "Pluperfect subjunctive",
+    },
+    level: "B2",
+    phrases: [
+      "Ojalá hubieras trabajado",
+      "Tant de bo haguessis treballat",
+      "I wish you had worked",
+      "Si seulement tu avais travaillé",
+      "Hättest du doch gearbeitet",
+      "Magari avessi lavorato",
+      "あなたが働いていたらよかったのに",
+    ],
+  },
+  {
+    id: "imperative",
+    title: {
+      es: "Imperativo afirmativo y negativo",
+      ca: "Imperatiu afirmatiu i negatiu",
+      en: "Positive and negative imperative",
+    },
+    level: "A2",
+    phrases: [
+      "Trabaja",
+      "Treballa",
+      "Work",
+      "Travaille",
+      "Arbeite",
+      "Lavora",
+      "働いてください",
+    ],
+  },
+];

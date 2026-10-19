@@ -1,0 +1,112 @@
+{
+  "landing": {
+    "eyebrow": "LANGUES · DÉBUTANT A1",
+    "title": "Un nouveau mot.",
+    "accent": "Un petit pas en avant.",
+    "intro": "Fais une place à une nouvelle langue dans ton quotidien. Découvre le vocabulaire, pratique des phrases et mets tes connaissances en jeu, à ton rythme.",
+    "play": "Explorer les jeux",
+    "learn": "Parcourir les leçons",
+    "note": "Gratuit · Sans compte · À ton rythme",
+    "sample": "TON PREMIER MOT",
+    "example": "Une image, sept façons de le dire.",
+    "try": "Pratiquer avec les animaux",
+    "languages": "Sept langues à pratiquer",
+    "topicsKicker": "COMMENCE PAR CE QUE TU CONNAIS",
+    "topicsTitle": "Ton monde, dans une autre langue.",
+    "topicsIntro": "Choisis un thème et découvre comment le pratiquer. Tu peux changer de langue avant chaque partie.",
+    "all": "Voir tous les jeux",
+    "topicAction": "Explorer le thème",
+    "howKicker": "TOUT SIMPLEMENT",
+    "howTitle": "Découvre. Pratique. Recommence.",
+    "steps": [
+      {
+        "title": "Fais connaissance avec les mots",
+        "text": "Explore les fiches des leçons, écoute leur prononciation et marque celles que tu connais.",
+        "link": "Ouvrir les leçons"
+      },
+      {
+        "title": "Mets-les en jeu",
+        "text": "Écris des traductions, associe des paires ou écoute les nombres au bingo. Choisis comment pratiquer.",
+        "link": "Choisir un jeu"
+      },
+      {
+        "title": "Garde ton rythme",
+        "text": "Consulte tes parties et revois les fiches que tu apprends encore. La progression est enregistrée dans ce navigateur.",
+        "link": "Pratiquer à nouveau"
+      }
+    ],
+    "closingTitle": "Ton prochain mot t’attend.",
+    "closingText": "Commence par un thème qui te plaît. Aucun compte à créer.",
+    "closingCta": "Choisir mon premier jeu",
+    "descriptions": {
+      "animals": "Apprends les noms d’animaux avec des images, des traductions et des paires à associer.",
+      "food": "Apprends les mots qui t’accompagnent à table.",
+      "numbers": "Écoute, reconnais et joue avec les nombres de 1 à 99.",
+      "everyday-conversation": "Pratique des phrases pour les conversations du quotidien."
+    }
+  },
+  "learn": {
+    "nav": "Plan d’étude",
+    "kicker": "PETITS PAS, GRANDS JEUX",
+    "title": "Apprends. Découvre. Joue !",
+    "intro": "Tout ce qu’il te faut pour jouer, à ton rythme. Explore une fiche, teste ta mémoire et utilise tes acquis dans une partie.",
+    "language": "Je veux apprendre",
+    "source": "Avec les traductions en",
+    "route": "Ton parcours d’apprentissage",
+    "cards": "fiches",
+    "mastered": "maîtrisées",
+    "saved": "La progression est enregistrée dans ce navigateur pour chaque thème et paire de langues.",
+    "storage": "Impossible d’enregistrer la progression. Tu peux continuer cette session.",
+    "discover": "1. Découvre",
+    "challenge": "2. Teste-toi",
+    "library": "3. Consulte toutes les fiches",
+    "reveal": "Afficher la réponse",
+    "hide": "Masquer la réponse",
+    "previous": "← Précédent",
+    "next": "Suivant →",
+    "question": "Quelle est la bonne traduction ?",
+    "correct": "Bravo ! Une fiche de plus maîtrisée.",
+    "wrong": "Presque… Vérifie la réponse et réessaie plus tard.",
+    "answer": "Réponse",
+    "play": "Jouons !",
+    "search": "Chercher un mot ou un nombre",
+    "empty": "Aucune fiche ne correspond à ta recherche.",
+    "complete": "Tu maîtrises toutes les fiches de ce thème !",
+    "review": "Réviser encore",
+    "start": "Commencer le défi",
+    "hint": "Réfléchis à la réponse avant de l’afficher. Teste ensuite ce que tu as retenu dans le défi.",
+    "spelling": "Conseil : respecte les accents et l’orthographe. Les variantes séparées par / sont aussi acceptées."
+  },
+  "curriculum": {
+    "title": "Ton plan d’étude",
+    "intro": "Avance en quatre étapes : découvre les fiches, relève les défis et pratique en jouant. Consacre 10 à 15 minutes par jour et révise avant de continuer. Explore les thèmes quand tu veux.",
+    "stage": "Étape",
+    "completed": "thèmes terminés",
+    "continue": "Continuer à apprendre",
+    "review": "Revoir le plan",
+    "recommended": "Prochaine étape",
+    "done": "Terminé",
+    "current": "En cours",
+    "pending": "À découvrir",
+    "finish": "Tu as terminé le plan ! Continue les jeux pour consolider tes acquis.",
+    "scope": "Un parcours de vocabulaire et de grammaire de A1 à B2 ; le terminer ne certifie pas ces niveaux.",
+    "stages": [
+      [
+        "Premiers pas",
+        "Reconnais les nombres et les animaux, puis apprends qui fait l’action avec les pronoms."
+      ],
+      [
+        "Ton quotidien",
+        "Enrichis ton vocabulaire pour parler d’alimentation, de maison, de vêtements et du corps."
+      ],
+      [
+        "Commence à communiquer",
+        "Exprime tes habitudes au présent, apprends à te déplacer et pratique les phrases du quotidien."
+      ],
+      [
+        "Parle du temps",
+        "Apprends les formes simples, continues et parfaites, le conditionnel, le subjonctif et l’impératif avec des exemples et des jeux."
+      ]
+    ]
+  }
+}

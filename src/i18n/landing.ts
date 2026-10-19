@@ -1,4 +1,5 @@
-export const landingCopy = {
+import { additionalCopy } from "@/i18n/additional";
+const baseCopy = {
   es: {
     eyebrow: "IDIOMAS · NIVEL INICIAL A1",
     title: "Una palabra nueva.",
@@ -9,9 +10,9 @@ export const landingCopy = {
     learn: "Ver el temario",
     note: "Gratis · Sin registro · A tu ritmo",
     sample: "TU PRIMERA PALABRA",
-    example: "Una imagen, seis formas de decirlo.",
+    example: "Una imagen, siete formas de decirlo.",
     try: "Practicar con animales",
-    languages: "Seis idiomas para practicar",
+    languages: "Siete idiomas para practicar",
     topicsKicker: "EMPIEZA POR ALGO CERCANO",
     topicsTitle: "Tu mundo, en otro idioma.",
     topicsIntro:
@@ -60,9 +61,9 @@ export const landingCopy = {
     learn: "Veure el temari",
     note: "Gratis · Sense registre · Al teu ritme",
     sample: "LA TEVA PRIMERA PARAULA",
-    example: "Una imatge, sis maneres de dir-ho.",
+    example: "Una imatge, set maneres de dir-ho.",
     try: "Practicar amb animals",
-    languages: "Sis idiomes per practicar",
+    languages: "Set idiomes per practicar",
     topicsKicker: "COMENÇA PER ALLÒ QUE T’ENVOLTA",
     topicsTitle: "El teu món, en un altre idioma.",
     topicsIntro:
@@ -110,9 +111,9 @@ export const landingCopy = {
     learn: "Browse the lessons",
     note: "Free · No account needed · Your own pace",
     sample: "YOUR FIRST WORD",
-    example: "One picture, six ways to say it.",
+    example: "One picture, seven ways to say it.",
     try: "Practise with animals",
-    languages: "Six languages to practise",
+    languages: "Seven languages to practise",
     topicsKicker: "START WITH SOMETHING FAMILIAR",
     topicsTitle: "Your world, in another language.",
     topicsIntro:
@@ -149,4 +150,12 @@ export const landingCopy = {
       "everyday-conversation": "Practise phrases for everyday conversations.",
     },
   },
+};
+
+export const landingCopy = {
+  ...baseCopy,
+  fr: additionalCopy.fr.landing,
+  de: additionalCopy.de.landing,
+  it: additionalCopy.it.landing,
+  ja: additionalCopy.ja.landing,
 };

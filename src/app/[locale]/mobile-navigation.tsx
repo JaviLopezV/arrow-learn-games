@@ -12,17 +12,33 @@ export function MobileNavigation({ locale }: { locale: Locale }) {
   const items = [
     {
       href: `/${locale}`,
-      label: { es: "Inicio", ca: "Inici", en: "Home" }[locale],
+      label: {
+        es: "Inicio",
+        ca: "Inici",
+        en: "Home",
+        fr: "Accueil",
+        de: "Startseite",
+        it: "Home",
+        ja: "ホーム",
+      }[locale],
       icon: HomeRounded,
     },
     {
       href: `/${locale}/games`,
-      label: { es: "Juegos", ca: "Jocs", en: "Games" }[locale],
+      label: messages[locale].nav.news,
       icon: SportsEsportsRounded,
     },
     {
       href: `/${locale}/topics`,
-      label: { es: "Aprender", ca: "Aprendre", en: "Learn" }[locale],
+      label: {
+        es: "Aprender",
+        ca: "Aprendre",
+        en: "Learn",
+        fr: "Apprendre",
+        de: "Lernen",
+        it: "Impara",
+        ja: "学習",
+      }[locale],
       icon: AutoStoriesRounded,
     },
   ];

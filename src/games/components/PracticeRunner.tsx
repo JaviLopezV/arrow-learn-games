@@ -1,7 +1,7 @@
 "use client";
 import { useMemo } from "react";
 import { Alert, Box, Typography } from "@jlopvil/mui-kit";
-import { messages, type Locale } from "@/i18n/messages";
+import { locales, messages, type Locale } from "@/i18n/messages";
 import { topics } from "../config/topics";
 import { useGame } from "../engines/use-game";
 import {
@@ -30,11 +30,12 @@ export function PracticeRunner({
       area: "vocabulary",
       level: "A1",
       icon: "✦",
-      title: {
-        es: messages.es.catalog.shortcutsData[strategy].title,
-        ca: messages.ca.catalog.shortcutsData[strategy].title,
-        en: messages.en.catalog.shortcutsData[strategy].title,
-      },
+      title: Object.fromEntries(
+        locales.map((value) => [
+          value,
+          messages[value].catalog.shortcutsData[strategy].title,
+        ]),
+      ) as Topic["title"],
       items: practiceItems(topics),
       availableGameModes: ["mixed-review"],
       roundSize: 8,

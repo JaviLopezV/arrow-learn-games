@@ -1,3 +1,4 @@
+import { localizeText, type BaseLocalizedText } from "@/i18n/additional";
 import { vocabularyItems } from "@/lib/vocabulary";
 import { extendedTenseTopics } from "@/lib/advanced-tenses";
 import { tenseItems } from "@/lib/verb-tenses";
@@ -5,9 +6,10 @@ import { numbers } from "@/lib/numbers";
 import { animals } from "@/lib/animals";
 import { pronouns } from "@/lib/pronouns";
 import { sentences, shuffledSentences } from "@/lib/sentences";
-import { messages } from "@/i18n/messages";
-import type { Topic } from "../types/game.types";
-export const topics: Topic[] = [
+import { locales, messages } from "@/i18n/messages";
+import type { Topic as FullTopic, LocalizedText } from "../types/game.types";
+type Topic = Omit<FullTopic, "title"> & { title: BaseLocalizedText };
+const topicDefinitions: Topic[] = [
   {
     id: "numbers",
     area: "vocabulary",
@@ -47,11 +49,12 @@ export const topics: Topic[] = [
     level: "A1",
     items: pronouns.map((item) => ({
       ...item,
-      context: {
-        es: messages.es.games.pronounContexts[item.id],
-        ca: messages.ca.games.pronounContexts[item.id],
-        en: messages.en.games.pronounContexts[item.id],
-      },
+      context: Object.fromEntries(
+        locales.map((locale) => [
+          locale,
+          messages[locale].games.pronounContexts[item.id],
+        ]),
+      ) as LocalizedText,
     })),
     availableGameModes: ["translation"],
     reference: "subject-pronouns",
@@ -124,6 +127,10 @@ export const topics: Topic[] = [
     }),
   ),
 ];
+export const topics: FullTopic[] = topicDefinitions.map((topic) => ({
+  ...topic,
+  title: localizeText(topic.title),
+}));
 // Enable only mechanics supported by the content, keeping ambiguous pronouns out of pairs/audio.
 for (const topic of topics) {
   topic.availableGameModes.push(

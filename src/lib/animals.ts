@@ -6,7 +6,7 @@ export const languages = {
   fr: "Français",
   de: "Deutsch",
   it: "Italiano",
-  ja: "Japonés",
+  ja: "日本語",
 } as const;
 export type Language = keyof typeof languages;
 export type Mode = "picture" | "translation" | "pronouns" | "matching";

@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games • 言語学習ゲーム",
+    "description": "7言語の単語・文法・フレーズをゲームとカードで練習。無料・登録不要。進捗はブラウザーに保存されます。",
+    "openGraphTitle": "Arrow Learn Games • 言語学習ゲーム",
+    "openGraphDescription": "7言語の単語・文法・フレーズをゲームとカードで練習。無料・登録不要。進捗はブラウザーに保存されます。",
+    "imageAlt": "Arrow Learn Games：動物・単語・代名詞のカードで楽しく学習。"
+  },
+  "nav": {
+    "home": "ホームへ",
+    "navigation": "メインナビゲーション",
+    "how": "使い方",
+    "news": "ゲーム",
+    "discover": "ゲームを始める",
+    "language": "言語"
+  },
+  "hero": {
+    "eyebrow": "発見に満ちた世界",
+    "titleBefore": "学ぶことが",
+    "titleAccent": "大好きなゲームに。",
+    "description": "動物の名前、代名詞、文章を学ぼう。言語を選んで練習を始めよう。",
+    "primary": "ゲームを始める",
+    "secondary": "使い方",
+    "note": "好奇心も遊びも学びも、ここに。"
+  },
+  "art": {
+    "letsGo": "さあ、始めよう！",
+    "discover": "発見して学ぼう",
+    "newChallenge": "新しいチャレンジ",
+    "play": "準備はいい？",
+    "adventure": "ここから冒険が始まる",
+    "newIdea": "新しいアイデア"
+  },
+  "features": {
+    "kicker": "新しい学び方",
+    "title": "遊んで、発見して、成長しよう。",
+    "description": "正解ごとに10点。間違えても減点はありません。アクセント記号は区別されますが、大文字・小文字は区別されません。",
+    "items": [
+      {
+        "title": "動物を当てよう",
+        "description": "絵を見て動物の名前を書こう。"
+      },
+      {
+        "title": "単語を訳そう",
+        "description": "動物の名前を読んで訳を書こう。"
+      },
+      {
+        "title": "成長を実感しよう",
+        "description": "結果はゲームごとにこのブラウザーに保存されます。"
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "もっと探してみよう",
+    "title": "遊びながら学ぶ方法がいっぱい。",
+    "description": "記憶・リスニング・タイムゲームに挑戦。間違いを復習したり、毎日のチャレンジを楽しもう。"
+  },
+  "footer": "好奇心いっぱいのあなたへ。",
+  "games": {
+    "kicker": "次のチャレンジ",
+    "title": "小さな言葉、大きな発見。",
+    "description": "動物の名前、代名詞、文章を学ぼう。言語を選んで練習を始めよう。",
+    "pictureTitle": "画像 → 単語",
+    "pictureDescription": "画像を見て正しい単語を書こう。",
+    "translationTitle": "翻訳",
+    "translationDescription": "文章を読んで訳を書こう。",
+    "target": "練習する言語",
+    "source": "翻訳元の言語",
+    "start": "ゲームを始める",
+    "points": "合計点",
+    "correct": "正解数",
+    "best": "最高連続正解数",
+    "saved": "ゲームはテーマとモードごとにこのブラウザーに保存されます。",
+    "rules": "正解ごとに10点。間違えても減点はありません。アクセント記号は区別されますが、大文字・小文字は区別されません。",
+    "question": "問題",
+    "picturePrompt": "画像には何がある？",
+    "translationPrompt": "訳を書こう",
+    "answer": "あなたの答え",
+    "check": "答えを確認",
+    "success": "正解！＋10点",
+    "failure": "練習を続けよう。正解：",
+    "next": "次へ",
+    "results": "結果を見る",
+    "complete": "ラウンド完了！",
+    "roundPoints": "今回の得点",
+    "again": "もう一度遊ぶ",
+    "change": "言語を変更・やり直す",
+    "imageAlt": "名前を当てるイラスト",
+    "storageError": "このブラウザーでは進捗を保存できません。このページを開いている間は得点が保持されます。",
+    "of": "／",
+    "writeIn": "回答する言語：",
+    "choose": "ゲームを選ぼう",
+    "loading": "得点を読み込み中…",
+    "pronounsTitle": "主語の代名詞",
+    "pronounsDescription": "誰が動作するかを学ぼう：私、あなた、彼…。訳を書いてみよう。",
+    "pronounsPrompt": "この主語代名詞を訳そう",
+    "pronounsList": "主語代名詞の一覧",
+    "pronounsContext": "人称と文脈",
+    "pronounsNote": "1ラウンド12問。文脈で単数・複数・性を区別します。人称・敬称を扱い、itなどの中性・非人称用法は除きます。スペイン語のvosとustedesは適切な文脈で正解となります。",
+    "nextPronoun": "次の代名詞",
+    "pronounContexts": {
+      "firstSingular": "一人称単数",
+      "secondSingular": "二人称単数・親しい表現",
+      "thirdMasculine": "三人称単数・男性",
+      "thirdFeminine": "三人称単数・女性",
+      "firstPluralMasculine": "一人称複数・男性または混合の集団",
+      "firstPluralFeminine": "一人称複数・女性の集団",
+      "secondPluralMasculine": "二人称複数・男性または混合の集団・親しい表現",
+      "secondPluralFeminine": "二人称複数・女性の集団・親しい表現",
+      "thirdPluralMasculine": "三人称複数・男性または混合の集団",
+      "thirdPluralFeminine": "三人称複数・女性の集団",
+      "formalSingular": "二人称単数・敬称",
+      "formalPlural": "二人称複数・敬称"
+    },
+    "lastScore": "前回のゲーム",
+    "bestScore": "完了したゲームの最高得点",
+    "completedGames": "完了したゲーム数",
+    "historyTitle": "ゲーム履歴",
+    "historyNote": "各ゲームは0点から始まります。未完了のゲームも保存されますが、最高記録には含まれません。",
+    "noGames": "このゲームはまだ遊んでいません。",
+    "playedAt": "日付",
+    "historyLanguage": "言語",
+    "resultScore": "得点",
+    "gameStatus": "状態",
+    "finishedGame": "完了",
+    "activeGame": "進行中",
+    "unfinishedGame": "未完了",
+    "legacyScore": "以前の合計点は別に保存されています。各回答のゲームが記録されていないため、ゲーム別に分けることはできません。",
+    "matchingTitle": "ペア合わせ",
+    "matchingDescription": "単語やフレーズと訳を組み合わせよう。",
+    "matchingPrompt": "文章を選んでから、その訳を選ぼう。",
+    "matchingRules": "初回で正解したペアは10点。間違えたペアは0点になりますが、何度でも挑戦できます。",
+    "matchedPairs": "完成したペア",
+    "matchingError": "意味が異なります。別の訳を選んでみよう。",
+    "matchingSuccess": "ペア正解！",
+    "matchingSelected": "選択中"
+  },
+  "catalog": {
+    "title": "何を練習する？",
+    "description": "テーマを選んで、いろいろな方法で学ぼう。",
+    "chooseMode": "練習方法を選ぼう",
+    "topics": "テーマ別に練習",
+    "shortcuts": "自分のペースで",
+    "soon": "近日公開",
+    "browse": "テーマを探す",
+    "back": "すべてのコンテンツ",
+    "modesLabel": "利用可能なモード",
+    "breadcrumb": "学習コース",
+    "areas": {
+      "vocabulary": {
+        "title": "単語",
+        "description": "世界を発見するための言葉。"
+      },
+      "grammar": {
+        "title": "文法",
+        "description": "言葉の仕組みを学ぼう。"
+      },
+      "phrases": {
+        "title": "フレーズと表現",
+        "description": "毎日使う表現を練習しよう。"
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "クイックゲーム",
+        "description": "いろいろな問題で練習しよう。"
+      },
+      "mistakes": {
+        "title": "間違いを復習",
+        "description": "以前間違えた単語を練習しよう。"
+      },
+      "daily": {
+        "title": "今日のチャレンジ",
+        "description": "毎日違う小さなチャレンジに挑戦しよう。"
+      },
+      "topic": {
+        "title": "テーマ別に練習",
+        "description": "学びたい内容を選ぼう。"
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "画像 → 単語",
+        "description": "画像を見て正しい単語を書こう。"
+      },
+      "translation": {
+        "title": "翻訳",
+        "description": "文章を読んで訳を書こう。"
+      },
+      "matching": {
+        "title": "ペア合わせ",
+        "description": "単語やフレーズと訳を組み合わせよう。"
+      },
+      "multiple-choice": {
+        "title": "選択問題",
+        "description": "選択肢から正解を選ぼう。"
+      },
+      "complete-word": {
+        "title": "単語を完成",
+        "description": "足りない文字を入れよう。"
+      },
+      "unscramble": {
+        "title": "文字並べ替え",
+        "description": "文字を並べ替えて単語を作ろう。"
+      },
+      "listen-and-write": {
+        "title": "聞いて書く",
+        "description": "音声を聞いて、聞こえた内容を書こう。"
+      },
+      "listen-and-choose": {
+        "title": "聞いて選ぶ",
+        "description": "聞いて正解を選ぼう。"
+      },
+      "memory": {
+        "title": "神経衰弱",
+        "description": "同じ意味のカードを見つけよう。"
+      },
+      "speed-round": {
+        "title": "タイムアタック",
+        "description": "時間内に答えよう。"
+      },
+      "odd-one-out": {
+        "title": "仲間はずれ",
+        "description": "グループに当てはまらない単語を探そう。"
+      },
+      "sentence-context": {
+        "title": "文を完成",
+        "description": "単語を文章で使ってみよう。"
+      },
+      "mixed-review": {
+        "title": "総合復習",
+        "description": "いろいろな練習方法を組み合わせよう。"
+      },
+      "bingo": {
+        "title": "ビンゴ",
+        "description": "1から99までの数字を聞き取ってカードを完成させよう！"
+      }
+    }
+  },
+  "bingo": {
+    "description": "1から99までの数字を聞き取ってカードを完成させよう！",
+    "rules": "1〜99の数字が重複なくランダムに読み上げられます。自分のカードの数字をチェックしよう。読み上げ済みの数字はいつでもチェックでき、一覧でも確認できます。",
+    "language": "練習する言語",
+    "start": "ゲーム開始",
+    "next": "次の数字",
+    "listen": "聞く",
+    "card": "あなたのカード",
+    "progress": "チェック済みの数字",
+    "line": "1列完成！",
+    "win": "ビンゴ！カード完成。",
+    "wrong": "この数字はまだ読み上げられていません。",
+    "correct": "正解！",
+    "again": "新しいゲーム",
+    "audio": "音声を利用できません。数字を読んで遊べます。",
+    "called": "読み上げ済みの数字",
+    "hint": "数字を聞いてチェックしよう。聞き逃した数字は下の一覧で確認できます。",
+    "interval": "数字を読み上げる間隔：",
+    "seconds": "秒",
+    "pause": "一時停止",
+    "resume": "再開",
+    "paused": "読み上げを一時停止中。数字は引き続きチェックできます。",
+    "finished": "99個すべての数字を読み上げました。一覧を確認してカードを完成させよう。",
+    "board": "数字一覧・1〜99",
+    "boardHint": "読み上げ済みの数字には自動で線が付きます。選ぶともう一度聞けます。",
+    "drawn": "読み上げ済み",
+    "notDrawn": "未読み上げ"
+  },
+  "play": {
+    "timer": "1問20秒",
+    "audioUnavailable": "この言語の音声がありません。得点なしで問題をスキップするか、別の言語を選んでください。",
+    "skip": "問題をスキップ",
+    "outsideGroup": "次のグループに当てはまらない単語を選ぼう：",
+    "wholeWord": "文字を正しい順番にして、単語全体を入力しよう。",
+    "missingWord": "空欄に入る単語だけを入力しよう。",
+    "memoryNote": "2枚のカードをめくって単語と訳を探そう。間違いなしのペアは10点、間違えたペアは0点です。",
+    "card": "カード",
+    "dailyNote": "8つの異なるテーマ。端末の日付に合わせて、同じ日は同じ問題が出ます。繰り返し挑戦して履歴で結果を比べよう。",
+    "mistakesNote": "このブラウザーで最近間違えた問題を復習します。同じ翻訳元・学習言語を選んでください。正解すると復習リストから削除されます。古い履歴には単語別の間違いが記録されていません。",
+    "emptyMistakes": "この言語の組み合わせには復習する間違いがありません。ゲームを遊ぶか、別の組み合わせを選ぼう。"
+  }
+}

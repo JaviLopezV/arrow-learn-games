@@ -1,5 +1,6 @@
-import type { Locale } from "@/i18n/messages";
-export const learnCopy = {
+import { additionalCopy } from "@/i18n/additional";
+import type { BaseLocale } from "@/i18n/messages";
+const baseCopy = {
   es: {
     nav: "Plan de estudios",
     kicker: "PEQUEÑOS PASOS, GRANDES PARTIDAS",
@@ -105,4 +106,11 @@ export const learnCopy = {
     spelling:
       "Tip: pay attention to accents and spelling. Variants separated by / are also accepted answers.",
   },
-} satisfies Record<Locale, unknown>;
+} satisfies Record<BaseLocale, unknown>;
+
+export const learnCopy = { ...baseCopy,
+  fr: additionalCopy.fr.learn,
+  de: additionalCopy.de.learn,
+  it: additionalCopy.it.learn,
+  ja: additionalCopy.ja.learn,
+};

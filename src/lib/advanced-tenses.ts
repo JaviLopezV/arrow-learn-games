@@ -1,3 +1,4 @@
+import { localizeText } from "@/i18n/additional";
 import type { Topic } from "@/games/types/game.types";
 import { continuousPerfectTenses } from "./continuous-perfect-tenses";
 import { moodTenses } from "./mood-tenses";
@@ -75,7 +76,7 @@ const languages = ["es", "ca", "en", "fr", "de", "it", "ja"] as const;
 export const extendedTenseTopics: Topic[] = extendedTenses.map((tense) => ({
   id: `${tense.id}-tense`,
   area: "grammar",
-  title: tense.title,
+  title: localizeText(tense.title),
   icon: tense.id === "imperative" ? "📣" : "🕰️",
   level: tense.level,
   roundSize: 8,

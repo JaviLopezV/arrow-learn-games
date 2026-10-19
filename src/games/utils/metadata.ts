@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { messages, type Locale } from "@/i18n/messages";
+import { messages, locales, ogLocales, type Locale } from "@/i18n/messages";
 
 export function gameMetadata(
   locale: Locale,
@@ -15,12 +15,10 @@ export function gameMetadata(
     description,
     alternates: {
       canonical: `/${locale}${path}`,
-      languages: {
-        es: `/es${path}`,
-        ca: `/ca${path}`,
-        en: `/en${path}`,
-        "x-default": `/es${path}`,
-      },
+      languages: Object.fromEntries([
+        ...locales.map((value) => [value, `/${value}${path}`]),
+        ["x-default", `/es${path}`],
+      ]),
     },
     openGraph: {
       title,
@@ -28,7 +26,7 @@ export function gameMetadata(
       url: `/${locale}${path}`,
       siteName: "Arrow Learn Games",
       type: "website",
-      locale: { es: "es_ES", ca: "ca_ES", en: "en_US" }[locale],
+      locale: ogLocales[locale],
       images: [
         {
           url: "/og.png",

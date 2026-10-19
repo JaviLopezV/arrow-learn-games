@@ -1,7 +1,8 @@
+import { additionalCopy } from "@/i18n/additional";
 import { extendedTenses } from "@/lib/advanced-tenses";
-import type { Locale } from "@/i18n/messages";
+import type { BaseLocale } from "@/i18n/messages";
 
-export const lessonTips: Record<Locale, Record<string, string>> = {
+const baseTips: Record<BaseLocale, Record<string, string>> = {
   es: {
     "present-tense":
       "Practica hábitos con «cada día». Traduce la frase completa y observa cómo cambia el verbo con cada persona. Se acepta omitir el pronombre en español, catalán e italiano.",
@@ -80,10 +81,20 @@ export const lessonTips: Record<Locale, Record<string, string>> = {
 for (const tense of extendedTenses) {
   for (const locale of ["es", "ca", "en"] as const) {
     const examples = tense.phrases;
-    lessonTips[locale][`${tense.id}-tense`] = {
+    baseTips[locale][`${tense.id}-tense`] = {
       es: `${tense.title.es}: compara «${examples[0]}» con «${examples[2]}». Lee las fichas y observa los auxiliares y las terminaciones antes de jugar. Las traducciones expresan el mismo sentido; cada idioma organiza los tiempos de forma distinta. En japonés estas fichas usan la escritura original.`,
       ca: `${tense.title.ca}: compara «${examples[1]}» amb «${examples[2]}». Llegeix les fitxes i observa els auxiliars i les terminacions abans de jugar. Les traduccions expressen el mateix sentit; cada idioma organitza els temps de manera diferent. En japonès aquestes fitxes fan servir l’escriptura original.`,
       en: `${tense.title.en}: compare “${examples[2]}” with “${examples[0]}”. Read the cards and notice auxiliaries and endings before playing. Translations convey the same meaning; languages organise tenses differently. These Japanese cards use native writing.`,
     }[locale];
   }
 }
+
+export const lessonTips = { ...baseTips,
+  ...Object.fromEntries(Object.entries(additionalCopy).map(([locale, copy]) => [locale, {
+    ...copy.tips,
+    ...Object.fromEntries(extendedTenses.map((tense) => [
+      `${tense.id}-tense`,
+      `${copy.titles[tense.title.en as keyof typeof copy.titles]}: «${tense.phrases[{ fr: 3, de: 4, it: 5, ja: 6 }[locale as keyof typeof additionalCopy]]}». ${copy.ui.tenseTip}`,
+    ])),
+  }])),
+} as Record<import("@/i18n/messages").Locale, Record<string, string>>;

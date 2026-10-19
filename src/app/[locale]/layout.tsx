@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { MyUiInitColorSchemeScript } from "@jlopvil/mui-kit/theme";
-import { isLocale, locales, messages } from "@/i18n/messages";
+import { isLocale, locales, messages, ogLocales } from "@/i18n/messages";
 import "@jlopvil/mui-kit/styles.css";
 import "../globals.css";
 import { Providers } from "../providers";
@@ -14,8 +14,6 @@ export const viewport: Viewport = {
   themeColor: "#4552d5",
   viewportFit: "cover",
 };
-
-const ogLocales = { es: "es_ES", ca: "ca_ES", en: "en_US" };
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> };
 
@@ -50,7 +48,10 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `/${locale}`,
-      languages: { es: "/es", ca: "/ca", en: "/en", "x-default": "/es" },
+      languages: Object.fromEntries([
+        ...locales.map((value) => [value, `/${value}`]),
+        ["x-default", "/es"],
+      ]),
     },
     openGraph: {
       title: m.openGraphTitle,

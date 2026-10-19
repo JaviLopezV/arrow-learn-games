@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games • Sprachlernspiele",
+    "description": "Wortschatz, Grammatik und Sätze in sieben Sprachen mit Spielen und Lernkarten üben. Kostenlos, ohne Konto, mit Fortschritt im Browser.",
+    "openGraphTitle": "Arrow Learn Games • Sprachlernspiele",
+    "openGraphDescription": "Wortschatz, Grammatik und Sätze in sieben Sprachen mit Spielen und Lernkarten üben. Kostenlos, ohne Konto, mit Fortschritt im Browser.",
+    "imageAlt": "Arrow Learn Games: spielerisch lernen mit Tier-, Wort- und Pronomenkarten."
+  },
+  "nav": {
+    "home": "Zur Startseite",
+    "navigation": "Hauptnavigation",
+    "how": "So funktioniert’s",
+    "news": "Spiele",
+    "discover": "Jetzt spielen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "eyebrow": "Eine Welt zum Entdecken",
+    "titleBefore": "Lernen kann dein ",
+    "titleAccent": "Lieblingsspiel sein.",
+    "description": "Lerne Tiernamen, Pronomen und Sätze. Wähle eine Sprache und übe los.",
+    "primary": "Jetzt spielen",
+    "secondary": "So funktioniert’s",
+    "note": "Neugier, Spielen und Lernen an einem Ort."
+  },
+  "art": {
+    "letsGo": "Los geht’s!",
+    "discover": "Entdecken und lernen",
+    "newChallenge": "NEUE HERAUSFORDERUNG",
+    "play": "Bereit zum Spielen?",
+    "adventure": "Hier beginnt ein Abenteuer",
+    "newIdea": "neue Idee"
+  },
+  "features": {
+    "kicker": "ANDERS LERNEN",
+    "title": "Spielen, entdecken, wachsen.",
+    "description": "10 Punkte pro richtiger Antwort. Fehler kosten keine Punkte. Akzente zählen, Großschreibung nicht.",
+    "items": [
+      {
+        "title": "Erkenne das Tier",
+        "description": "Schau dir das Bild an und schreibe den Tiernamen."
+      },
+      {
+        "title": "Übersetze das Wort",
+        "description": "Lies den Tiernamen und schreibe die Übersetzung."
+      },
+      {
+        "title": "Feiere deinen Fortschritt",
+        "description": "Deine Ergebnisse werden für jedes Spiel getrennt in diesem Browser gespeichert."
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "WEITER ENTDECKEN",
+    "title": "Mehr Möglichkeiten, spielerisch zu lernen.",
+    "description": "Probiere Gedächtnis-, Hör- und Zeitspiele aus, wiederhole Fehler oder löse die Tagesaufgabe."
+  },
+  "footer": "Für neugierige Köpfe.",
+  "games": {
+    "kicker": "DEINE NÄCHSTE AUFGABE",
+    "title": "Kleine Wörter, große Entdeckungen.",
+    "description": "Lerne Tiernamen, Pronomen und Sätze. Wähle eine Sprache und übe los.",
+    "pictureTitle": "Bild → Wort",
+    "pictureDescription": "Schau dir das Bild an und schreibe das richtige Wort.",
+    "translationTitle": "Übersetzung",
+    "translationDescription": "Lies den Text und schreibe die Übersetzung.",
+    "target": "Übungssprache",
+    "source": "Übersetzen aus",
+    "start": "Jetzt spielen",
+    "points": "Gesamtpunkte",
+    "correct": "Richtige Antworten",
+    "best": "Beste Serie",
+    "saved": "Deine Spiele werden nach Thema und Modus in diesem Browser gespeichert.",
+    "rules": "10 Punkte pro richtiger Antwort. Fehler kosten keine Punkte. Akzente zählen, Großschreibung nicht.",
+    "question": "Frage",
+    "picturePrompt": "Was zeigt das Bild?",
+    "translationPrompt": "Schreibe die Übersetzung",
+    "answer": "Deine Antwort",
+    "check": "Antwort prüfen",
+    "success": "Richtig! +10 Punkte",
+    "failure": "Übe weiter. Richtige Antwort:",
+    "next": "Weiter",
+    "results": "Ergebnisse ansehen",
+    "complete": "Runde beendet!",
+    "roundPoints": "Punkte dieser Runde",
+    "again": "Erneut spielen",
+    "change": "Sprache wechseln oder neu starten",
+    "imageAlt": "Zu erkennendes Bild",
+    "storageError": "Der Fortschritt kann in diesem Browser nicht gespeichert werden. Dein Punktestand bleibt erhalten, solange diese Seite geöffnet ist.",
+    "of": "von",
+    "writeIn": "Schreiben auf",
+    "choose": "Wähle dein Spiel",
+    "loading": "Punktestand wird geladen…",
+    "pronounsTitle": "Subjektpronomen",
+    "pronounsDescription": "Lerne, wer handelt: ich, du, er … und schreibe die Übersetzung.",
+    "pronounsPrompt": "Übersetze dieses Subjektpronomen",
+    "pronounsList": "Liste der Subjektpronomen",
+    "pronounsContext": "Person und Kontext",
+    "pronounsNote": "12 Fragen pro Runde. Der Kontext unterscheidet Singular, Plural und Geschlecht. Enthält persönliche und höfliche Formen, aber keine neutralen oder unpersönlichen Verwendungen wie „it“. Die spanischen Formen „vos“ und „ustedes“ werden im passenden Kontext akzeptiert.",
+    "nextPronoun": "Nächstes Pronomen",
+    "pronounContexts": {
+      "firstSingular": "1. Person Singular",
+      "secondSingular": "2. Person Singular · informell",
+      "thirdMasculine": "3. Person Singular · männlich",
+      "thirdFeminine": "3. Person Singular · weiblich",
+      "firstPluralMasculine": "1. Person Plural · männliche oder gemischte Gruppe",
+      "firstPluralFeminine": "1. Person Plural · weibliche Gruppe",
+      "secondPluralMasculine": "2. Person Plural · männliche oder gemischte Gruppe · informell",
+      "secondPluralFeminine": "2. Person Plural · weibliche Gruppe · informell",
+      "thirdPluralMasculine": "3. Person Plural · männliche oder gemischte Gruppe",
+      "thirdPluralFeminine": "3. Person Plural · weibliche Gruppe",
+      "formalSingular": "2. Person Singular · formell",
+      "formalPlural": "2. Person Plural · formell"
+    },
+    "lastScore": "Letztes Spiel",
+    "bestScore": "Bestes abgeschlossenes Spiel",
+    "completedGames": "Abgeschlossene Spiele",
+    "historyTitle": "Spielverlauf",
+    "historyNote": "Jedes Spiel beginnt bei 0. Unfertige Spiele werden gespeichert, zählen aber nicht zum Rekord.",
+    "noGames": "Du hast dieses Spiel noch nicht gespielt.",
+    "playedAt": "Datum",
+    "historyLanguage": "Sprache",
+    "resultScore": "Punktestand",
+    "gameStatus": "Status",
+    "finishedGame": "Abgeschlossen",
+    "activeGame": "In Bearbeitung",
+    "unfinishedGame": "Unvollständig",
+    "legacyScore": "Dein früherer Gesamtpunktestand bleibt separat erhalten. Er lässt sich nicht auf Spiele aufteilen, da die Zuordnung der Antworten fehlt.",
+    "matchingTitle": "Zuordnen",
+    "matchingDescription": "Ordne jedem Wort oder Satz seine Übersetzung zu.",
+    "matchingPrompt": "Wähle einen Text und dann seine Übersetzung.",
+    "matchingRules": "10 Punkte pro Paar beim ersten Versuch; nach einem Fehler gibt es dafür 0 Punkte. Du kannst weiterprobieren.",
+    "matchedPairs": "Gefundene Paare",
+    "matchingError": "Diese Texte bedeuten nicht dasselbe. Probiere eine andere Übersetzung.",
+    "matchingSuccess": "Paar gefunden!",
+    "matchingSelected": "Ausgewählt"
+  },
+  "catalog": {
+    "title": "Was möchtest du üben?",
+    "description": "Wähle ein Thema und entdecke verschiedene Lernmethoden.",
+    "chooseMode": "Wähle, wie du üben möchtest",
+    "topics": "Ein Thema üben",
+    "shortcuts": "In deinem Tempo",
+    "soon": "Demnächst",
+    "browse": "Themen entdecken",
+    "back": "Alle Inhalte",
+    "modesLabel": "verfügbare Spielmodi",
+    "breadcrumb": "Lernpfad",
+    "areas": {
+      "vocabulary": {
+        "title": "Wortschatz",
+        "description": "Wörter, um die Welt zu entdecken."
+      },
+      "grammar": {
+        "title": "Grammatik",
+        "description": "Verstehe, wie die Sprache funktioniert."
+      },
+      "phrases": {
+        "title": "Sätze und Ausdrücke",
+        "description": "Übe Sätze für den Alltag."
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "Schnelles Spiel",
+        "description": "Übe mit einer abwechslungsreichen Auswahl an Aufgaben."
+      },
+      "mistakes": {
+        "title": "Fehler wiederholen",
+        "description": "Übe Wörter, bei denen du Fehler gemacht hast."
+      },
+      "daily": {
+        "title": "Tagesaufgabe",
+        "description": "Jeden Tag eine neue kleine Aufgabe."
+      },
+      "topic": {
+        "title": "Ein Thema üben",
+        "description": "Wähle die Inhalte, die du lernen möchtest."
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "Bild → Wort",
+        "description": "Schau dir das Bild an und schreibe das richtige Wort."
+      },
+      "translation": {
+        "title": "Übersetzung",
+        "description": "Lies den Text und schreibe die Übersetzung."
+      },
+      "matching": {
+        "title": "Zuordnen",
+        "description": "Ordne jedem Wort oder Satz seine Übersetzung zu."
+      },
+      "multiple-choice": {
+        "title": "Multiple Choice",
+        "description": "Wähle aus mehreren Optionen die richtige Antwort."
+      },
+      "complete-word": {
+        "title": "Wort ergänzen",
+        "description": "Ergänze die fehlenden Buchstaben."
+      },
+      "unscramble": {
+        "title": "Buchstabensalat",
+        "description": "Ordne die Buchstaben zu einem Wort."
+      },
+      "listen-and-write": {
+        "title": "Hören und schreiben",
+        "description": "Höre zu und schreibe, was du hörst."
+      },
+      "listen-and-choose": {
+        "title": "Hören und auswählen",
+        "description": "Höre zu und wähle die richtige Antwort."
+      },
+      "memory": {
+        "title": "Gedächtnisspiel",
+        "description": "Finde die passenden Karten."
+      },
+      "speed-round": {
+        "title": "Zeitrunde",
+        "description": "Antworte, bevor die Zeit abläuft."
+      },
+      "odd-one-out": {
+        "title": "Was passt nicht?",
+        "description": "Finde das Wort, das nicht in die Gruppe gehört."
+      },
+      "sentence-context": {
+        "title": "Satz ergänzen",
+        "description": "Verwende den Wortschatz in einem Satz."
+      },
+      "mixed-review": {
+        "title": "Gemischte Wiederholung",
+        "description": "Kombiniere verschiedene Übungsarten."
+      },
+      "bingo": {
+        "title": "Bingo",
+        "description": "Höre und erkenne Zahlen von 1 bis 99. Fülle deine Karte!"
+      }
+    }
+  },
+  "bingo": {
+    "description": "Höre und erkenne Zahlen von 1 bis 99. Fülle deine Karte!",
+    "rules": "Höre Zahlen von 1 bis 99, die automatisch zufällig und ohne Wiederholung gezogen werden. Markiere sie auf deiner Karte. Du kannst alle bereits gezogenen Zahlen markieren und auf der Tafel nachsehen.",
+    "language": "Übungssprache",
+    "start": "Spiel starten",
+    "next": "Nächste Zahl",
+    "listen": "Anhören",
+    "card": "Deine Karte",
+    "progress": "markierte Zahlen",
+    "line": "Reihe!",
+    "win": "Bingo! Deine Karte ist vollständig.",
+    "wrong": "Diese Zahl wurde noch nicht gezogen.",
+    "correct": "Richtig!",
+    "again": "Neues Spiel",
+    "audio": "Sprachausgabe nicht verfügbar. Du kannst die Zahlen lesen und weiterspielen.",
+    "called": "Gezogene Zahlen",
+    "hint": "Höre zu und markiere deine Zahlen. Schau unten auf die Tafel, wenn du eine verpasst hast.",
+    "interval": "Eine Zahl ziehen alle",
+    "seconds": "Sekunden",
+    "pause": "Pause",
+    "resume": "Fortsetzen",
+    "paused": "Ziehung pausiert. Du kannst weiterhin Zahlen markieren.",
+    "finished": "Alle 99 Zahlen wurden gezogen. Prüfe die Tafel und vervollständige deine Karte.",
+    "board": "Zahlentafel · 1–99",
+    "boardHint": "Gezogene Zahlen werden automatisch durchgestrichen. Wähle eine durchgestrichene Zahl, um sie erneut zu hören.",
+    "drawn": "Bereits gezogen",
+    "notDrawn": "Noch nicht gezogen"
+  },
+  "play": {
+    "timer": "20 Sekunden pro Frage",
+    "audioUnavailable": "Für diese Sprache ist keine Stimme verfügbar. Überspringe die Frage ohne Punkte oder wähle eine andere Sprache.",
+    "skip": "Frage überspringen",
+    "outsideGroup": "Wähle das Wort, das NICHT dazu gehört:",
+    "wholeWord": "Schreibe das ganze Wort mit den Buchstaben in der richtigen Reihenfolge.",
+    "missingWord": "Schreibe nur das fehlende Wort.",
+    "memoryNote": "Decke zwei Karten auf, um Wort und Übersetzung zu finden. Fehlerfreie Paare bringen 10 Punkte, verwechselte Paare 0.",
+    "card": "Karte",
+    "dailyNote": "Acht verschiedene Themen. Die Auswahl bleibt den ganzen Tag nach dem Datum deines Geräts gleich. Wiederhole die Aufgabe und vergleiche die Ergebnisse im Verlauf.",
+    "mistakesNote": "Wiederhole neue Fehler aus Spielen in diesem Browser. Wähle dieselbe Ausgangs- und Übungssprache. Jede richtige Antwort entfernt den Eintrag aus der Wiederholung. Ältere Verläufe enthalten keine Fehler zu einzelnen Wörtern.",
+    "emptyMistakes": "Für diese Sprachen gibt es keine offenen Fehler. Spiele eine Runde oder wähle eine andere Kombination."
+  }
+}

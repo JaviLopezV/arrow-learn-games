@@ -1,8 +1,9 @@
-import type { Topic, LocalizedText } from "@/games/types/game.types";
+import type { BaseLocalizedText } from "@/i18n/additional";
+import type { Topic } from "@/games/types/game.types";
 
 export type ExtendedTense = {
   id: string;
-  title: LocalizedText;
+  title: BaseLocalizedText;
   level: Topic["level"];
   phrases: string[];
 };

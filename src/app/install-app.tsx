@@ -1,5 +1,7 @@
 "use client";
 
+import { additionalCopy } from "@/i18n/additional";
+
 import { useEffect, useRef, useState } from "react";
 import DownloadRounded from "@mui/icons-material/DownloadRounded";
 import {
@@ -16,7 +18,7 @@ interface InstallPrompt extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-const copy = {
+const baseCopy = {
   es: {
     button: "Instalar app",
     title: "Llévate el aprendizaje contigo",
@@ -36,6 +38,21 @@ const copy = {
     close: "Got it",
   },
 };
+
+const copy = {
+  ...baseCopy,
+  ...Object.fromEntries(
+    Object.entries(additionalCopy).map(([locale, { ui }]) => [
+      locale,
+      {
+        button: ui.installButton,
+        title: ui.installTitle,
+        text: ui.installText,
+        close: ui.close,
+      },
+    ]),
+  ),
+} as Record<Locale, typeof baseCopy.en>;
 
 export function InstallApp({ locale }: { locale: Locale }) {
   const prompt = useRef<InstallPrompt | null>(null);

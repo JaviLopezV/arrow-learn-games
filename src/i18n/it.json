@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "title": "Arrow Learn Games • Giochi per imparare le lingue",
+    "description": "Esercitati con lessico, grammatica e frasi in sette lingue con giochi e schede. Gratis, senza account, con progressi salvati nel browser.",
+    "openGraphTitle": "Arrow Learn Games • Giochi per imparare le lingue",
+    "openGraphDescription": "Esercitati con lessico, grammatica e frasi in sette lingue con giochi e schede. Gratis, senza account, con progressi salvati nel browser.",
+    "imageAlt": "Arrow Learn Games: impara giocando con schede di animali, parole e pronomi."
+  },
+  "nav": {
+    "home": "Vai alla home",
+    "navigation": "Navigazione principale",
+    "how": "Come funziona",
+    "news": "Giochi",
+    "discover": "Inizia a giocare",
+    "language": "Lingua"
+  },
+  "hero": {
+    "eyebrow": "Un mondo da scoprire",
+    "titleBefore": "Imparare può diventare il tuo ",
+    "titleAccent": "gioco preferito.",
+    "description": "Impara nomi di animali, pronomi e frasi. Scegli una lingua e inizia a esercitarti.",
+    "primary": "Inizia a giocare",
+    "secondary": "Come funziona",
+    "note": "Curiosità, gioco e apprendimento in un solo posto."
+  },
+  "art": {
+    "letsGo": "Si parte!",
+    "discover": "Scopri e impara",
+    "newChallenge": "NUOVA SFIDA",
+    "play": "Pronto a giocare?",
+    "adventure": "L’avventura inizia qui",
+    "newIdea": "nuova idea"
+  },
+  "features": {
+    "kicker": "UN ALTRO MODO DI IMPARARE",
+    "title": "Gioca, scopri, cresci.",
+    "description": "10 punti per risposta corretta. Gli errori non tolgono punti. Gli accenti contano, le maiuscole no.",
+    "items": [
+      {
+        "title": "Riconosci l’animale",
+        "description": "Guarda l’immagine e scrivi il nome dell’animale."
+      },
+      {
+        "title": "Traduci la parola",
+        "description": "Leggi il nome dell’animale e scrivi la traduzione."
+      },
+      {
+        "title": "Festeggia i tuoi progressi",
+        "description": "I risultati vengono salvati separatamente per ogni gioco in questo browser."
+      }
+    ]
+  },
+  "coming": {
+    "kicker": "CONTINUA A ESPLORARE",
+    "title": "Altri modi per imparare giocando.",
+    "description": "Prova giochi di memoria, ascolto e velocità, ripassa gli errori o completa la sfida del giorno."
+  },
+  "footer": "Per menti curiose.",
+  "games": {
+    "kicker": "LA TUA PROSSIMA SFIDA",
+    "title": "Piccole parole, grandi scoperte.",
+    "description": "Impara nomi di animali, pronomi e frasi. Scegli una lingua e inizia a esercitarti.",
+    "pictureTitle": "Immagine → parola",
+    "pictureDescription": "Guarda l’immagine e scrivi la parola corretta.",
+    "translationTitle": "Traduzione",
+    "translationDescription": "Leggi il testo e scrivi la traduzione.",
+    "target": "Lingua da praticare",
+    "source": "Traduci da",
+    "start": "Inizia a giocare",
+    "points": "Punti totali",
+    "correct": "Risposte corrette",
+    "best": "Miglior serie",
+    "saved": "Le partite vengono salvate per argomento e modalità in questo browser.",
+    "rules": "10 punti per risposta corretta. Gli errori non tolgono punti. Gli accenti contano, le maiuscole no.",
+    "question": "Domanda",
+    "picturePrompt": "Che cosa mostra l’immagine?",
+    "translationPrompt": "Scrivi la traduzione",
+    "answer": "La tua risposta",
+    "check": "Controlla la risposta",
+    "success": "Corretto! +10 punti",
+    "failure": "Continua a esercitarti. Risposta corretta:",
+    "next": "Avanti",
+    "results": "Vedi i risultati",
+    "complete": "Turno completato!",
+    "roundPoints": "Punti del turno",
+    "again": "Gioca ancora",
+    "change": "Cambia lingua o ricomincia",
+    "imageAlt": "Illustrazione da riconoscere",
+    "storageError": "Impossibile salvare i progressi in questo browser. Il punteggio resta disponibile finché la pagina è aperta.",
+    "of": "di",
+    "writeIn": "Scrivi in",
+    "choose": "Scegli il gioco",
+    "loading": "Caricamento del punteggio…",
+    "pronounsTitle": "Pronomi soggetto",
+    "pronounsDescription": "Impara chi compie l’azione: io, tu, lui… e scrivi la traduzione.",
+    "pronounsPrompt": "Traduci questo pronome soggetto",
+    "pronounsList": "Elenco dei pronomi soggetto",
+    "pronounsContext": "Persona e contesto",
+    "pronounsNote": "12 domande per turno. Il contesto distingue singolare, plurale e genere. Include forme personali e di cortesia, ma esclude usi neutri o impersonali come «it». Le forme spagnole «vos» e «ustedes» sono accettate nei contesti appropriati.",
+    "nextPronoun": "Pronome successivo",
+    "pronounContexts": {
+      "firstSingular": "1ª persona singolare",
+      "secondSingular": "2ª persona singolare · informale",
+      "thirdMasculine": "3ª persona singolare · maschile",
+      "thirdFeminine": "3ª persona singolare · femminile",
+      "firstPluralMasculine": "1ª persona plurale · gruppo maschile o misto",
+      "firstPluralFeminine": "1ª persona plurale · gruppo femminile",
+      "secondPluralMasculine": "2ª persona plurale · gruppo maschile o misto · informale",
+      "secondPluralFeminine": "2ª persona plurale · gruppo femminile · informale",
+      "thirdPluralMasculine": "3ª persona plurale · gruppo maschile o misto",
+      "thirdPluralFeminine": "3ª persona plurale · gruppo femminile",
+      "formalSingular": "2ª persona singolare · formale",
+      "formalPlural": "2ª persona plurale · formale"
+    },
+    "lastScore": "Ultima partita",
+    "bestScore": "Migliore partita completata",
+    "completedGames": "Partite completate",
+    "historyTitle": "Cronologia delle partite",
+    "historyNote": "Ogni partita inizia da 0. Le partite non finite vengono salvate, ma non contano per il record.",
+    "noGames": "Non hai ancora giocato a questo gioco.",
+    "playedAt": "Data",
+    "historyLanguage": "Lingua",
+    "resultScore": "Punteggio",
+    "gameStatus": "Stato",
+    "finishedGame": "Completato",
+    "activeGame": "In corso",
+    "unfinishedGame": "Non completato",
+    "legacyScore": "Il vecchio punteggio globale resta separato: non è possibile dividerlo tra i giochi perché non indicava a quale gioco appartenesse ogni risposta.",
+    "matchingTitle": "Abbinamenti",
+    "matchingDescription": "Abbina ogni parola o frase alla sua traduzione.",
+    "matchingPrompt": "Seleziona un testo e poi la sua traduzione.",
+    "matchingRules": "10 punti per coppia al primo tentativo; dopo un errore, quella coppia vale 0 punti. Puoi continuare a provare.",
+    "matchedPairs": "Coppie completate",
+    "matchingError": "Questi testi non hanno lo stesso significato. Prova un’altra traduzione.",
+    "matchingSuccess": "Coppia trovata!",
+    "matchingSelected": "Selezionato"
+  },
+  "catalog": {
+    "title": "Che cosa vuoi praticare?",
+    "description": "Scegli un argomento e scopri diversi modi per impararlo.",
+    "chooseMode": "Scegli come esercitarti",
+    "topics": "Pratica un argomento",
+    "shortcuts": "Al tuo ritmo",
+    "soon": "Prossimamente",
+    "browse": "Esplora gli argomenti",
+    "back": "Tutti i contenuti",
+    "modesLabel": "modalità disponibili",
+    "breadcrumb": "Percorso di apprendimento",
+    "areas": {
+      "vocabulary": {
+        "title": "Lessico",
+        "description": "Parole per scoprire il mondo."
+      },
+      "grammar": {
+        "title": "Grammatica",
+        "description": "Scopri come funziona la lingua."
+      },
+      "phrases": {
+        "title": "Frasi ed espressioni",
+        "description": "Esercitati con le frasi di ogni giorno."
+      }
+    },
+    "shortcutsData": {
+      "quick": {
+        "title": "Partita veloce",
+        "description": "Esercitati con una selezione varia di esercizi."
+      },
+      "mistakes": {
+        "title": "Ripassa gli errori",
+        "description": "Ripassa le parole che hai sbagliato."
+      },
+      "daily": {
+        "title": "Sfida del giorno",
+        "description": "Completa una piccola sfida diversa ogni giorno."
+      },
+      "topic": {
+        "title": "Pratica un argomento",
+        "description": "Scegli i contenuti che vuoi imparare."
+      }
+    },
+    "modes": {
+      "image-to-word": {
+        "title": "Immagine → parola",
+        "description": "Guarda l’immagine e scrivi la parola corretta."
+      },
+      "translation": {
+        "title": "Traduzione",
+        "description": "Leggi il testo e scrivi la traduzione."
+      },
+      "matching": {
+        "title": "Abbinamenti",
+        "description": "Abbina ogni parola o frase alla sua traduzione."
+      },
+      "multiple-choice": {
+        "title": "Scelta multipla",
+        "description": "Scegli la risposta corretta tra diverse opzioni."
+      },
+      "complete-word": {
+        "title": "Completa la parola",
+        "description": "Inserisci le lettere mancanti."
+      },
+      "unscramble": {
+        "title": "Riordina le lettere",
+        "description": "Metti in ordine le lettere per formare una parola."
+      },
+      "listen-and-write": {
+        "title": "Ascolta e scrivi",
+        "description": "Ascolta l’audio e scrivi ciò che senti."
+      },
+      "listen-and-choose": {
+        "title": "Ascolta e scegli",
+        "description": "Ascolta e seleziona la risposta corretta."
+      },
+      "memory": {
+        "title": "Memoria",
+        "description": "Trova le carte corrispondenti."
+      },
+      "speed-round": {
+        "title": "Sfida a tempo",
+        "description": "Rispondi prima che scada il tempo."
+      },
+      "odd-one-out": {
+        "title": "Trova l’intruso",
+        "description": "Trova la parola che non appartiene al gruppo."
+      },
+      "sentence-context": {
+        "title": "Completa la frase",
+        "description": "Usa il lessico in una frase."
+      },
+      "mixed-review": {
+        "title": "Ripasso misto",
+        "description": "Combina diversi modi di esercitarti."
+      },
+      "bingo": {
+        "title": "Bingo",
+        "description": "Ascolta e riconosci i numeri da 1 a 99. Completa la cartella!"
+      }
+    }
+  },
+  "bingo": {
+    "description": "Ascolta e riconosci i numeri da 1 a 99. Completa la cartella!",
+    "rules": "Ascolta i numeri da 1 a 99 estratti automaticamente a caso senza ripetizioni. Segnali sulla cartella. Puoi segnare ogni numero già estratto e consultare il tabellone.",
+    "language": "Lingua da praticare",
+    "start": "Inizia la partita",
+    "next": "Numero successivo",
+    "listen": "Ascolta",
+    "card": "La tua cartella",
+    "progress": "numeri segnati",
+    "line": "Cinquina!",
+    "win": "Bingo! Hai completato la cartella.",
+    "wrong": "Questo numero non è ancora stato estratto.",
+    "correct": "Corretto!",
+    "again": "Nuova partita",
+    "audio": "La voce non è disponibile. Puoi giocare leggendo i numeri.",
+    "called": "Numeri estratti",
+    "hint": "Ascolta e segna i numeri. Controlla il tabellone qui sotto se ne hai perso uno.",
+    "interval": "Estrai un numero ogni",
+    "seconds": "secondi",
+    "pause": "Pausa",
+    "resume": "Riprendi",
+    "paused": "Estrazione in pausa. Puoi ancora segnare i numeri.",
+    "finished": "Tutti i 99 numeri sono stati estratti. Controlla il tabellone e completa la cartella.",
+    "board": "Tabellone · 1–99",
+    "boardHint": "I numeri estratti vengono barrati automaticamente. Seleziona un numero barrato per riascoltarlo.",
+    "drawn": "Già estratto",
+    "notDrawn": "Non ancora estratto"
+  },
+  "play": {
+    "timer": "20 secondi per domanda",
+    "audioUnavailable": "Nessuna voce disponibile per questa lingua. Salta la domanda senza punti o scegli un’altra lingua.",
+    "skip": "Salta la domanda",
+    "outsideGroup": "Scegli la parola che NON appartiene a:",
+    "wholeWord": "Scrivi la parola completa con le lettere in ordine.",
+    "missingWord": "Scrivi solo la parola mancante.",
+    "memoryNote": "Gira due carte per trovare una parola e la sua traduzione. Ogni coppia senza errori vale 10 punti; le coppie sbagliate valgono 0.",
+    "card": "Carta",
+    "dailyNote": "Otto argomenti diversi. La selezione resta uguale per tutta la giornata secondo la data del dispositivo. Ripeti la sfida e confronta i risultati nella cronologia.",
+    "mistakesNote": "Ripassa gli errori recenti dei giochi in questo browser. Scegli le stesse lingue di partenza e di pratica. Ogni risposta corretta rimuove la scheda dal ripasso; la vecchia cronologia non contiene errori per singola parola.",
+    "emptyMistakes": "Nessun errore da ripassare per queste lingue. Gioca un turno o scegli un’altra combinazione."
+  }
+}

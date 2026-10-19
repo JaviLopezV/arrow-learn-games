@@ -1,0 +1,112 @@
+{
+  "landing": {
+    "eyebrow": "SPRACHEN · EINSTIEG A1",
+    "title": "Ein neues Wort.",
+    "accent": "Ein kleiner Schritt nach vorn.",
+    "intro": "Gib einer neuen Sprache Raum in deinem Alltag. Entdecke Wörter, übe Sätze und wende das Gelernte spielerisch an, in deinem Tempo.",
+    "play": "Spiele entdecken",
+    "learn": "Lektionen ansehen",
+    "note": "Kostenlos · Ohne Konto · In deinem Tempo",
+    "sample": "DEIN ERSTES WORT",
+    "example": "Ein Bild, sieben Sprachen.",
+    "try": "Mit Tieren üben",
+    "languages": "Sieben Sprachen zum Üben",
+    "topicsKicker": "BEGINNE MIT ETWAS VERTRAUTEM",
+    "topicsTitle": "Deine Welt in einer anderen Sprache.",
+    "topicsIntro": "Wähle ein Thema und entdecke Übungsmöglichkeiten. Vor jedem Spiel kannst du die Sprache wechseln.",
+    "all": "Alle Spiele ansehen",
+    "topicAction": "Thema entdecken",
+    "howKicker": "GANZ EINFACH",
+    "howTitle": "Entdecken. Üben. Erneut versuchen.",
+    "steps": [
+      {
+        "title": "Lerne die Wörter kennen",
+        "text": "Entdecke die Lernkarten, höre die Aussprache und markiere die Karten, die du kennst.",
+        "link": "Lektionen öffnen"
+      },
+      {
+        "title": "Wende sie im Spiel an",
+        "text": "Schreibe Übersetzungen, ordne Paare zu oder höre Zahlen beim Bingo. Entscheide, wie du übst.",
+        "link": "Spiel auswählen"
+      },
+      {
+        "title": "Bleib in deinem Tempo",
+        "text": "Sieh dir deine Spiele an und wiederhole Karten, die du noch lernst. Dein Fortschritt wird in diesem Browser gespeichert.",
+        "link": "Erneut üben"
+      }
+    ],
+    "closingTitle": "Dein nächstes Wort wartet.",
+    "closingText": "Beginne mit einem Thema, das dir gefällt. Du brauchst kein Konto.",
+    "closingCta": "Mein erstes Spiel wählen",
+    "descriptions": {
+      "animals": "Lerne Tiernamen mit Bildern, Übersetzungen und Paaren.",
+      "food": "Lerne Wörter für den Esstisch.",
+      "numbers": "Höre, erkenne und spiele mit Zahlen von 1 bis 99.",
+      "everyday-conversation": "Übe Sätze für Alltagsgespräche."
+    }
+  },
+  "learn": {
+    "nav": "Lernplan",
+    "kicker": "KLEINE SCHRITTE, GROSSE SPIELE",
+    "title": "Lernen. Entdecken. Spielen!",
+    "intro": "Alles für die Spiele, in deinem Tempo. Entdecke eine Karte, teste dein Gedächtnis und nutze das Gelernte im Spiel.",
+    "language": "Ich möchte lernen",
+    "source": "Mit Übersetzungen auf",
+    "route": "Dein Lernpfad",
+    "cards": "Karten",
+    "mastered": "gelernt",
+    "saved": "Der Fortschritt wird für jedes Thema und Sprachpaar in diesem Browser gespeichert.",
+    "storage": "Der Fortschritt kann nicht gespeichert werden. Du kannst in dieser Sitzung weiterlernen.",
+    "discover": "1. Entdecken",
+    "challenge": "2. Teste dich",
+    "library": "3. Alle Karten ansehen",
+    "reveal": "Antwort zeigen",
+    "hide": "Antwort verbergen",
+    "previous": "← Zurück",
+    "next": "Weiter →",
+    "question": "Welche Übersetzung ist richtig?",
+    "correct": "Geschafft! Eine weitere Karte gelernt.",
+    "wrong": "Fast … Schau dir die Antwort an und versuche es später erneut.",
+    "answer": "Antwort",
+    "play": "Losspielen!",
+    "search": "Wort oder Zahl suchen",
+    "empty": "Keine Karten für diese Suche.",
+    "complete": "Du hast alle Karten dieses Themas gelernt!",
+    "review": "Erneut wiederholen",
+    "start": "Aufgabe starten",
+    "hint": "Überlege dir die Antwort, bevor du sie aufdeckst. Teste dann in der Aufgabe, was du behalten hast.",
+    "spelling": "Tipp: Achte auf Akzente und Schreibweise. Varianten mit / werden ebenfalls akzeptiert."
+  },
+  "curriculum": {
+    "title": "Dein Lernplan",
+    "intro": "Lerne in vier Etappen: Entdecke Karten, löse Aufgaben und übe spielerisch. Nimm dir täglich 10–15 Minuten und wiederhole vor dem nächsten Schritt. Du kannst jedes Thema jederzeit erkunden.",
+    "stage": "Etappe",
+    "completed": "abgeschlossene Themen",
+    "continue": "Weiterlernen",
+    "review": "Lernplan wiederholen",
+    "recommended": "Nächster Schritt",
+    "done": "Abgeschlossen",
+    "current": "In Bearbeitung",
+    "pending": "Noch zu entdecken",
+    "finish": "Du hast den Lernplan abgeschlossen! Festige das Gelernte mit weiteren Spielen.",
+    "scope": "Ein Lernpfad für Wortschatz und Grammatik von A1 bis B2. Sein Abschluss ist kein Sprachnachweis.",
+    "stages": [
+      [
+        "Erste Schritte",
+        "Erkenne Zahlen und Tiere und lerne mit Pronomen, wer handelt."
+      ],
+      [
+        "Dein Alltag",
+        "Erweitere deinen Wortschatz für Essen, Zuhause, Kleidung und Körper."
+      ],
+      [
+        "Beginne zu kommunizieren",
+        "Drücke Gewohnheiten in der Gegenwart aus, lerne Verkehrsmittel und übe Alltagssätze."
+      ],
+      [
+        "Über Zeit sprechen",
+        "Lerne einfache, fortlaufende und abgeschlossene Zeitformen, Konditional, Konjunktiv und Imperativ anhand von Beispielen und Spielen."
+      ]
+    ]
+  }
+}

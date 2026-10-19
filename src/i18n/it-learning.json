@@ -1,0 +1,112 @@
+{
+  "landing": {
+    "eyebrow": "LINGUE · PRINCIPIANTI A1",
+    "title": "Una parola nuova.",
+    "accent": "Un piccolo passo avanti.",
+    "intro": "Fai spazio a una nuova lingua nella tua giornata. Scopri parole, esercitati con le frasi e metti in gioco ciò che impari, al tuo ritmo.",
+    "play": "Esplora i giochi",
+    "learn": "Esplora le lezioni",
+    "note": "Gratis · Senza account · Al tuo ritmo",
+    "sample": "LA TUA PRIMA PAROLA",
+    "example": "Un’immagine, sette modi per dirlo.",
+    "try": "Esercitati con gli animali",
+    "languages": "Sette lingue da praticare",
+    "topicsKicker": "INIZIA DA QUALCOSA DI FAMILIARE",
+    "topicsTitle": "Il tuo mondo, in un’altra lingua.",
+    "topicsIntro": "Scegli un argomento e scopri come esercitarti. Puoi cambiare lingua prima di ogni partita.",
+    "all": "Vedi tutti i giochi",
+    "topicAction": "Esplora l’argomento",
+    "howKicker": "È SEMPLICE",
+    "howTitle": "Scopri. Esercitati. Riprova.",
+    "steps": [
+      {
+        "title": "Scopri le parole",
+        "text": "Esplora le schede delle lezioni, ascolta la pronuncia e segna quelle che conosci.",
+        "link": "Apri le lezioni"
+      },
+      {
+        "title": "Mettile in gioco",
+        "text": "Scrivi traduzioni, abbina coppie o ascolta i numeri nel bingo. Scegli come esercitarti.",
+        "link": "Scegli un gioco"
+      },
+      {
+        "title": "Segui il tuo ritmo",
+        "text": "Consulta le partite e ripassa le schede che stai ancora imparando. I progressi vengono salvati in questo browser.",
+        "link": "Esercitati ancora"
+      }
+    ],
+    "closingTitle": "La tua prossima parola ti aspetta.",
+    "closingText": "Inizia da un argomento che ti piace. Non serve un account.",
+    "closingCta": "Scegli il mio primo gioco",
+    "descriptions": {
+      "animals": "Impara i nomi degli animali con immagini, traduzioni e abbinamenti.",
+      "food": "Impara le parole che ti accompagnano a tavola.",
+      "numbers": "Ascolta, riconosci e gioca con i numeri da 1 a 99.",
+      "everyday-conversation": "Esercitati con frasi per le conversazioni quotidiane."
+    }
+  },
+  "learn": {
+    "nav": "Piano di studio",
+    "kicker": "PICCOLI PASSI, GRANDI PARTITE",
+    "title": "Impara. Scopri. Gioca!",
+    "intro": "Tutto ciò che serve per i giochi, al tuo ritmo. Esplora una scheda, metti alla prova la memoria e usa ciò che impari in partita.",
+    "language": "Voglio imparare",
+    "source": "Con traduzioni in",
+    "route": "Il tuo percorso di apprendimento",
+    "cards": "schede",
+    "mastered": "imparate",
+    "saved": "I progressi vengono salvati in questo browser per ogni argomento e coppia di lingue.",
+    "storage": "Impossibile salvare i progressi. Puoi continuare a imparare in questa sessione.",
+    "discover": "1. Scopri",
+    "challenge": "2. Mettiti alla prova",
+    "library": "3. Consulta tutte le schede",
+    "reveal": "Mostra la risposta",
+    "hide": "Nascondi la risposta",
+    "previous": "← Precedente",
+    "next": "Avanti →",
+    "question": "Qual è la traduzione corretta?",
+    "correct": "Bravo! Un’altra scheda imparata.",
+    "wrong": "Quasi… Controlla la risposta e riprova più tardi.",
+    "answer": "Risposta",
+    "play": "Giochiamo!",
+    "search": "Cerca una parola o un numero",
+    "empty": "Nessuna scheda corrisponde alla ricerca.",
+    "complete": "Hai imparato tutte le schede di questo argomento!",
+    "review": "Ripassa ancora",
+    "start": "Inizia la sfida",
+    "hint": "Pensa alla risposta prima di mostrarla. Poi verifica ciò che ricordi nella sfida.",
+    "spelling": "Consiglio: rispetta accenti e ortografia. Anche le varianti separate da / sono accettate."
+  },
+  "curriculum": {
+    "title": "Il tuo piano di studio",
+    "intro": "Avanza in quattro tappe: scopri le schede, supera le sfide e fai pratica giocando. Dedica 10–15 minuti al giorno e ripassa prima di continuare. Puoi esplorare ogni argomento quando vuoi.",
+    "stage": "Tappa",
+    "completed": "argomenti completati",
+    "continue": "Continua a imparare",
+    "review": "Ripassa il piano",
+    "recommended": "Prossimo passo",
+    "done": "Completato",
+    "current": "In corso",
+    "pending": "Da scoprire",
+    "finish": "Hai completato il piano! Continua con i giochi per consolidare ciò che hai imparato.",
+    "scope": "Un percorso di lessico e grammatica da A1 a B2; completarlo non certifica questi livelli.",
+    "stages": [
+      [
+        "Primi passi",
+        "Riconosci numeri e animali e impara chi compie l’azione con i pronomi."
+      ],
+      [
+        "La tua vita quotidiana",
+        "Amplia il lessico per parlare di cibo, casa, vestiti e corpo."
+      ],
+      [
+        "Inizia a comunicare",
+        "Esprimi abitudini al presente, impara a spostarti ed esercitati con frasi quotidiane."
+      ],
+      [
+        "Parla del tempo",
+        "Impara forme semplici, continue e composte, condizionale, congiuntivo e imperativo con esempi e giochi."
+      ]
+    ]
+  }
+}

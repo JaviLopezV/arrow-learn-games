@@ -454,3 +454,43 @@ test("extended verb lessons are playable and included in the study plan", () => 
   const imperative = getTopic("grammar", "imperative-tense");
   assert.ok(imperative.items[1].words.en.includes("Don't work at the office"));
 });
+
+test("all seven learning languages have complete website translations", () => {
+  const { locales, isLocale, ogLocales } = load("src/i18n/messages.ts");
+  const { landingCopy } = load("src/i18n/landing.ts");
+  const { learnCopy } = load("src/learn/copy.ts");
+  const { curriculumCopy } = load("src/learn/curriculum-copy.ts");
+  const { lessonTips } = load("src/learn/tips.ts");
+  function verifyShape(reference, translation, path = "") {
+    if (typeof reference === "string") {
+      assert.equal(typeof translation, "string", path);
+      assert.ok(translation.trim(), path);
+      return;
+    }
+    assert.deepEqual(Object.keys(translation), Object.keys(reference), path);
+    for (const key of Object.keys(reference))
+      verifyShape(reference[key], translation[key], `${path}.${key}`);
+  }
+  assert.deepEqual([...locales].sort(), Object.keys(languages).sort());
+  assert.equal(isLocale("pt"), false);
+  for (const locale of locales) {
+    assert.ok(isLocale(locale));
+    assert.ok(ogLocales[locale]);
+    verifyShape(messages.en, messages[locale], `${locale}.messages`);
+    verifyShape(landingCopy.en, landingCopy[locale], `${locale}.landing`);
+    verifyShape(learnCopy.en, learnCopy[locale], `${locale}.learn`);
+    verifyShape(curriculumCopy.en, curriculumCopy[locale], `${locale}.curriculum`);
+    for (const topic of topics) {
+      assert.ok(topic.title[locale], `${locale}.${topic.id}.title`);
+      assert.ok(lessonTips[locale][topic.id], `${locale}.${topic.id}.tip`);
+      for (const item of topic.items)
+        if (item.context) assert.ok(item.context[locale]);
+    }
+    const { gameMetadata } = load("src/games/utils/metadata.ts");
+    const metadata = gameMetadata(locale, "/topics", learnCopy[locale].nav);
+    assert.equal(metadata.alternates.canonical, `/${locale}/topics`);
+    assert.equal(metadata.openGraph.locale, ogLocales[locale]);
+    for (const other of locales)
+      assert.equal(metadata.alternates.languages[other], `/${other}/topics`);
+  }
+});

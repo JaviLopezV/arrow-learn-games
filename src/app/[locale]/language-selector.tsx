@@ -3,13 +3,21 @@
 import { alpha } from "@mui/material/styles";
 import { useRouter } from "next/navigation";
 import { LanguageSelector as SharedLanguageSelector } from "@jlopvil/mui-kit";
-import type { Locale } from "@/i18n/messages";
+import { locales, type Locale } from "@/i18n/messages";
 
-const languageOptions: { value: Locale; label: string }[] = [
-  { value: "es", label: "Español" },
-  { value: "ca", label: "Català" },
-  { value: "en", label: "English" },
-];
+const names = {
+  es: "Español",
+  ca: "Català",
+  en: "English",
+  fr: "Français",
+  de: "Deutsch",
+  it: "Italiano",
+  ja: "日本語",
+};
+const languageOptions = locales.map((value) => ({
+  value,
+  label: names[value],
+}));
 
 export function LanguageSelector({
   locale,

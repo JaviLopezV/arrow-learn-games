@@ -1,4 +1,5 @@
-export const curriculumCopy = {
+import { additionalCopy } from "@/i18n/additional";
+const baseCopy = {
   es: {
     title: "Tu plan de estudios",
     intro:
@@ -104,4 +105,11 @@ export const curriculumCopy = {
       ],
     ],
   },
+};
+
+export const curriculumCopy = { ...baseCopy,
+  fr: additionalCopy.fr.curriculum,
+  de: additionalCopy.de.curriculum,
+  it: additionalCopy.it.curriculum,
+  ja: additionalCopy.ja.curriculum,
 };

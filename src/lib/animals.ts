@@ -107,6 +107,102 @@ export const animals: { id: string; words: Record<Language, string[]> }[] = [
       it: ["panda"],
     },
   },
+  {
+    id: "lion",
+    words: {
+      ja: japaneseWords("lion"),
+      es: ["león", "leona"],
+      ca: ["lleó", "lleona"],
+      en: ["lion", "lioness"],
+      fr: ["lion", "lionne"],
+      de: ["Löwe", "Löwin"],
+      it: ["leone", "leonessa"],
+    },
+  },
+  {
+    id: "elephant",
+    words: {
+      ja: japaneseWords("elephant"),
+      es: ["elefante", "elefanta"],
+      ca: ["elefant", "elefanta"],
+      en: ["elephant"],
+      fr: ["éléphant", "éléphante"],
+      de: ["Elefant", "Elefantin"],
+      it: ["elefante", "elefantessa"],
+    },
+  },
+  {
+    id: "giraffe",
+    words: {
+      ja: japaneseWords("giraffe"),
+      es: ["jirafa"],
+      ca: ["girafa"],
+      en: ["giraffe"],
+      fr: ["girafe"],
+      de: ["Giraffe"],
+      it: ["giraffa"],
+    },
+  },
+  {
+    id: "monkey",
+    words: {
+      ja: japaneseWords("monkey"),
+      es: ["mono", "mona"],
+      ca: ["mico", "mica"],
+      en: ["monkey"],
+      fr: ["singe", "guenon"],
+      de: ["Affe", "Äffin"],
+      it: ["scimmia"],
+    },
+  },
+  {
+    id: "sheep",
+    words: {
+      ja: japaneseWords("sheep"),
+      es: ["oveja"],
+      ca: ["ovella"],
+      en: ["sheep"],
+      fr: ["mouton", "brebis"],
+      de: ["Schaf"],
+      it: ["pecora"],
+    },
+  },
+  {
+    id: "horse",
+    words: {
+      ja: japaneseWords("horse"),
+      es: ["caballo", "yegua"],
+      ca: ["cavall", "euga"],
+      en: ["horse", "mare"],
+      fr: ["cheval", "jument"],
+      de: ["Pferd", "Stute"],
+      it: ["cavallo", "cavalla"],
+    },
+  },
+  {
+    id: "duck",
+    words: {
+      ja: japaneseWords("duck"),
+      es: ["pato", "pata"],
+      ca: ["ànec", "ànega"],
+      en: ["duck"],
+      fr: ["canard", "cane"],
+      de: ["Ente", "Erpel"],
+      it: ["anatra"],
+    },
+  },
+  {
+    id: "turtle",
+    words: {
+      ja: japaneseWords("turtle"),
+      es: ["tortuga"],
+      ca: ["tortuga"],
+      en: ["turtle", "tortoise"],
+      fr: ["tortue"],
+      de: ["Schildkröte"],
+      it: ["tartaruga"],
+    },
+  },
 ];
 export function normalizeAnswer(value: string) {
   return value.normalize("NFC").trim().toLocaleLowerCase().replace(/\s+/g, " ");

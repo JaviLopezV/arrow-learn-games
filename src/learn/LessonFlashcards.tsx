@@ -1,5 +1,6 @@
 "use client";
 
+import { SpeakingAvatar } from "@/components/speaking-avatar";
 import { useState } from "react";
 import Image from "next/image";
 import type { Topic } from "@/games/types/game.types";
@@ -58,6 +59,16 @@ export function LessonFlashcards({
           <span className="learn-reveal">✦ {m.reveal}</span>
         )}
       </button>
+      <SpeakingAvatar
+        locale={locale}
+        language={revealed ? target : source}
+        text={
+          item.words[revealed ? target : source][
+            (revealed ? target : source) === "ja" ? 1 : 0
+          ]
+        }
+        cue={`${topic.id}/${index}/${revealed}`}
+      />
       <div className="learn-controls">
         <button
           className="learn-button"

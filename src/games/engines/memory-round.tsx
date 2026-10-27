@@ -1,4 +1,5 @@
 "use client";
+import { SpeakingAvatar } from "@/components/speaking-avatar";
 import { useState } from "react";
 import { Alert, Box, Button, Surface, Typography } from "@jlopvil/mui-kit";
 import { languages } from "@/lib/animals";
@@ -7,6 +8,11 @@ import { seededShuffle } from "../utils/practice";
 import type { GameController } from "./use-game";
 export function MemoryRound({ game }: { game: GameController }) {
   const { round, m } = game;
+  const [spoken, setSpoken] = useState<{
+    text: string;
+    side: "source" | "target";
+    cue: number;
+  } | null>(null);
   const [open, setOpen] = useState<string[]>([]);
   const [failed, setFailed] = useState(false);
   if (!round) return null;
@@ -24,6 +30,13 @@ export function MemoryRound({ game }: { game: GameController }) {
     if (!round || open.includes(key) || failed) return;
     const card = cards.find((entry) => entry.key === key)!;
     if (round.matched.includes(card.item.id)) return;
+    setSpoken((previous) => ({
+      text: card.item.words[round[card.side]][
+        round[card.side] === "ja" ? 1 : 0
+      ],
+      side: card.side,
+      cue: (previous?.cue ?? 0) + 1,
+    }));
     if (!open.length) {
       setOpen([key]);
       return;
@@ -47,6 +60,12 @@ export function MemoryRound({ game }: { game: GameController }) {
       <p>
         {m.matchedPairs}: {round.matched.length} / {round.deck.length}
       </p>
+      <SpeakingAvatar
+        locale={game.locale}
+        language={round[spoken?.side ?? "source"]}
+        text={spoken?.text ?? ""}
+        cue={`${round.id}/${spoken?.cue ?? 0}`}
+      />
       <Box
         sx={{
           display: "grid",

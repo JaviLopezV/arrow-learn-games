@@ -2492,3 +2492,159 @@ a.catalog-card:hover,
     gap: 8px;
   }
 }
+
+/* Arlo, the pronunciation companion. */
+.speaking-buddy {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 24px 0;
+  padding: 20px;
+  border: 1px solid #c9dfeb;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #edf8ff, #f3faf5);
+  color: #153d51;
+  text-align: left;
+}
+.buddy-robot {
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 66px;
+  padding: 10px 7px;
+  background: #65cbbd;
+  border: 3px solid #287c80;
+  border-radius: 24px;
+  box-shadow: 0 5px 0 #287c8020;
+}
+.buddy-antenna {
+  position: absolute;
+  width: 4px;
+  height: 13px;
+  background: #287c80;
+  left: 31px;
+  top: -14px;
+}
+.buddy-antenna::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f5bd57;
+  top: -6px;
+  left: -3px;
+}
+.buddy-face {
+  position: relative;
+  height: 39px;
+  border-radius: 14px;
+  background: #163d50;
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  padding-top: 9px;
+}
+.buddy-face i {
+  width: 7px;
+  height: 8px;
+  border-radius: 50%;
+  background: #b1f8e8;
+}
+.buddy-mouth {
+  position: absolute;
+  bottom: 7px;
+  width: 14px;
+  height: 5px;
+  border-radius: 2px 2px 8px 8px;
+  background: #b1f8e8;
+}
+.buddy-content {
+  min-width: 0;
+  flex: 1;
+}
+.buddy-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.buddy-heading strong {
+  font-size: 18px;
+}
+.buddy-heading > span {
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: #fff9;
+}
+.buddy-content p {
+  margin: 5px 0 12px;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.buddy-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.buddy-controls button,
+.buddy-error button {
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #287c80;
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: white;
+  color: #174e59;
+}
+.buddy-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.buddy-controls label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.buddy-controls input {
+  accent-color: #287c80;
+  width: 16px;
+  height: 16px;
+}
+.buddy-error {
+  margin-top: 12px;
+  font-size: 13px;
+}
+.is-speaking .buddy-mouth {
+  animation: buddy-talk 0.24s ease-in-out infinite alternate;
+}
+.is-speaking .buddy-antenna::before {
+  box-shadow: 0 0 0 5px #f5bd5733;
+}
+@keyframes buddy-talk {
+  to {
+    height: 12px;
+    width: 10px;
+    border-radius: 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-speaking .buddy-mouth {
+    animation: none;
+    height: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .speaking-buddy {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  .buddy-robot {
+    transform: scale(0.85);
+    flex-basis: 62px;
+  }
+}

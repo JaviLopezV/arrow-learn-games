@@ -1,5 +1,6 @@
 "use client";
 
+import { SpeakingAvatar } from "@/components/speaking-avatar";
 import { useRef, useState } from "react";
 import { Alert, Box, Button, Surface, Typography } from "@jlopvil/mui-kit";
 import { LinearProgress } from "@mui/material";
@@ -8,6 +9,11 @@ import type { GameController } from "./use-game";
 
 export function MatchingRound({ game }: { game: GameController }) {
   const { m, round, match, setRound } = game;
+  const [spoken, setSpoken] = useState<{
+    text: string;
+    side: "source" | "target";
+    cue: number;
+  } | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<"success" | "warning" | null>(null);
   const sourceButtons = useRef<Map<string, HTMLButtonElement>>(new Map());
@@ -47,6 +53,12 @@ export function MatchingRound({ game }: { game: GameController }) {
         aria-label={m.matchedPairs}
         sx={{ my: 2, height: 7, borderRadius: 2 }}
       />
+      <SpeakingAvatar
+        locale={game.locale}
+        language={round[spoken?.side ?? "source"]}
+        text={spoken?.text ?? ""}
+        cue={`${round.id}/${spoken?.cue ?? 0}`}
+      />
       <Box
         sx={{
           display: "grid",
@@ -83,6 +95,13 @@ export function MatchingRound({ game }: { game: GameController }) {
                     disabled={matched || (side === "target" && !selected)}
                     aria-pressed={side === "source" ? active : undefined}
                     onClick={() => {
+                      setSpoken((previous) => ({
+                        text: item.words[round[side]][
+                          round[side] === "ja" ? 1 : 0
+                        ],
+                        side,
+                        cue: (previous?.cue ?? 0) + 1,
+                      }));
                       if (side === "target") chooseTarget(item.id);
                       else {
                         setSelected(item.id);

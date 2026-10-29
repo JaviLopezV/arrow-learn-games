@@ -72,7 +72,7 @@ export function GameLanguageSettings({ game }: { game: GameController }) {
         flexDirection: { xs: "column", sm: "row" },
         alignItems: { xs: "stretch", sm: "flex-end" },
         gap: 2.25,
-        mt: 3.5,
+        mt: 0,
       }}
     >
       {mode !== "image-to-word" && (

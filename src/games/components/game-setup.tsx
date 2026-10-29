@@ -1,5 +1,6 @@
 "use client";
 
+import { compactCopy } from "@/i18n/compact";
 import { Surface, Typography } from "@jlopvil/mui-kit";
 import {
   TableContainer,
@@ -37,6 +38,8 @@ export function GameSetup({ game }: { game: GameController }) {
       {(source === "ja" || target === "ja") && (
         <JapanesePronunciationNote locale={locale} />
       )}
+      <details className="app-disclosure game-instructions">
+        <summary>{compactCopy[locale].instructions}</summary>
       <Typography
         component="p"
         sx={{ mt: 2.75, color: "#70748d", fontSize: 13, lineHeight: 1.7 }}
@@ -48,6 +51,7 @@ export function GameSetup({ game }: { game: GameController }) {
             : m.rules}
         {mode === "speed-round" && ` ${messages[locale].play.timer}.`}
       </Typography>
+      </details>
       {topic.reference === "subject-pronouns" && (
         <Accordion sx={{ mt: 3 }}>
           <AccordionSummary

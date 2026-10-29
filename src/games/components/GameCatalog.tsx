@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { homeCopy } from "@/i18n/home";
+import { compactCopy } from "@/i18n/compact";
 import { messages, type Locale } from "@/i18n/messages";
 import { learningAreas } from "../config/learningAreas";
 import { topics } from "../config/topics";
@@ -19,7 +21,7 @@ export function GameBreadcrumbs({
   const m = messages[locale].catalog;
   return (
     <nav className="game-breadcrumbs" aria-label={m.breadcrumb}>
-      <Link href={`/${locale}/games`}>{messages[locale].nav.news}</Link>
+      <Link href={`/${locale}/games`}>{homeCopy[locale].games}</Link>
       {area && (
         <>
           <span aria-hidden="true">/</span>
@@ -58,14 +60,10 @@ export function GameCatalog({
             {messages[locale].games.kicker}
           </span>
           <h1>
-            {topic ? topic.title[locale] : area ? m.areas[area].title : m.title}
+            {topic ? topic.title[locale] : area ? m.areas[area].title : homeCopy[locale].games}
           </h1>
           <p>
-            {topic
-              ? m.chooseMode
-              : area
-                ? m.areas[area].description
-                : m.description}
+            {topic ? compactCopy[locale].choose : compactCopy[locale].games}
           </p>
         </header>
         {topic ? (
@@ -89,7 +87,6 @@ export function GameCatalog({
                   key={item.id}
                   icon={item.icon}
                   title={m.areas[item.id].title}
-                  description={m.areas[item.id].description}
                   href={`/${locale}/games/${item.id}`}
                   selected={selectedArea === item.id}
                 />

@@ -1,5 +1,6 @@
 "use client";
 
+import { compactCopy } from "@/i18n/compact";
 import { useState } from "react";
 import Link from "next/link";
 import type { ContentItem, Topic } from "@/games/types/game.types";
@@ -83,13 +84,13 @@ export function Lesson({
           {m.play} ↗
         </Link>
       </div>
-      <aside className="learn-tip">
-        <span aria-hidden="true">💡</span>
+      <details className="learn-tip app-disclosure">
+        <summary>💡 {compactCopy[locale].tip}</summary>
         <div>
           <p>{lessonTips[locale][topic.id]}</p>
           <small>{m.spelling}</small>
         </div>
-      </aside>
+      </details>
       <div className="learn-workspace">
         <LessonFlashcards
           topic={topic}

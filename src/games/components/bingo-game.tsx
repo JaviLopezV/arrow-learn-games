@@ -1,5 +1,6 @@
 "use client";
 
+import { compactCopy } from "@/i18n/compact";
 import { Box, Button, Typography } from "@jlopvil/mui-kit";
 import {
   ButtonBase,
@@ -51,7 +52,7 @@ export function BingoGame({ locale }: { locale: Locale }) {
           <Typography component="h1" variant="h4" id="bingo-title">
             Bingo
           </Typography>
-          <Typography component="p">{m.rules}</Typography>
+          <details className="app-disclosure"><summary>{compactCopy[locale].instructions}</summary><Typography component="p">{m.rules}</Typography></details>
         </Box>
         <Box className="bingo-tempo">
           <FormControl sx={{ minWidth: 220 }}>

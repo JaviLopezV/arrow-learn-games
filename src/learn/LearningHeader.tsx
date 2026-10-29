@@ -1,3 +1,5 @@
+import { homeCopy } from "@/i18n/home";
+import { compactCopy } from "@/i18n/compact";
 import type { Dispatch, SetStateAction } from "react";
 import type { Locale } from "@/i18n/messages";
 import { languages, type Language } from "@/lib/animals";
@@ -21,9 +23,8 @@ export function LearningHeader({
   const m = learnCopy[locale];
   return (
     <header className="learn-hero">
-      <span className="section-kicker">✦ {m.kicker}</span>
-      <h1>{m.title}</h1>
-      <p>{m.intro}</p>
+      <h1>{homeCopy[locale].study}</h1>
+      <p>{compactCopy[locale].study}</p>
       <div className="learn-settings">
         <label>
           {m.language}

@@ -53,9 +53,6 @@ export function GameRunner({
           </Typography>
           <Typography component="p">{gameTitle(activeMode)}</Typography>
         </Box>
-        <Typography component="h3" variant="h5" className="score-game-title">
-          {gameTitle(activeMode)}
-        </Typography>
         <Box className="score-grid" aria-label={gameTitle(activeMode)}>
           <Box>
             <Box component="span">{round ? m.roundPoints : m.lastScore}</Box>

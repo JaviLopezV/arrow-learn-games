@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { homeCopy } from "@/i18n/home";
 import HomeRounded from "@mui/icons-material/HomeRounded";
 import SportsEsportsRounded from "@mui/icons-material/SportsEsportsRounded";
 import AutoStoriesRounded from "@mui/icons-material/AutoStoriesRounded";
@@ -25,20 +26,12 @@ export function MobileNavigation({ locale }: { locale: Locale }) {
     },
     {
       href: `/${locale}/games`,
-      label: messages[locale].nav.news,
+      label: homeCopy[locale].games,
       icon: SportsEsportsRounded,
     },
     {
       href: `/${locale}/topics`,
-      label: {
-        es: "Aprender",
-        ca: "Aprendre",
-        en: "Learn",
-        fr: "Apprendre",
-        de: "Lernen",
-        it: "Impara",
-        ja: "学習",
-      }[locale],
+      label: homeCopy[locale].study,
       icon: AutoStoriesRounded,
     },
   ];

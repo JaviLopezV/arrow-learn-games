@@ -1,5 +1,6 @@
 "use client";
 
+import { compactCopy } from "@/i18n/compact";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/messages";
 import { languages, type Language } from "@/lib/animals";
@@ -82,8 +83,7 @@ export function LearningHub({ locale }: { locale: Locale }) {
           <div>
             <span className="section-kicker">{languages[target]}</span>
             <h2 id="study-title">{plan.title}</h2>
-            <p>{plan.intro}</p>
-            <small>{plan.scope}</small>
+            <details className="app-disclosure"><summary>{compactCopy[locale].overview}</summary><p>{plan.intro}</p><small>{plan.scope}</small></details>
           </div>
           <div className="study-summary" aria-live="polite">
             <strong>
@@ -148,7 +148,10 @@ export function LearningHub({ locale }: { locale: Locale }) {
                       key={lesson.id}
                       className={`learn-topic ${selected === lesson.id ? "is-selected" : ""}`}
                       aria-pressed={selected === lesson.id}
-                      onClick={() => setSelected(lesson.id)}
+                      onClick={() => {
+                        setSelected(lesson.id);
+                        document.getElementById("study-lesson")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+                      }}
                     >
                       <span className="learn-topic-icon" aria-hidden="true">
                         {lesson.icon}

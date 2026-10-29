@@ -2648,3 +2648,104 @@ a.catalog-card:hover,
     flex-basis: 62px;
   }
 }
+
+/* App home: immediate access to the two learning paths. */
+.app-home { max-width: 1040px; margin: 0 auto; padding: 44px 28px 28px; }
+.app-welcome { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 30px; }
+.app-eyebrow { color: #5860a2; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
+.app-welcome h1 { margin: 10px 0; font-family: Outfit, sans-serif; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.045em; line-height: 1.15; }
+.app-welcome p { margin: 0; color: #656980; font-size: 15px; line-height: 1.6; }
+.app-welcome-mark { display: grid; place-items: center; flex-shrink: 0; width: 72px; height: 72px; border-radius: 24px; background: #eeeafb; color: #4552d5; font-size: 54px; transform: rotate(-8deg); }
+.app-destinations { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.app-destination { display: flex; flex-direction: column; padding: 26px; border-radius: 26px; min-width: 0; transition: transform .18s, box-shadow .18s; }
+.app-destination-games { background: #4552d5; color: white; box-shadow: 0 8px 0 #3541b3, 0 16px 30px #4552d51a; }
+.app-destination-study { background: #e9f2e8; color: #284c3b; box-shadow: 0 8px 0 #d1e1ce; }
+.app-destination-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.app-feature-icon { display: grid; place-items: center; height: 58px; width: 58px; border-radius: 19px; background: #ffffff24; }
+.app-feature-icon svg { font-size: 34px; }
+.app-destination-study .app-feature-icon { background: #ffffffa1; }
+.app-pill { font-size: 10px; font-weight: 800; letter-spacing: .07em; border: 1px solid #ffffff45; border-radius: 20px; padding: 7px 10px; }
+.app-destination-study .app-pill { border-color: #b7ceb8; }
+.app-destination h2 { font-family: Outfit, sans-serif; margin: 22px 0 8px; font-size: 30px; letter-spacing: -.035em; }
+.app-destination p { font-size: 14px; line-height: 1.65; margin: 0 0 24px; max-width: 320px; }
+.app-card-action { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 18px; border-top: 1px solid #ffffff45; font-size: 14px; font-weight: 800; }
+.app-destination-study .app-card-action { border-color: #c8dac6; }
+.app-card-action svg, .app-section-heading svg { font-size: 20px; }
+.app-recommendations { margin-top: 42px; }
+.app-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.app-section-heading h2 { margin: 0; font-size: 21px; letter-spacing: -.035em; }
+.app-section-heading a { display: flex; align-items: center; gap: 6px; color: #4552bd; font-size: 13px; font-weight: 700; }
+.app-topic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.app-topic { display: flex; align-items: center; gap: 14px; min-width: 0; border: 1px solid #e7e5ef; border-radius: 20px; background: white; padding: 14px; color: #20234b; transition: border-color .18s, transform .18s; }
+.app-topic-icon { display: grid; place-items: center; flex-shrink: 0; width: 64px; height: 64px; border-radius: 16px; background: #fff2d9; font-size: 30px; }
+.app-topic-icon-food { background: #ffede7; }.app-topic-icon-numbers { background: #eeebff; }.app-topic-icon-everyday-conversation { background: #e8f3fa; }
+.app-topic-copy { flex: 1; min-width: 0; }.app-topic-copy small { color: #757990; font-size: 10px; font-weight: 800; letter-spacing: .07em; }
+.app-topic h3 { font-size: 15px; margin: 5px 0 0; line-height: 1.35; }
+.app-topic-arrow { color: #86899e; font-size: 19px !important; flex-shrink: 0; }
+.app-learning-note { display: flex; align-items: center; gap: 18px; background: #f1eef9; border-radius: 20px; padding: 22px; margin-top: 24px; }
+.app-learning-note > span { font-size: 32px; color: #8171bc; }.app-learning-note h2 { margin: 0 0 5px; font-size: 15px; }.app-learning-note p { margin: 0; color: #686582; font-size: 13px; line-height: 1.6; }
+.app-home-note { text-align: center; color: #777a8d; margin: 24px 0 0; font-size: 12px; }
+.app-home a:focus-visible { outline: 3px solid #ad741b; outline-offset: 5px; }
+@media (hover: hover) { .app-destination:hover { transform: translateY(-3px); }.app-topic:hover { border-color: #999ee0; transform: translateY(-2px); } }
+@media (max-width: 700px) {
+  .app-home { padding: 24px 18px 16px; }
+  .app-welcome { margin-bottom: 22px; gap: 12px; }.app-welcome-mark { width: 46px; height: 46px; border-radius: 16px; font-size: 34px; }
+  .app-eyebrow { font-size: 9px; }.app-welcome h1 { font-size: 28px; }.app-welcome p { font-size: 13px; }
+  .app-destinations { grid-template-columns: 1fr; gap: 20px; }.app-destination { padding: 20px; border-radius: 22px; }
+  .app-feature-icon { width: 46px; height: 46px; border-radius: 15px; }.app-feature-icon svg { font-size: 28px; }
+  .app-destination h2 { margin-top: 14px; font-size: 26px; }.app-destination p { max-width: none; margin-bottom: 16px; font-size: 13px; }
+  .app-card-action { padding-top: 14px; }.app-recommendations { margin-top: 32px; }.app-section-heading h2 { font-size: 20px; }
+  .app-topic-grid { grid-template-columns: 1fr; gap: 10px; }.app-topic { padding: 12px; }.app-topic-icon { width: 50px; height: 50px; font-size: 26px; }.app-topic-icon img { width: 46px; height: 46px; }
+  .app-learning-note { padding: 18px; gap: 12px; }.app-home + .site-footer { margin-top: 10px; }
+}
+@media (prefers-reduced-motion: reduce) { .app-destination, .app-topic { transition: none; } }
+
+/* Shared compact app screens. */
+.games-catalog, .game-session, .learn-page { background: #fcfbf8; padding: 32px 28px 40px; }
+.games-container { max-width: 984px; }
+.games-catalog .section-heading, .game-session .section-heading { max-width: none; text-align: left; margin: 0 0 24px; }
+.games-catalog .section-heading h1, .game-session .section-heading h1, .learn-hero h1 { font-size: clamp(28px, 4vw, 36px); margin: 8px 0; letter-spacing: -.04em; }
+.games-catalog .section-heading > p, .game-session .section-heading > p { font-size: 14px; margin: 8px 0 0; line-height: 1.5; }
+.game-breadcrumbs { flex-wrap: wrap; line-height: 1.5; font-size: 12px; }
+.catalog-section { margin-top: 28px; }.catalog-section h2 { font-size: 21px; margin-bottom: 16px; }
+.catalog-grid { gap: 12px; }.catalog-card { padding: 18px; gap: 8px; border-color: #e7e5ef; border-radius: 20px; }
+.catalog-card-title { font-size: 18px; }.catalog-card-description { font-size: 13px; line-height: 1.5; }
+.catalog-icon { min-width: 46px; height: 46px; border-radius: 15px; font-size: 24px; }.catalog-arrow { font-size: 20px; top: 18px; right: 16px; }
+.areas-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.areas-grid .catalog-card { display: flex; flex-direction: row; align-items: center; gap: 10px; padding: 12px; }
+.areas-grid .catalog-card-title { font-size: 14px; padding: 0; overflow-wrap: anywhere; }.areas-grid .catalog-arrow { display: none; }
+.areas-grid .catalog-card.selected { color: white; background: #4552d5; border-color: #4552d5; }.areas-grid .catalog-card.selected .catalog-icon { background: #ffffff24; }
+.shortcuts-grid .catalog-card { background: #f1eef9; padding: 16px; }.shortcuts-grid .catalog-card-title { font-size: 16px; }
+.topics-grid .catalog-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 5px 12px; }
+.topics-grid .catalog-icon { grid-row: 1 / span 2; }.topics-grid .catalog-card-title { font-size: 16px; }.topics-grid .catalog-card-description { grid-column: 2; font-size: 12px; }
+.topics-grid .catalog-badge { grid-column: 2; justify-self: start; }.topics-grid .catalog-arrow { top: 50%; transform: translateY(-50%); }
+.score-grid { gap: 10px; }.score-grid > div { padding: 16px; gap: 6px; border-radius: 18px; }.score-grid strong { font-size: 28px; }.score-grid span { font-size: 12px; }
+.game-session .save-note { margin: 12px 0 18px; font-size: 11px; }.game-setup, .play-panel { border-radius: 22px; }
+.app-disclosure { font-size: 13px; line-height: 1.6; color: #646982; }
+.app-disclosure summary { cursor: pointer; font-weight: 700; padding-block: 10px; min-height: 44px; color: #4552bd; }
+.app-disclosure summary:focus-visible { outline: 3px solid #ad741b; outline-offset: 3px; border-radius: 8px; }
+.app-disclosure p { margin: 8px 0; }.game-instructions { margin-top: 14px; border-top: 1px solid #eeedf5; }.game-instructions p { margin-top: 6px; }
+.learn-hero { padding: 0; background: transparent; border: 0; border-radius: 0; }.learn-hero > p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; }
+.learn-settings { background: white; border: 1px solid #e7e5ef; border-radius: 20px; padding: 18px; margin-top: 22px; gap: 14px; }
+.learn-settings label { font-size: 12px; }.learn-settings select { padding: 10px; }
+.study-overview { background: #e9f2e8; border-color: #d1e1ce; margin-top: 18px; padding: 22px; gap: 20px; }
+.study-overview h2 { margin: 0 0 6px; font-size: 22px; color: #284c3b; }.study-summary { gap: 10px; }.study-summary strong { font-size: 14px; }.study-summary small { font-size: 12px; }
+.study-overview .app-disclosure summary { color: #355c46; }.study-summary .learn-button.primary { background: #355c46; }
+.study-stage { margin-top: 26px; }.study-stage-heading { gap: 12px; margin-bottom: 14px; }.study-stage-heading h2 { font-size: 21px; margin: 6px 0; }.study-stage-heading p { font-size: 13px; }.study-stage-heading > span { font-size: 12px; }
+.learn-path { gap: 10px; }.learn-topic { padding: 16px; gap: 7px; border-width: 1px; border-color: #e7e5ef; }.learn-topic.is-selected { border-color: #4552d5; box-shadow: inset 0 0 0 1px #4552d5; }.learn-topic strong { font-size: 15px; }.learn-topic-icon { font-size: 26px; }
+.learn-page .learn-tip { display: block; padding: 6px 16px; background: #f1eef9; border-radius: 18px; }.learn-tip small { display: block; margin-bottom: 10px; }
+.learn-lesson-heading h2 { font-size: 23px; }.learn-panel { border-radius: 20px; }.learn-button { border-radius: 12px; min-height: 44px; }.learn-save { font-size: 11px; }
+.site-footer { padding-block: 22px; }.footer-identity p { font-size: 12px; }.footer-legal-links { gap: 10px 16px; }.footer-legal-links a { font-size: 11px; }
+.legal-document { border: 1px solid #e7e5ef; border-radius: 22px; background: white; }.legal-document h1 { font-size: clamp(26px, 4vw, 36px); }.legal-document h2 { font-size: 19px; }
+@media (max-width: 700px) {
+  .games-catalog, .game-session, .learn-page { padding: 24px 18px 28px; }
+  .games-catalog .section-heading, .game-session .section-heading { margin-bottom: 20px; }
+  .areas-grid .catalog-card { flex-direction: column; text-align: center; padding: 12px 6px; gap: 8px; }.areas-grid .catalog-card-title { font-size: 12px; }
+  .shortcuts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.shortcuts-grid .catalog-card { padding: 14px; }.shortcuts-grid .catalog-card-title { font-size: 14px; }.shortcuts-grid .catalog-card-description { font-size: 12px; }
+  .topics-grid .catalog-card { padding: 14px; }.modes-grid .catalog-card { padding: 18px; }
+  .score-grid > div { padding: 12px 10px; }.score-grid strong { font-size: 24px; }.score-grid span { font-size: 11px; overflow-wrap: anywhere; }
+  .learn-settings { padding: 14px; gap: 10px; }.learn-settings label { min-width: 0; }.learn-settings > span { display: none; }
+  .study-overview { grid-template-columns: 1fr; padding: 18px; gap: 12px; }.study-stage-heading { align-items: flex-start; }.study-stage-heading h2 { font-size: 20px; }
+  .learn-path { grid-template-columns: repeat(2, minmax(0, 1fr)); }.learn-topic { min-width: 0; padding: 13px; }.learn-topic strong { overflow-wrap: anywhere; }.learn-topic > span:last-of-type { font-size: 11px; }
+  .learn-lesson-heading h2 { font-size: 21px; }.legal-document { margin: 20px 18px; padding: 20px; }
+}
